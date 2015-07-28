@@ -6,7 +6,7 @@ Central location for ZRS curriculum materials
 
 ##### Affiliate
 * Team - ZRS
-* Initiator - nesp
+* Initiator - alma
 
 ___
 * [github] - See other project from Zühlke on github
