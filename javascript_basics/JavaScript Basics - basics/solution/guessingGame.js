@@ -14,20 +14,14 @@ function isLimitReached() {
 function respondTo(guess) {
     guesses.push(guess);
 
-    // !guess will prevent undefined, null and "", but we must allow zero
-    if (!guess && guess !== 0) {
-        throw new Error("You must enter something! Nothing is not an answer!");
-    }
+    EnsureGuessNotNullOrEmpty(guess);
     
     // We check if the answer is a number and give a hint if it isn't.
-    var castedToNumber = Number(guess);
-    if (isNaN(castedToNumber)) {
-        throw new Error("The answer is a number.");
-    }
+    var guessAsNumber = CastToNumberOrThrow(guess);
 
-    // Check if the answer is correct and give a hint what was the closest guess.
-    if (castedToNumber !== answer) {
-        guesses.push(castedToNumber);
+    // Check if the answer is correct and if not give a hint what was the closest guess.
+    if (!IsGuessCorrect(guessAsNumber)) {
+        guesses.push(guessAsNumber);
         return "Your closest guess so far was: " + closest();
     }
 
@@ -42,8 +36,8 @@ function closest() {
     for (var i = 0; i < guesses.length; i++) {
         var guessValue = guesses[i];
 
-        // Check if the typeof item is a number, and skip if it isn't.
-        if (typeof guessValue !== "number") {
+        // Check if the type of the item is a number, and skip if it isn't.
+        if (!IsNumber(guessValue)) {
             continue;
         }
 
@@ -57,6 +51,30 @@ function closest() {
     return curr;
 }
 
+function EnsureGuessNotNullOrEmpty(guess) {
+    // !guess will prevent undefined, null or "", but we must allow zero
+    if (!guess && guess !== 0) {
+        throw new Error("You must enter something! Nothing is not an answer!");
+    }
+}
+
+function CastToNumberOrThrow(guess) {
+    var guessAsNumber = Number(guess);
+    if (isNaN(guessAsNumber)) {
+        throw new Error("The answer is a number.");
+    }
+
+    return guessAsNumber;
+}
+
+function IsGuessCorrect(guessAsNumber) {
+    return guessAsNumber === answer;
+}
+
+function IsNumber(guessValue) {
+    return typeof guessValue === "number";
+}
+
 function game() {
     do {
         var guess = prompt("What is the answer to everything?", "");
@@ -64,11 +82,12 @@ function game() {
         try {
             alert(respondTo(guess));
         } catch (e) {
+            // Notify user of error
             alert(e.message);
         }
 
         if (isLimitReached()) {
-            alert("You reached your limit of 5 guesses and cannot guess anymore.");
+            alert("You reached your limit of " + numberOfTries + " guesses and cannot guess any more.");
             break;
         }
 
