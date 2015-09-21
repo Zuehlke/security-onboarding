@@ -18,7 +18,7 @@ Characteristics:
 
 ### Including JS file in HTML
 
-- Use the `<script>` tag with `src` attribute pointing to the locatoin of the file​
+- Use the `<script>` tag with `src` attribute pointing to the location of the file​
 - JavaScript files have .js extension​
 ​
 > **Always include script references at the end of the `<body>` of the page**   
@@ -40,12 +40,12 @@ Example:
 	</html>
 
 ### Declaring a variable
-Variables are declared using the var keyword.
+Variables are declared using the `var` keyword.
 
 	var a = 5;​
 	var text = "Some message"​;
 
-> **Never declare a variable without the var keyword!​**   
+> **Never declare a variable without the `var` keyword!​**   
 > It will automatically become a global variable, and can cause problems.
 
 ## Data types
@@ -60,7 +60,7 @@ Variables are declared using the var keyword.
 - Object
 
 ### Arrays
-Characterisctics of arrays in JavaScript:
+Characteristics of arrays in JavaScript:
 
 - Zero-based index
 - Can hold different type in same array
@@ -152,7 +152,7 @@ Falsy values:
 	}
 
 ## Operators
-The table of [operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators) precedance
+The table of [operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators) precedence.
 
 ​
 ![Operators](operators.png)
@@ -296,9 +296,9 @@ JavaScript has all the usual flow control & loop concepts:
 
 > **Best practices:**
 > 
-> - Handle **all** exceptions that may occur and influence user's workflow    ​
+> - Handle **all** exceptions that may occur and influence user's work-flow    ​
 > - Do not use exceptions for non-exceptional flow control​
-> - Prefer exceptions to error codes (like -1, false, 0x3343…)   ​
+> - Prefer exceptions to error codes (like `-1`, `false`, `0x3343`…)   ​
 > - Create your own exception types, instead of using the default `Error` object
 
 ## Scopes of variables
@@ -333,8 +333,6 @@ Example:
 	function myFunction() {​
 	    carName = "Volvo"; // will be declared globally if no var keyword is used​
 	}
-
-
 
 
 ## Task
