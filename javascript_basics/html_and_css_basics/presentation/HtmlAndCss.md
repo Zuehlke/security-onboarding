@@ -572,3 +572,11 @@ Good code:
 	}
 
 
+## Exercise ##
+
+Create page that looks like picture below, the CSS should be in a separate file, use the appropriate HTML tags.
+![](page1.png)
+
+It should redirect to page2.html, which is in the exercise folder:
+
+![](page2.png)
