@@ -6,7 +6,7 @@
 	function add(a, b) {
 		return a + b;
 	}
-	
+
 	add(2, 2) === 4;
 
 > Note: semicolon is not required after a function declaration
@@ -41,13 +41,13 @@ The only way of creating a scope for variables in javascript is by declaring a f
 
 - variables declared in the body of the function are locally scoped in that function.
 - new local scope is created for each function call
-
-	var someDummyGlobalVariable = 1; //this variable belongs to global scope
-	
-	function add(a, b) {
-		var addResult = a + b; //this variable belongs to the local scope of add function
-		return addResult;
-	}
+		
+		var someDummyGlobalVariable = 1; //this variable belongs to global scope
+		
+		function add(a, b) {
+			var addResult = a + b; //this variable belongs to the local scope of add function
+			return addResult;
+		}
 
 > Pitfall: flow control structures do **NOT** have their local scopes
 > 
@@ -165,36 +165,53 @@ Quiz 2:
 	}, 3); // ???
 
 ## Module pattern
+When organizing javascript code in a large code base, for maintenance reasons it is required to separate the code into separate smaller units (*modules*) avoiding usage of global variables, because each module has:
 
-	function() {}; //declare anonymous function
-	
-	(function() {})(); //declare anonymous function and call it
-	
-	(function(dep1, dep2, dep3) {
-		var localVariable;
-		
-		function locallyDeclaredFunction() {
-		  ...
-		}
-		
-		...code operating using the dependancies available
-	})(dep1, dep2, dep3); //pass some globally defined dependencies
-	
-	var myModule = (function(otherModule1, otherModule2, otherModule3) {
-	   var module = {};
-	   var localVariable;
-	   module.exportedVar = 1;
-		
-		function locallyDeclaredFunction() {
-		  ...
-		}
-		
-		...code operating using the dependancies available
-		
-		return module;
-	})(otherModule1, otherModule2, otherModule3); //name your module for other modules to use it as dependency
+-  locally scoped variables/functions
+-  while having access to other modules *public* variables/functions
 
-	(function(myModule) { //use myModule as dependancy
-	    ... do sth with myModule
-	})(myModule);
+		//forming a module pattern
+
+		//step 1:
+		//declare anonymous function
+		function() {}; 
+		
+		//step 2:
+		//declare anonymous function and call it
+		(function() {})(); 
+		
+		//step 3: 
+		//when calling the anonymous function, pass in dependancies as parameters
+		(function(dep1, dep2, dep3) {
+			//now you can have locally scoped variables...
+			var localVariable;
+			
+			function locallyDeclaredFunction() {/* some code here...*/}
+			
+			//and code operating using the dependancies available...
+			
+		})(dep1, dep2, dep3); //pass some globally defined dependencies
+		
+		//step 4:
+		//make public variables and/or functions available to other modules
+		var myModule = (function(otherModule1, otherModule2, otherModule3) {
+		    var localVariable;
+			var publicVariable;
+			
+			function locallyDeclaredFunction() {/* some code here...*/}
+			function publicFunction() {/* some code here...*/}
+			
+			//...code doing sth with dependancies available
+			
+			//return what you want to export as public
+			return [
+				publicVariable,
+				publicFunction
+			];
+		})(otherModule1, otherModule2, otherModule3); //name your module for other modules to use it as dependency
+	
+		//some other module using 'myModule'
+		(function(myModule) { //use myModule as dependancy
+		    //... do sth with myModule
+		})(myModule);
 
