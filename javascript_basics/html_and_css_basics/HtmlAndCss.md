@@ -13,13 +13,13 @@ The head element (that which starts with the <head> opening tag and ends with th
 “My first web page” will appear on a tab or the title bar of the window (not the actual canvas area). 
 
 	<!DOCTYPE html>
-		<html>
-			<head>
-				<title>My first web page</title>
-			</head>
-			<body> 
-				This is my first web page
-			</body>
+	<html>
+		<head>
+			<title>My first web page</title>
+		</head>
+		<body> 
+			This is my first web page
+		</body>
 	</html> 
 
 
@@ -435,15 +435,15 @@ Bad code:
 Good code:
 
 	<!DOCTYPE html> 
-		<html>
-			 <head> 
-				<title>Hello World</title>
-			 </head> 
-			<body> 
-				<h1>Hello World</h1> 
-				<p>This is a web page.</p> 
-			</body> 
-		</html>
+	<html>
+		 <head> 
+			<title>Hello World</title>
+		 </head> 
+		<body> 
+			<h1>Hello World</h1> 
+			<p>This is a web page.</p> 
+		</body> 
+	</html>
 
 
 **Keep the Syntax Organized**
