@@ -566,9 +566,9 @@ Bad code:
 Good code:
 
 	.feat-box {
-	  background: #eee; 
-	  border: 1px solid #ccc; 
-	  border-radius: 6px; 
+		background: #eee; 
+		border: 1px solid #ccc; 
+		border-radius: 6px; 
 	}
 
 
