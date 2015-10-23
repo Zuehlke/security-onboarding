@@ -11,4 +11,4 @@ TDD = Refactoring + TFD (test first development).
 
 The following sequence is based on the book Test-Driven Development by Example.
 
-![Images](TDD.png)
+![Images](tdd.png)
