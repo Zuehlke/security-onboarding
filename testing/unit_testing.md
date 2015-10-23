@@ -49,28 +49,28 @@ The Art of Unit Testing by Roy Osherove
 ##Guidelines
 
 * Keep unit tests small and fast
-  * Ideally the entire test suite should be executed before every code check in. Keeping the tests fast reduce the development turnaround time.
+    * Ideally the entire test suite should be executed before every code check in. Keeping the tests fast reduce the development turnaround time.
 * Unit tests should be fully automated and non-interactive
-  * The test suite is normally executed on a regular basis and must be fully automated to be useful. If the results require manual inspection the tests are not proper unit tests.
+    * The test suite is normally executed on a regular basis and must be fully automated to be useful. If the results require manual inspection the tests are not proper unit tests.
 * Make unit tests simple to run
-  * Configure the development environment so that single tests and test suites can be run by a single command or a one button click.
+    * Configure the development environment so that single tests and test suites can be run by a single command or a one button click.
 * Measure the tests
-  * Apply coverage analysis to the test runs so that it is possible to read the exact execution coverage and investigate which parts of the code is executed and not.
+    * Apply coverage analysis to the test runs so that it is possible to read the exact execution coverage and investigate which parts of the code is executed and not.
 * Start off simple
-  * One simple test is infinitely better than no tests at all. A simple test class will establish the target class test framework, it will verify the presence and correctness of both the build environment, the unit testing environment, the execution environment and the coverage analysis tool, and it will prove that the target class is part of the assembly and that it can be accessed.
+    * One simple test is infinitely better than no tests at all. A simple test class will establish the target class test framework, it will verify the presence and correctness of both the build environment, the unit testing environment, the execution environment and the coverage analysis tool, and it will prove that the target class is part of the assembly and that it can be accessed.
 * Keep tests independent
-  * To ensure testing robustness and simplify maintenance, tests should never rely on other tests nor should they depend on the ordering in which tests are executed.
+    * To ensure testing robustness and simplify maintenance, tests should never rely on other tests nor should they depend on the ordering in which tests are executed.
 * Name tests properly
-  * Make sure each test method test one distinct feature of the class being tested and name the test methods accordingly. The typical naming convention is Test[what] such As TestSaveAs(), TestAddListener(), TestDeleteProperty() etc.
+    * Make sure each test method test one distinct feature of the class being tested and name the test methods accordingly. The typical naming convention is Test[what] such As TestSaveAs(), TestAddListener(), TestDeleteProperty() etc.
 * Test public API
-  * Unit testing can be defined as testing classes through their public API. Some testing tools makes it possible to test private content of a class, but this should be avoided as it makes the test more verbose and much harder to maintain. If there is private content that seems to need explicit testing, consider refactoring it into public methods in utility classes instead. But do this to improve the general design, not to aid testing.
+    * Unit testing can be defined as testing classes through their public API. Some testing tools makes it possible to test private content of a class, but this should be avoided as it makes the test more verbose and much harder to maintain. If there is private content that seems to need explicit testing, consider refactoring it into public methods in utility classes instead. But do this to improve the general design, not to aid testing.
 * Provide negative tests
-  * Negative tests intentionally misuse the code and verify robustness and appropriate error handling.
+    * Negative tests intentionally misuse the code and verify robustness and appropriate error handling.
 * Design code with testing in mind
-  * Writing and maintaining unit tests are costly, and minimizing public API and reducing complexity in the code are ways to reduce this cost and make high-coverage test code faster to write and easier to maintain.
+    * Writing and maintaining unit tests are costly, and minimizing public API and reducing complexity in the code are ways to reduce this cost and make high-coverage test code faster to write and easier to maintain.
 * Don't connect to predefined external resources
-  * Unit tests should be written without explicit knowledge of the environment context in which they are executed so that they can be run anywhere at anytime. In order to provide required resources for a test these resources should instead be made available by the test itself.
+    * Unit tests should be written without explicit knowledge of the environment context in which they are executed so that they can be run anywhere at anytime. In order to provide required resources for a test these resources should instead be made available by the test itself.
 * Write tests to reproduce bugs
-  * When a bug is reported, write a test to reproduce the bug (i.e. a failing test) and use this test as a success criteria when fixing the code.
+    * When a bug is reported, write a test to reproduce the bug (i.e. a failing test) and use this test as a success criteria when fixing the code.
 * Know the limitations
-  * Unit tests can never prove the correctness of code.
+    * Unit tests can never prove the correctness of code.
