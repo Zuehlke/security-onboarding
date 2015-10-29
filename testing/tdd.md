@@ -33,3 +33,7 @@ The concept of removing duplication is an important aspect of any software desig
 
 ##Repeat
 Starting with another new test, the cycle is then repeated to push forward the functionality. The size of the steps should always be small, with as few as 1 to 10 edits between each test run. If new code does not rapidly satisfy a new test, or other tests fail unexpectedly, the programmer should undo or revert in preference to excessive debugging. Continuous integration helps by providing revertible checkpoints. When using external libraries it is important not to make increments that are so small as to be effectively merely testing the library itself,[4] unless there is some reason to believe that the library is buggy or is not sufficiently feature-complete to serve all the needs of the software under development.
+
+#Sample TDD solution (.NET)
+In the ```TddSample``` folder, you'll find a prepared solution which you can use to start learning or brushing-up your TDD skill. A list of features can be found in ```Features.txt``` file. Empty test is created for each feature, so you can start implementing one by one with TDD.
+You can also find a completed solution in the archive ```CompletedSample.zip```
