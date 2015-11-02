@@ -109,7 +109,7 @@ namespace WebApi2Sample.Controllers
 
             if (account.Balance + amount < 0)
             {
-                return BadRequest();
+                return BadRequest("Insufficient funds");
             }
 
             account.Balance += amount;

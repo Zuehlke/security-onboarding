@@ -104,10 +104,26 @@ namespace WebApi2Sample.Tests.Controllers
                 AccountId = new Guid("bd877de3-d2c9-4237-b5ca-08bd3ba56cd8"),
                 Amount = 200
             };
+
             var result = await _controller.Withdraw(dto);
             var contentResult = result as OkNegotiatedContentResult<BankAccount>;
             Assert.IsNotNull(contentResult);
             Assert.AreEqual(800, _fakeContext.BankAccounts.ElementAt(0).Balance);
+        }
+
+        [TestMethod]
+        public async Task WithdrawalNotAllowedTest()
+        {
+            var dto = new ChangeBalanceDto()
+                {
+                    AccountId = new Guid("bd877de3-d2c9-4237-b5ca-08bd3ba56cd8"),
+                    Amount = 2000
+                };
+
+            var result = await _controller.Withdraw(dto);
+            var badRequestResult = result as BadRequestErrorMessageResult;
+            Assert.IsNotNull(badRequestResult);
+            Assert.AreEqual("Insufficient funds", badRequestResult.Message);
         }
     }
 }

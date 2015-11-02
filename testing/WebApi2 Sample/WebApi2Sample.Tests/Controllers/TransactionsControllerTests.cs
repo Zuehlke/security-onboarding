@@ -86,7 +86,7 @@ namespace WebApi2Sample.Tests.Controllers
         }
 
         [TestMethod]
-        public async Task TransferTest()
+        public async Task TransactionAddedToLogOnTransferTest()
         {
             var dto = new TransferDto
             {
@@ -101,6 +101,34 @@ namespace WebApi2Sample.Tests.Controllers
             Assert.AreEqual(2, _fakeContext.Transactions.Count());
             Assert.AreEqual(_fakeContext.Transactions.ElementAt(1).AccountFrom.Id, dto.AccountFromId);
             Assert.AreEqual(_fakeContext.Transactions.ElementAt(1).AccountTo.Id, dto.AccountToId);
+        }
+
+        [TestMethod]
+        public async Task FirstAccountBalanceAfterTransferTest()
+        {
+            var dto = new TransferDto
+                {
+                    AccountFromId = new Guid("bd877de3-d2c9-4237-b5ca-08bd3ba56cd8"),
+                    AccountToId = new Guid("29222f0b-dd48-4589-921b-02eb8a4518f0"),
+                    Amount = 500
+                };
+
+            await _controller.Transfer(dto);
+            Assert.AreEqual(500, _fakeContext.BankAccounts.ElementAt(0).Balance);
+        }
+
+        [TestMethod]
+        public async Task SecondAccountBalanceAfterTransferTest()
+        {
+            var dto = new TransferDto
+            {
+                AccountFromId = new Guid("bd877de3-d2c9-4237-b5ca-08bd3ba56cd8"),
+                AccountToId = new Guid("29222f0b-dd48-4589-921b-02eb8a4518f0"),
+                Amount = 500
+            };
+
+            await _controller.Transfer(dto);
+            Assert.AreEqual(600, _fakeContext.BankAccounts.ElementAt(1).Balance);
         }
     }
 }
