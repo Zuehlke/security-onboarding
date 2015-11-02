@@ -39,4 +39,4 @@ In the ```TddSample``` folder, you'll find a prepared solution which you can use
 You can also find a completed solution in the archive ```CompletedSample.zip```
 Features are related to opening bank accounts, making deposits and withdrawals and making transaction between two account.
 
-Another sample located in ```WebAPI2``` folder is using Web API 2 and Entity Framework 6 to show how to use dependency injection, testing one layer at a time, while mocking dependencies.
+Another sample located in ```WebAPI2 Sample``` folder is using Web API 2 and Entity Framework 6 to show how to use dependency injection, testing one layer at a time, while mocking dependencies.
