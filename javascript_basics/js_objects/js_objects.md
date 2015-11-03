@@ -1,7 +1,23 @@
 ## Objects ##
 
-The standard way to create an "object type" is to use an object constructor function:
+There are different ways to create new objects:
 
+    //Using an Object Literal
+    var person = {
+		firstName:"John",
+		lastName:"Doe",
+		age:50,
+		eyeColor:"blue"
+	};
+
+
+	//Using the JavaScript Keyword new
+    var person = new Object();
+    person.firstName = "John";
+    person.lastName = "Doe";
+
+
+    //Using an Object Constructor
     function person(first, last, age, eye) {
 	    this.firstName = first;
 	    this.lastName = last;
@@ -10,13 +26,18 @@ The standard way to create an "object type" is to use an object constructor func
     }
     var myFather = new person("John", "Doe", 50, "blue");
 
-The above function (person) is an object constructor.
+
+    //Using the Object.create method
+    var animal1 = Object.create(Animal);
+
 
 Each object has an internal link to another object called its prototype. That prototype object has a prototype of its own, and so on until an object is reached with null as its prototype. null, by definition, has no prototype, and acts as the final link in this prototype chain.
 
 When trying to access a property of an object, the property will not only be sought on the object but on the prototype of the object, the prototype of the prototype, and so on until either a property with a matching name is found or the end of the prototype chain is reached.
 
 ![Prototypical inheritance](/prototype-inheritance.png)
+
+When an inherited function is executed, the value of this points to the inheriting object, not to the prototype object where the function is an own property.
 
     var o = {
       a: 2,
@@ -33,7 +54,14 @@ When trying to access a property of an object, the property will not only be sou
     p.a = 12;
     console.log(p.m()); // 13
 
-When an inherited function is executed, the value of this points to the inheriting object, not to the prototype object where the function is an own property.
+
+JavaScript objects are mutable: They are addressed by reference, not by value.
+
+    var person = {firstName:"John", lastName:"Doe", age:50}
+    
+    var x = person;
+    x.age = 10; 
+	console.log(person.age); //10
 
 ## Namespacing ##
 
