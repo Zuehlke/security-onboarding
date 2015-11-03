@@ -15,8 +15,17 @@ The bubbling guarantees that click on Div 3 will trigger onclick first on the in
 
 The deepest element which triggered the event is called the target or, the originating element.
 
-A handler may decide that event is fully processed and stop the bubbling.
+Internet Explorer has the **srcElement** property for it, all W3C-compliant browsers use **event.target**.
 
+When event handlers trigger on parents:
+
+1. **Event.target**/**srcElement** - remains the same originating element.
+2. **This** - is the current element, the one event has bubbled to, the one which runs the handler.
+
+![Event target](/event-order-bubbling-target.png)
+
+
+A handler may decide that event is fully processed and stop the bubbling.
 
 1. For W3C-compliant browsers: **event.stopPropagation()**
 2. For IE<9: **event.cancelBubble = true**
@@ -24,11 +33,15 @@ A handler may decide that event is fully processed and stop the bubbling.
 
 In all browsers, except IE<9, there are two stages of event processing.
 
+
 **The event first goes down - that’s called capturing, and then bubbles up**. This behavior is standartized in W3C specification.
 
 **All methods of event handling ignore the capturing phase**. 
 
 Using **addEventListener with last argument true is only the way to catch the event at capturing**.
+
+    elem.addEventListener( type, handler, phase )
+
 
 ![Event Bubbling Order](/event-order-w3c.gif)
 
@@ -50,3 +63,4 @@ The same in jQuery:
     	console.log( "click" );
     });
     
+
