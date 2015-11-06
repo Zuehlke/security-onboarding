@@ -1,7 +1,27 @@
 ## Listening for events
 
-## Reference to DOM events list
+The Event interface represents any event of the DOM. It contains common properties and methods to any event.
 
+DOM Events are sent to notify code of interesting things that have taken place. Each event is represented by an object which is based on the Event interface, and may have additional custom fields and/or functions used to get additional information about what happened. 
+
+Events can represent everything from basic user interactions to automated notifications of things happening in the rendering model.
+
+The addEventListener() method attaches an event handler to the specified element.
+
+    //execute displayDate() on the click event
+    document.getElementById("myBtn").addEventListener("click", function() {
+		console.log( "click" );
+    });
+
+The same in jQuery:
+
+    $("#myBtn").on( "click", function() {
+    	console.log( "click" );
+    });
+
+
+A list of the standard DOM events can be found on the following link:
+[https://developer.mozilla.org/en-US/docs/Web/Events](https://developer.mozilla.org/en-US/docs/Web/Events)
 
 ## Event bubbling and capturing ##
 
@@ -54,19 +74,6 @@ According to this model, the event:
 
 1. Captures down - through 1 -> 2 -> 3.
 2. Bubbles up - through 3 -> 2 -> 1.
-
-The addEventListener() method attaches an event handler to the specified element.
-
-    //execute displayDate() on the click event
-    document.getElementById("myBtn").addEventListener("click", function() {
-		console.log( "click" );
-    });
-
-The same in jQuery:
-
-    $("#myBtn").on( "click", function() {
-    	console.log( "click" );
-    });
     
 
 ## Exercise ##

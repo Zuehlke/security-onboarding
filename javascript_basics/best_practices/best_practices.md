@@ -309,7 +309,7 @@ Revealing Module Pattern: Keep consistent syntax and mix and match what to make 
       		show();
        }
 
-       return{init:init, show:show, current:current}
+       return { init:init, show:show, current:current }
     }();
 
     module.init();

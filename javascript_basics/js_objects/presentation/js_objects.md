@@ -82,49 +82,90 @@ The practice of **namespacing** is usually to create an object literal encapsula
 	//call myFunc() function
 	myApplication.myFunc();
 
-## This keyword in context of calling object methods
-
-## Explicitly setting this when calling functions
-
-function text(setOnThis) {
-    this.someProperty = setOnThis;
-}
-
-var myObject = {};
-
-text.apply(myObject, ["someValueToSet"]);
-text.call(myObject, "someValueToSet");
+Another way to avoid global variables would be using the module pattern. (See the best practices presentation)
 
 
-var boundFunction = text.bind(myObject);
+## This keyword in functions ##
 
-boundFunction("setsThisValueToMyObject");
+Inside a function, the value of this depends on how the function is called.
+
+In this case, the value of this is not set by the call. Since the code is not in strict mode, the value of this must always be an object so it defaults to the global object.
+
+    function f1(){
+      return this;
+    }
+    
+    f1() === window; // global object
 
 
-//TODO: Have it in functions and best-practices already, should be moved to best practices?
-**Module pattern**
+In strict mode, the value of this remains at whatever it's set to when entering the execution context. If it's not defined, it remains undefined. It can also be set to any value, such as null or 42 or "I am not this".
 
-The logic is shielded from the global scope by a function wrapper (usually self-invoking) which returns an object representing the module’s public interface. 
+    (function(){
+	    "use strict"
+	    function f2(){
+	     	return this;
+	    }
+	    
+	    console.log(f2() === undefined);
+    })();
 
-By immediately invoking the function and assigning the result to a namespace variable, we lock up the module’s API in the namespace. 
 
-Additionally any variables not included in the return value will remain forever private, visible only to the public functions that reference them.
+When a function is called as a method of an object, its this is set to the object the method is called on.
 
-    var myApp = (function() {
-	 
-	    var id= 0;
-	 
-	    return {
-	        next: function() {
-	            return id++;    
-	        },
-	 
-	        reset: function() {
-	            id = 0;     
-	        }
-	    };  
-	})(); 
+In the following example, when o.f() is invoked, inside the function this is bound to the o object.
 
+    var o = {
+      prop: 37,
+      f: function() {
+    	return this.prop;
+      }
+    };
+    
+    console.log(o.f()); // logs 37
+
+Note that this behavior is not at all affected by how or where the function was defined. 	
+
+    var o = {prop: 37};
+    
+    function independent() {
+      return this.prop;
+    }
+    
+    o.f = independent;
+    
+    console.log(o.f()); // logs 37
+
+## Explicitly setting this when calling functions ##
+
+Where a function uses the this keyword in its body, its value can be bound to a particular object in the call using the call or apply methods that all functions inherit from Function.prototype.
+
+    function add(c, d){
+      return this.a + this.b + c + d;
+    }
+    
+    var o = {a:1, b:3};
+    
+With **.call()** the first parameter is the object to use as 'this', subsequent parameters are passed as arguments in the function call.
+
+    add.call(o, 5, 7); // 1 + 3 + 5 + 7 = 16
+    
+
+With **.apply()** the first parameter is the object to use as 'this', the second is an array whose members are used as the arguments in the function call.
+
+    add.apply(o, [10, 20]); // 1 + 3 + 10 + 20 = 34
+
+
+The **.bind()** method creates a new function that, when called, has its this keyword set to the provided value, with a 
+given sequence of arguments preceding any provided when the new function is called.
+
+    function add(c, d){
+      	return this.a + this.b + c + d;
+    }
+    
+    var o = {a:1, b:3};
+    
+    var boundFunction = add.bind(o, 5, 7); 
+    boundFunction();
 
 ## Exercise ##
 
