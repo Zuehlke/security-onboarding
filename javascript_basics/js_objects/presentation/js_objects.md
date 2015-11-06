@@ -81,7 +81,27 @@ The practice of **namespacing** is usually to create an object literal encapsula
 	
 	//call myFunc() function
 	myApplication.myFunc();
-	
+
+## This keyword in context of calling object methods
+
+## Explicitly setting this when calling functions
+
+function text(setOnThis) {
+    this.someProperty = setOnThis;
+}
+
+var myObject = {};
+
+text.apply(myObject, ["someValueToSet"]);
+text.call(myObject, "someValueToSet");
+
+
+var boundFunction = text.bind(myObject);
+
+boundFunction("setsThisValueToMyObject");
+
+
+//TODO: Have it in functions and best-practices already, should be moved to best practices?
 **Module pattern**
 
 The logic is shielded from the global scope by a function wrapper (usually self-invoking) which returns an object representing the module’s public interface. 

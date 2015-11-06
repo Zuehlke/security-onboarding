@@ -1,3 +1,8 @@
+## Listening for events
+
+## Reference to DOM events list
+
+
 ## Event bubbling and capturing ##
 
 **Event bubbling** states that after an event triggers on the deepest possible element, it then triggers on parents in nesting order.

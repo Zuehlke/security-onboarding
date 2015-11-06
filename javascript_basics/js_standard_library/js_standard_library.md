@@ -72,10 +72,11 @@
     txt.split(",");  // Split on commas
 
 
-    //The match() method searches a string for a match against a regular expression, 
-	//Returns the matches, as an Array object.
+## Regex ##
 
-    var str = "The rain in SPAIN stays mainly in the plain"; 
+	//The match() method searches a string for a match against a regular expression, 
+	//Returns the matches, as an Array object.
+	var str = "The rain in SPAIN stays mainly in the plain"; 
     var res = str.match(/ain/g);
 
 ## Math Functions ##

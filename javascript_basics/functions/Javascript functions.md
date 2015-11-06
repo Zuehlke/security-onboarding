@@ -1,7 +1,7 @@
 # Javascript functions
 
 ## Function basics
-###Declaring and using a function
+### Declaring and using a function
 
 	function add(a, b) {
 		return a + b;
@@ -25,7 +25,7 @@
 	}
 
 
-###Anonymous functions (function literals)
+### Anonymous functions (function literals)
 Functions is not given a name, but can be used as a ***function literal*** and stored in a variable in the same way as any other data type would be (e.g. number or a string)
 
 	var add = function (a, b) {
