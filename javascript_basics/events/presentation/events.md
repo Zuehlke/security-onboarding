@@ -64,4 +64,15 @@ The same in jQuery:
     });
     
 
+## Exercise ##
 
+In the exercise folder there is an HTML with 3 nested divs.
+
+    <div class="d1">1
+	    <div class="d2">2
+		    <div class="d3">3
+		    </div>
+	    </div>
+    </div>
+
+Add an click listener to each of them, without changing the HTML. On each click you should show the **div** class in  an alert dialog, but only of the div that was clicked.
