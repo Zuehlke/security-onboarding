@@ -1,0 +1,65 @@
+<div class="container">
+
+    <header id="header" class="page-header Center-Container">
+        <div class="leftDiv">
+            <img class="appLogo" ng-src="assets/images/beacon_scavenger.png" alt="Application Logo">
+            <h4>Beacon Scavenger</h4>
+        </div>
+
+        <div class="centerDiv Absolute-Center">
+            <h1>Rang Lista</h1>
+        </div>
+
+        <div class="rightDiv">
+           <h4>Skeniraj i pridruži se pohodu</h4>
+        </div>
+    </header>
+
+
+    <div class="jumbotron" ng-show="mainCtrl.table.filteredUsers.length === 0">
+        <h1>Čekamo na registrovane korisnike...</h1>
+    </div>
+
+    <table class="table table-striped usersTable" ng-hide="mainCtrl.table.filteredUsers.length === 0">
+        <tr>
+            <th>Pozicija</th>
+            <th>Korisničko Ime</th>
+            <th>Broj Beacon-a</th>
+            <th>Proteklo Vreme (Sat/Minut)</th>
+        </tr>
+        <tr ng-repeat="user in mainCtrl.table.filteredUsers track by $index">
+            <td>{{mainCtrl.getIndexOfUser(mainCtrl.table.allUsers, user) + 1}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.beaconCount}}</td>
+            <td>{{user.elapsedMinutes}}  <img ng-show="user.beaconCount === 5" class="finishedFlag" ng-src="assets/images/Finish Flag-26.png" alt="Finished Flag"></td>
+        </tr>
+    </table>
+
+    <nav ng-hide="mainCtrl.table.filteredUsers.length === 0">
+        <ul class="pagination">
+            <li>
+                <a href="#/" aria-label="Previous" ng-click="mainCtrl.chnageTablePage(mainCtrl.table.currentPage - 1)">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li ng-repeat="page in mainCtrl.table.pagesArray track by $index">
+                <a href="#/" ng-click="mainCtrl.chnageTablePage($index + 1)">{{$index + 1}}</a>
+            </li>
+            <li>
+                <a href="#/" aria-label="Next" ng-click="mainCtrl.chnageTablePage(mainCtrl.table.currentPage + 1)">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <footer class="footer">
+        <a href="http://www.zuehlke.com/rs/en/" target="_blank">
+            <img id="zuhlkeLogo" class="appLogo" ng-src="assets/images/logo-zuehlke.png" alt="Zuhlke Logo">
+        </a>
+
+        <a href=" http://www.jobfair.rs/" target="_blank">
+            <img id="jobFairLogo" class="appLogo" ng-src="assets/images/jobfair.png" alt="JobFair Logo">
+        </a>
+    </footer>
+</div>

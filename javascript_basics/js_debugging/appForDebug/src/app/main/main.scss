@@ -1,0 +1,95 @@
+$primary-blue: #61bcb5;
+$primary-yellow: #ffc006;
+$primary-grey: #828282;
+$break-large: 1024px;
+
+.appLogo {
+  width: 75px;
+  height: 75px;
+}
+
+#header {
+  margin-top: 1em;
+  overflow: hidden;
+}
+
+.Center-Container {
+  position: relative;
+}
+
+.Absolute-Center {
+  width: 50%;
+  height: 50%;
+  overflow: hidden;
+  margin: auto auto 10px auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0.6em;
+
+  @media (min-width: $break-large) {
+    overflow: visible;
+    bottom: initial;
+  }
+}
+
+.centerDiv {
+    h1 {
+      font-size: 270%;
+      color: $primary-blue;
+      text-align: center;
+
+      @media (min-width: $break-large) {
+        font-size: 600%;
+      }
+    }
+}
+
+h4 {
+  font-size: 16px;
+
+  @media (min-width: $break-large) {
+    font-size: 18px;
+  }
+}
+
+.leftDiv {
+  color: $primary-grey;
+  float: left;
+}
+
+.rightDiv {
+  color: $primary-grey;
+  float: right;
+}
+
+.usersTable {
+  th {
+    background-color: $primary-blue;
+  }
+
+  tbody > tr:nth-of-type(odd) {
+    background-color: lighten($primary-blue, 35%);
+  }
+
+  tbody > tr:nth-of-type(even) {
+    background-color: lighten($primary-blue, 40%);
+  }
+}
+
+#jobFairLogo {
+  float: right;
+}
+
+#zuhlkeLogo {
+  float: left;
+}
+
+.footer {
+  overflow: hidden;
+}
+
+.finishedFlag {
+  height: 16px;
+}
