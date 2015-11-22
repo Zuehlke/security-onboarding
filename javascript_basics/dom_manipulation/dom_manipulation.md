@@ -192,7 +192,8 @@ Look-up of HTML elements can be performed based on different attributes.
 	document.getElementsByName('Author');
 
 	// use css selectors for advanced look-up queries
-	// find first element with class 'box' that is descendent of the element with id 'container'
+	// find first element with class 'box' that is descendent of the 
+	// element with id 'container'
 	document.querySelector('#container .box');
 
 	// get all elements that match the selector 
@@ -300,10 +301,19 @@ Common use case of the <code>document</code> object is locating and modifying a 
 	<html>
 		<head>
 			<title>Document</title>
+			<style>
+				.important {
+					color: red;
+				}
+			</style>
 		</head>
 		<body>
 			<h3>What is Lorem ipsum?</h3>
 			<p id="paragraph"></p>
+			<!-- type text/template is not understood by the browser and will not be parsed -->
+			<script id="paragraph-template" type="text/template">
+				<p class="important"></p>
+			</script>
 			<script>
 				// get the html element that we want to modify
 				var paragraph = document.getElementById('paragraph');
@@ -315,9 +325,18 @@ Common use case of the <code>document</code> object is locating and modifying a 
 				// create a new paragraph
 				var newParagraph = document.createElement('p');
 				
-				// another way of specifying element content
+				// assign html content to an element
 				newParagraph.innerHTML = 'This is a new paragraph';
-	
+
+				// when using innerHTML browser will try to parse the provided content
+				// and treat it as markup. If you want to provide plain text that 
+				// shouldn't be parsed use the textContent property
+				// newParagraph.textContent = 'This is a new paragraph';
+		
+				// textContent works in all browsers except in IE :)
+				// in IE for plain text you need to use innerText property
+				// newParagraph.innerText = 'This is a new paragraph';
+				
 				alert('About to add the new paragraph');
 				var parent = paragraph.parentNode;
 				parent.insertBefore(newParagraph, paragraph);
@@ -326,7 +345,30 @@ Common use case of the <code>document</code> object is locating and modifying a 
 				parent.removeChild(paragraph);
 				
 				alert('About to replace the new paragraph');
-				parent.replaceChild(document.createTextNode('Replaced.'), newParagraph); 
+				parent.replaceChild(document.createTextNode('Replaced.'), newParagraph);
+
+				alert('About to create a paragraph from a template');
+				// get the script element that contains the template.
+				var templateContainer = document.getElementById('paragraph-template');
+				
+				// convert script content to a DOM object
+				// first create a dummy container
+				var temporary = document.createElement('div');
+				
+				// by using innerHTML the content will be parsed by the browser and converted to DOM objects
+				temporary.innerHTML = templateContainer.innerHTML;
+				
+				// we can now access the template paragraph as a DOM object
+				var templateParagraph = temporary.firstElementChild;				
+				
+				templateParagraph.innerHTML = 'From template.'
+				parent.appendChild(templateParagraph);				
+
+				// we have created new DOM objects from a string
+				// if we want to copy an existing DOM object we can use cloneNode()
+				// parameter passed to the cloneNode method defines if we want to 
+				// perform a deep copy of the node
+				// var cloned = templateParagraph.cloneNode(true);
 			</script>
 		</body>
 	</html>
@@ -344,6 +386,9 @@ Inline style of HTML elements can be accessed using the <code>style</code> prope
 	// This is translated to lower camelcase in Javascript API.
 	element.style.fontSize = '24px';
 
+	// hide the element
+	element.style.display = 'none';
+
 CSS classes of an element can be accessed / modified using the <code>className</code> and <code>classList</code> properties.
 
 	// set the value of the class attribute. This overrides any currently applied classes.
@@ -353,26 +398,146 @@ CSS classes of an element can be accessed / modified using the <code>className</
 	element.classList.add('box');
 	element.classList.remove('box');
 
-## TODO: jQuery ##
+## jQuery and DOM ##
 
-## TODO: Task ##
+To simplify common tasks and ensure cross-browser consistency the developers rely on various utility libraries. We will now look at one of the most popular ones, jQuery.
 
-The same can be done in jQuery: 
+For finding elements in the DOM we use the jQuery function <code>$()</code> and CSS selectors.
 
-    //get element with the id 'lastname'
-    $("#lastname");
-    
-    //get elements with class 'intro'
-    $(".intro");
-    
-    //select ll elements with the class "intro" or "demo"
-    $(".intro,.demo");
-    
-    //select all <p> elements that are a direct child of a 'demo' element
-    $(".demo > p")
+	// get element with the id 'lastname'
+    $('#lastname');
+	
+	// get elements with class 'intro'
+	$('.intro');
 
-    //set the text to 'Hi!' on elements with class intro
-    $(".intro").text("Hi!");
+	// get elements with class 'intro' or 'demo'
+	$('.intro, .demo');
 
-    //add 'myClass' to the element with id 'lastname'
-    $("#lastname").addClass("myClass");
+	// when having a reference to a jQuery object you can look for descendents using find
+	var container = $('#container');
+	var firstChild = $container.find(':first-child');
+	var divs = $container.find('div');
+
+	// convert element(s) to jQuery object. This allows you to use the jQuery API.
+	var container = document.getElementById('container');
+	var $container = $(container);
+
+	// create a new div element and return a jQuery wrapper. The element is not attached
+	// to any part of the document yet.
+	var newDiv = $('<div></div>');
+
+jQuery function <code>$()</code> returns a jQuery object which represents a set of elements on which you can invoke jQuery API methods. Methods can be chained as they return the same object.
+
+	// set the action attribute for all form elements
+	$('form').attr('action', 'http://example.com');
+
+	// get the action attribute of the first form element
+	$('form').attr('action');
+
+	// set multiple attributes with one invocation
+	$('form').attr({
+		action: 'http://example.com',
+		method: 'POST'
+	});
+
+	// remove attribute
+	$('form').removeAttr('data-custom');
+
+	// change the element inline style using the css() function
+	$('#container').css('backgroundColor', '#00ff00');
+
+	// get the padding value
+	$('#container').css('padding');
+
+	// remove and add a css class to an element
+	$('#container').removeClass('disabled').addClass('active');
+
+	// toggle css class
+	$('#container').toggleClass('active');
+
+	// check if element has the class 'active' attached
+	$('#container').hasClass('active');
+
+To you can also check whether a set of elements matches a certain selector using the <code>is()</code> function. Function will return true if at least one element in the set is a match.
+
+	var element = $('#container');
+	
+	// check if element has a class 'active' attached
+	element.is('.active');
+
+	// check if element name starts with 'temp'
+	element.is('[name^="temp"]');
+
+To access and modify state of the <code>value</code> attribute of HTML input elements use the <code>val()</code> function.
+
+	// get the value of the firstname text field
+	$('#firstname').val();
+
+	// get the value of the checked radio button with name 'car'
+	$('input:radio[name=car]:checked').val();
+
+	// set the value of the text field 'email'
+	$('#email').val('Please enter an email address.');
+
+Modifying document content using jQuery is straightforward.
+
+	<!DOCTYPE HTML>
+		<html>
+			<head>
+				<title>Document</title>
+				<style>
+					.important {
+						color: red;
+					}
+				</style>
+			</head>
+			<body>
+				<h3>What is Lorem ipsum?</h3>
+				<p id="paragraph"></p>
+				<!-- type text/template is not understood by the browser and will not be parsed -->
+				<script id="paragraph-template" type="text/template">
+					<p class="important"></p>
+				</script>
+				<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+				<script>
+					// get the html element that we want to modify
+					var paragraph = $('#paragraph');
+					var text = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been...';
+					
+					// set the paragraph text
+					paragraph.text(text);
+				
+					// create a new paragraph
+					var newParagraph = $('<p />');
+					
+					// specifying element content as HTML
+					newParagraph.html('<strong>This is a new paragraph.</strong>');
+					
+					alert('About to add the new paragraph');
+					paragraph.before(newParagraph);
+					
+					// or
+					// newParagraph.insertBefore($paragraph);
+		
+					alert('About to remove the old paragraph');
+					paragraph.remove();
+					
+					alert('About to replace the new paragraph');					
+					newParagraph.replaceWith('Replaced.'); 
+					
+					alert('About to create a paragraph from a template');
+					var templateContainer = $('#paragraph-template');
+					
+					// parse string content of the container -> create a jQuery object
+					var templateParagraph = $(templateContainer.html());
+
+					templateParagraph.text('From template.');
+					$('body').append(templateParagraph);
+
+					// we have created a new jQuery / DOM object from a string
+					// if we want to create a copy of an existing jQuery 
+					// object we could do the following
+					// var clone = clonedParagraph.clone();
+				</script>
+			</body>
+		</html>
