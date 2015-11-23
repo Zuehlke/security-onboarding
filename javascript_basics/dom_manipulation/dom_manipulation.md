@@ -175,6 +175,30 @@ To access the DOM we use the <code>document</code> property of the <b>Window</b>
 	//accessing through the self-referencing window property
 	window.document;
 
+### Document loading ###
+
+In the examples so far we have seen synchronous execution of Javascript code in an HTML page. When the browser runs into a <code>&lt;script&gt;</code> tag it will parse and evaluate the code within immediately. 
+
+Usually we would like to have our scripts running after the document has loaded it's content completely. This way we are sure that the DOM is ready for processing. To have the code executed once the DOM is ready subscribe to the 'load' event of the <b>Window</b> object.
+
+	<!DOCTYPE HTML>
+	<html>
+		<head>
+			<title>Document</title>
+		</head>
+		<body>
+			<script>
+				// we subscribe a listener to an event using addEventListener method
+				// which allows registration of multiple listeners
+				window.addEventListener('load', function() {
+					alert('After document is loaded!');
+				});
+			</script>
+		</body>
+	</html>
+
+**Keep in mind that the <code>load</code> event is fired when all document resources (like images  and stylesheets) are loaded. To execute your script after the DOM structure is ready but not all resources are loaded use the <code>DOMContentLoaded</code> event.**
+
 ### Finding elements ###
  
 Look-up of HTML elements can be performed based on different attributes.
@@ -285,10 +309,12 @@ Javascript code executed in the browser can manipulate the document content thro
 				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been...
 			</p>
 			<script>
-				document.writeln('<h3>Where does it come from?</h3>');
-				document.writeln('<p>');
-				document.writeln('Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical...');
-				document.writeln('</p>');
+				window.addEventListener('load', function() {
+					document.writeln('<h3>Where does it come from?</h3>');
+					document.writeln('<p>');
+					document.writeln('Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical...');
+					document.writeln('</p>');
+				});
 			</script>
 		</body>
 	</html>
@@ -315,60 +341,62 @@ Common use case of the <code>document</code> object is locating and modifying a 
 				<p class="important"></p>
 			</script>
 			<script>
-				// get the html element that we want to modify
-				var paragraph = document.getElementById('paragraph');
-				var text = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been...';
-				
-				// add a text child node to the paragraph
-				paragraph.appendChild(document.createTextNode(text));
-							
-				// create a new paragraph
-				var newParagraph = document.createElement('p');
-				
-				// assign html content to an element
-				newParagraph.innerHTML = 'This is a new paragraph';
-
-				// when using innerHTML browser will try to parse the provided content
-				// and treat it as markup. If you want to provide plain text that 
-				// shouldn't be parsed use the textContent property
-				// newParagraph.textContent = 'This is a new paragraph';
-		
-				// textContent works in all browsers except in IE :)
-				// in IE for plain text you need to use innerText property
-				// newParagraph.innerText = 'This is a new paragraph';
-				
-				alert('About to add the new paragraph');
-				var parent = paragraph.parentNode;
-				parent.insertBefore(newParagraph, paragraph);
+				window.addEventListener('load', function() {
+					// get the html element that we want to modify
+					var paragraph = document.getElementById('paragraph');
+					var text = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been...';
+					
+					// add a text child node to the paragraph
+					paragraph.appendChild(document.createTextNode(text));
+								
+					// create a new paragraph
+					var newParagraph = document.createElement('p');
+					
+					// assign html content to an element
+					newParagraph.innerHTML = 'This is a new paragraph';
 	
-				alert('About to remove the old paragraph');
-				parent.removeChild(paragraph);
-				
-				alert('About to replace the new paragraph');
-				parent.replaceChild(document.createTextNode('Replaced.'), newParagraph);
-
-				alert('About to create a paragraph from a template');
-				// get the script element that contains the template.
-				var templateContainer = document.getElementById('paragraph-template');
-				
-				// convert script content to a DOM object
-				// first create a dummy container
-				var temporary = document.createElement('div');
-				
-				// by using innerHTML the content will be parsed by the browser and converted to DOM objects
-				temporary.innerHTML = templateContainer.innerHTML;
-				
-				// we can now access the template paragraph as a DOM object
-				var templateParagraph = temporary.firstElementChild;				
-				
-				templateParagraph.innerHTML = 'From template.'
-				parent.appendChild(templateParagraph);				
-
-				// we have created new DOM objects from a string
-				// if we want to copy an existing DOM object we can use cloneNode()
-				// parameter passed to the cloneNode method defines if we want to 
-				// perform a deep copy of the node
-				// var cloned = templateParagraph.cloneNode(true);
+					// when using innerHTML browser will try to parse the provided content
+					// and treat it as markup. If you want to provide plain text that 
+					// shouldn't be parsed use the textContent property
+					// newParagraph.textContent = 'This is a new paragraph';
+			
+					// textContent works in all browsers except in IE :)
+					// in IE for plain text you need to use innerText property
+					// newParagraph.innerText = 'This is a new paragraph';
+					
+					alert('About to add the new paragraph');
+					var parent = paragraph.parentNode;
+					parent.insertBefore(newParagraph, paragraph);
+		
+					alert('About to remove the old paragraph');
+					parent.removeChild(paragraph);
+					
+					alert('About to replace the new paragraph');
+					parent.replaceChild(document.createTextNode('Replaced.'), newParagraph);
+	
+					alert('About to create a paragraph from a template');
+					// get the script element that contains the template.
+					var templateContainer = document.getElementById('paragraph-template');
+					
+					// convert script content to a DOM object
+					// first create a dummy container
+					var temporary = document.createElement('div');
+					
+					// by using innerHTML the content will be parsed by the browser and converted to DOM objects
+					temporary.innerHTML = templateContainer.innerHTML;
+					
+					// we can now access the template paragraph as a DOM object
+					var templateParagraph = temporary.firstElementChild;				
+					
+					templateParagraph.innerHTML = 'From template.'
+					parent.appendChild(templateParagraph);				
+	
+					// we have created new DOM objects from a string
+					// if we want to copy an existing DOM object we can use cloneNode()
+					// parameter passed to the cloneNode method defines if we want to 
+					// perform a deep copy of the node
+					// var cloned = templateParagraph.cloneNode(true);
+				});
 			</script>
 		</body>
 	</html>
@@ -397,6 +425,7 @@ CSS classes of an element can be accessed / modified using the <code>className</
 	// add to / remove from class list
 	element.classList.add('box');
 	element.classList.remove('box');
+
 
 ## jQuery and DOM ##
 
@@ -479,7 +508,7 @@ To access and modify state of the <code>value</code> attribute of HTML input ele
 	// set the value of the text field 'email'
 	$('#email').val('Please enter an email address.');
 
-Modifying document content using jQuery is straightforward.
+Modifying document content using jQuery is straightforward. We can also register our script to run when DOM is ready using <code>$(document).ready()</code> function or it's shorthand <code>$(function() {...})</code>. The event is fired as soon the DOM structure of the page is constructed without waiting for all the resources (like images) to be loaded.
 
 	<!DOCTYPE HTML>
 		<html>
@@ -500,44 +529,47 @@ Modifying document content using jQuery is straightforward.
 				</script>
 				<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 				<script>
-					// get the html element that we want to modify
-					var paragraph = $('#paragraph');
-					var text = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been...';
+					// same as $(document).ready(function() {
+					$(function() {
+						// get the html element that we want to modify
+						var paragraph = $('#paragraph');
+						var text = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been...';
+						
+						// set the paragraph text
+						paragraph.text(text);
 					
-					// set the paragraph text
-					paragraph.text(text);
-				
-					// create a new paragraph
-					var newParagraph = $('<p />');
-					
-					// specifying element content as HTML
-					newParagraph.html('<strong>This is a new paragraph.</strong>');
-					
-					alert('About to add the new paragraph');
-					paragraph.before(newParagraph);
-					
-					// or
-					// newParagraph.insertBefore($paragraph);
-		
-					alert('About to remove the old paragraph');
-					paragraph.remove();
-					
-					alert('About to replace the new paragraph');					
-					newParagraph.replaceWith('Replaced.'); 
-					
-					alert('About to create a paragraph from a template');
-					var templateContainer = $('#paragraph-template');
-					
-					// parse string content of the container -> create a jQuery object
-					var templateParagraph = $(templateContainer.html());
-
-					templateParagraph.text('From template.');
-					$('body').append(templateParagraph);
-
-					// we have created a new jQuery / DOM object from a string
-					// if we want to create a copy of an existing jQuery 
-					// object we could do the following
-					// var clone = clonedParagraph.clone();
+						// create a new paragraph
+						var newParagraph = $('<p />');
+						
+						// specifying element content as HTML
+						newParagraph.html('<strong>This is a new paragraph.</strong>');
+						
+						alert('About to add the new paragraph');
+						paragraph.before(newParagraph);
+						
+						// or
+						// newParagraph.insertBefore($paragraph);
+			
+						alert('About to remove the old paragraph');
+						paragraph.remove();
+						
+						alert('About to replace the new paragraph');					
+						newParagraph.replaceWith('Replaced.'); 
+						
+						alert('About to create a paragraph from a template');
+						var templateContainer = $('#paragraph-template');
+						
+						// parse string content of the container -> create a jQuery object
+						var templateParagraph = $(templateContainer.html());
+	
+						templateParagraph.text('From template.');
+						$('body').append(templateParagraph);
+	
+						// we have created a new jQuery / DOM object from a string
+						// if we want to create a copy of an existing jQuery 
+						// object we could do the following
+						// var clone = clonedParagraph.clone();
+					});
 				</script>
 			</body>
 		</html>

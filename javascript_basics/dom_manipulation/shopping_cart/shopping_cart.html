@@ -60,11 +60,14 @@
 		<!-- scripts -->
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script src="products.js"></script>
+		<!-- <script src="task/native.js"></script> -->
 		<!-- <script src="task/jquery.js"></script> -->
 		
 		<!-- initializing script -->
 		<script>
-			shoppingCartApp.init(products);
+			$(function() {
+				shoppingCartApp.init(products);
+			});
 		</script>
 	</body>
 </html>
