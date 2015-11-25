@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<h4>Exercise <span class="title"></span></h4>
+<h4 class="title">Exercise <span class="title-text"></span></h4>
 
 <button type="button" class="btn btn-default btn-success btn-large go">Run</button>
 <div style="clear:both">
@@ -28,9 +28,9 @@
 <script src="assets/main.js"></script>
 
 
-<script id="exercise-1-title" type="text/x-handlebars-template">
+<div id="exercise-1-title" style="display:none">
     Get and array of all twitter user names
-</script>
+</div>
 <script id="exercise-1-code" type="text/x-handlebars-template">
 var tweetCountByUser = [
     {"name": "Jack Spencer","tweetsCount": 76},

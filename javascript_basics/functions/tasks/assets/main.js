@@ -18,8 +18,9 @@ var verify = (function () {
                     });
                 } else {
                     showError(
-                        JSON.stringify(result) +
-                        " did not equal " + JSON.stringify(target),
+                        `<strong>${JSON.stringify(result)}</strong><br />
+                        did not equal<br />
+                        <strong>${JSON.stringify(target)}</strong>`,
                         "Wrong result"
                     );
                 }
@@ -39,9 +40,9 @@ $(function () {
 
     var codeTextArea = document.querySelector('textarea.code');
 
-    var title = $("#exercise-" + exerciseId + "-title").html();
-    var code = $("#exercise-" + exerciseId + "-code").html();
-    var solution = $("#exercise-" + exerciseId + "-solution").html();
+    var title = $(`#exercise-${exerciseId}-title`).html();
+    var code = $(`#exercise-${exerciseId}-code`).html();
+    var solution = $(`#exercise-${exerciseId}-solution`).html();
 
     if (!code || !title || !solution) {
         showError("Exercise does not exist");
@@ -66,7 +67,7 @@ $(function () {
     });
 
     function renderTitleAndCode(exerciseId, title, codeTextArea, code) {
-        $(".title").html(exerciseId + ": " + title);
+        $(".title-text").html(`${exerciseId}: ${title}`);
         codeTextArea.innerHTML = code;
     }
 });
