@@ -18,7 +18,8 @@ var verify = (function () {
                     });
                 } else {
                     showError(
-                        JSON.stringify(result) + " did not equal " + JSON.stringify(target),
+                        JSON.stringify(result) +
+                        " did not equal " + JSON.stringify(target),
                         "Wrong result"
                     );
                 }
@@ -26,31 +27,11 @@ var verify = (function () {
         };
     }
 
-    var verifiers = {
-        "1": function (result) {
-            expect(result).toEqual([
-                "Twiter User 1",
-                "Twiter User 2",
-                "Twiter User 3",
-                "Twiter User 4"
-            ]);
-        }
-    };
-
-    return function (exerciseId, result) {
-        var verifier = verifiers[exerciseId];
-        if (!verifier) {
-            throw Error("Verifier for the exercise can not be found");
-        }
-
-        verifier(result);
+    return function (result, solution) {
+        expect(result).toEqual(solution);
     };
 })();
 
-function renderTitleAndCode(exerciseId, title, codeTextArea, code) {
-    $(".title").html(exerciseId + ": " + title);
-    codeTextArea.innerHTML = code;
-}
 $(function () {
     var hashMatch = location.hash.match(/#(.*)/i);
     var exerciseId = hashMatch && hashMatch[1] && hashMatch[1] !== "" ?
@@ -60,8 +41,9 @@ $(function () {
 
     var title = $("#exercise-" + exerciseId + "-title").html();
     var code = $("#exercise-" + exerciseId + "-code").html();
+    var solution = $("#exercise-" + exerciseId + "-solution").html();
 
-    if (!code || !title) {
+    if (!code || !title || !solution) {
         showError("Exercise does not exist");
         return;
     }
@@ -77,9 +59,14 @@ $(function () {
         try {
             var result = eval($(codeTextArea).val());
 
-            verify(exerciseId, result);
+            verify(result, JSON.parse(solution));
         } catch (e) {
             showError(e.message);
         }
     });
+
+    function renderTitleAndCode(exerciseId, title, codeTextArea, code) {
+        $(".title").html(exerciseId + ": " + title);
+        codeTextArea.innerHTML = code;
+    }
 });
