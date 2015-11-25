@@ -7,20 +7,15 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="assets/codemirror/codemirror.css">
     <link rel="stylesheet" href="assets/bootstrap-dialog.min.css">
+    <link rel="stylesheet" href="assets/main.css">
 </head>
 <body>
 
-<h4>Exercise 1: Print all the names in an array</h4>
+<h4>Exercise <span class="title"></span></h4>
 
-<button type="button" class="btn btn-default btn-success btn-large go pull-right">
-    Run
-</button>
+<button type="button" class="btn btn-default btn-success btn-large go">Run</button>
 <div style="clear:both">
-<textarea class="code" rows="8" cols="80" style="display:none">
-
-
-</textarea>
-
+    <textarea class="code" rows="8" cols="80" style="display:none"></textarea>
 </div>
 
 <script src="assets/codemirror/codemirror.js"></script>
@@ -30,101 +25,25 @@
 <script src="assets/jquery-1.10.2.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/bootstrap-dialog.min.js"></script>
+<script src="assets/main.js"></script>
 
-<script>
-    function showError(error, title) {
-        BootstrapDialog.alert({
-            type: BootstrapDialog.TYPE_DANGER,
-            title: title || "ERROR!",
-            message: error
-        });
-    }
 
-    var verify = (function () {
-        function expect(result) {
-            return {
-                toEqual: function (target) {
-                    if (JSON.stringify(result) === JSON.stringify(target)) {
-                        BootstrapDialog.alert({
-                            type: BootstrapDialog.TYPE_SUCCESS,
-                            title: "Success",
-                            message: "Well done!"
-                        });
-                    } else {
-                        showError(
-                            JSON.stringify(result) + " did not equal " + JSON.stringify(target),
-                            "Wrong result"
-                        );
-                    }
-                }
-            };
-        }
-
-        var verifiers = {
-            "1": function (result) {
-                expect(result).toEqual([
-                    "Twiter User 1",
-                    "Twiter User 2",
-                    "Twiter User 3",
-                    "Twiter User 4"
-                ]);
-            }
-        };
-
-        return function (exerciseId, result) {
-            var verifier = verifiers[exerciseId];
-            if (!verifier) {
-                throw Error("Verifier for the exercise can not be found");
-            }
-
-            verifier(result);
-        };
-    })();
-
-    $(function () {
-        var hashMatch = location.hash.match(/#(.*)/i);
-        var exersizeId = hashMatch && hashMatch[1] && hashMatch[1] !== "" ?
-                hashMatch[1] : "1";
-
-        var codeTextArea = document.querySelector('textarea.code');
-
-        //get the code template for the exercise
-        var code = $("#exersize-" + exersizeId).html();
-        if (!code) {
-            showError("Exercise does not exist");
-            return;
-        }
-        codeTextArea.innerHTML = code;
-
-        var codeMirror = CodeMirror.fromTextArea(codeTextArea, {
-            lineNumbers: true
-        });
-
-        $(".go").on("click", function () {
-            codeMirror.save();
-
-            try {
-                var result = eval($(codeTextArea).val());
-
-                verify(exersizeId, result);
-            } catch (e) {
-                showError(e.message);
-            }
-        });
-    });
+<script id="exercise-1-title" type="text/x-handlebars-template">
+    Get and array of all twitter user names
 </script>
 
-<script id="exersize-1" type="text/x-handlebars-template">
-    var tweetCountByUser = [
-        {name: "Twiter User 1", tweets: 5},
-        {name: "Twiter User 2", tweets: 0},
-        {name: "Twiter User 3", tweets: 11},
-        {name: "Twiter User 4", tweets: 101}
-    ];
+<script id="exercise-1-code" type="text/x-handlebars-template">
+var tweetCountByUser = [
+    {name: "Twiter User 1", tweets: 5},
+    {name: "Twiter User 2", tweets: 0},
+    {name: "Twiter User 3", tweets: 11},
+    {name: "Twiter User 4", tweets: 101}
+];
 
-    //print all twiter user names using Array.prototype.map
-    //by continuing uncommenting the line below and completing the code
-    //tweetCountByUser.map
+//Get and array of all twitter user names using Array.prototype.map
+//by uncommenting the line below and completing the code
+
+//tweetCountByUser.map
 </script>
 
 </body>

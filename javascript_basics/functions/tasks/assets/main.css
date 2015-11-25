@@ -1,0 +1,11 @@
+.CodeMirror {
+    background: #f6f2f3;
+    height: auto;
+}
+
+.btn.go {
+    position: fixed;
+    top: 20px;
+    right: 15px;
+    z-index: 999999
+}
