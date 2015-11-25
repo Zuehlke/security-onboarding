@@ -123,8 +123,7 @@ Since functions can be stored in variables and used as literals, functions can a
 			alert("I get executed after 1s");
 		}, 1000);
 
-[Exercise 1](exercise.html)
-
+[Exercise 1](../tasks/index.html#1)
 
 
 - returned as a result of a function
