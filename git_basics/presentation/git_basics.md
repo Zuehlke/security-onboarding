@@ -3,7 +3,7 @@
 ##What is Git?
 Git is a widely used version control system for software development. It is a **distributed version control system (DVCS)** with an emphasis on speed, data integrity, and support for distributed, non-linear workflows.
 
-![Images](centralize_vs_distributed_vcs.png)
+![Images](img/centralize_vs_distributed_vcs.png)
 
 In a DVCS clients don’t just check out the latest snapshot of the files: they fully mirror the repository. Thus if any server dies, and these systems were collaborating via it, any of the client repositories can be copied back up to the server to restore it. Every clone is really a full backup of all the data.
 
@@ -25,7 +25,7 @@ When using a remote server, command will be like:
 
 Local repository consists of three "trees" maintained by git. The first one is **Working Directory** which holds the actual files. The second one is the `Index` which acts as **staging area** and finally the `HEAD` which points to the last commit you've made in your **local git repository**.
 
-![Images](git_workflow.png)
+![Images](img/git_workflow.png)
 
 The typical workflow goes like this: - you create/edit/modify a file inside your repository - you **stage** the changes to the staging area - you **commit** these changes which creates a permanent snapshot of the file in the Git directory along with a message that indicates what you did to the file.
 
@@ -124,7 +124,7 @@ What happens if you create a new branch? Well, doing so creates a new pointer fo
 
 This creates a new pointer at the same commit you’re currently on.
 
-![Images](creating_new_branch.png)
+![Images](img/creating_new_branch.png)
 
 How does Git know what branch you’re currently on? It keeps a special pointer called `HEAD`. Note that this is a lot different than the concept of `HEAD` in other VCSs you may be used to, such as Subversion or CVS. In Git, this is a pointer to the local branch you’re currently on. In this case, you’re still on `master`.
  
@@ -144,19 +144,19 @@ To switch to an existing branch, you run the `git checkout` command. Let’s swi
 
 This moves `HEAD` to point to the **testing** branch.
 
-![Images](checkout_new_branch.png)
+![Images](img/checkout_new_branch.png)
 
 What is the significance of that? Well, let’s update our **web.config** file and do another commit:
 
 	$ git commit -am "Updated web.config file"
 
-![Images](commit_new_branch.png)
+![Images](img/commit_new_branch.png)
 
 This is interesting, because now your **testing** branch has moved forward, but your **master** branch still points to the commit you were on when you ran `git checkout` to switch branches. Let’s switch back to the **master** branch:
 
 	$ git checkout master
 
-![Images](checkout_master_branch.png)
+![Images](img/checkout_master_branch.png)
 
 
 That command did two things. It moved the `HEAD` pointer back to point to the `master` branch, and it reverted the files in your working directory back to the snapshot that `master` points to. This also means the changes you make from this point forward will diverge from an older version of the project. It essentially rewinds the work you’ve done in your **testing** branch so you can go in a different direction.
@@ -180,7 +180,7 @@ At this stage, you’ll receive a call that another issue is critical and you ne
 
 First, let’s say you’re working on your project and have a couple of commits already.
 
-![Images](merge_simple_commit_history.png)
+![Images](img/merge_simple_commit_history.png)
 
 You’ve decided that you’re going to work on **issue #53** in whatever issue-tracking system your company uses. To create a branch and switch to it at the same time, you can run the git checkout command with the -b switch:
 
@@ -191,13 +191,13 @@ This is shorthand for:
 	$ git branch iss53
 	$ git checkout iss53
 
-![Images](merge_new_branch.png)
+![Images](img/merge_new_branch.png)
 
 You work on your web site and do some commits. Doing so moves the **iss53** branch forward, because you have it checked out (that is, your `HEAD` is pointing to it):
 
 	$ git commit -a -m "Added a new footer [issue 53]"
 
-![Images](merge_new_branch_commit.png)
+![Images](img/merge_new_branch_commit.png)
 
 Now you get the call that there is an issue with the web site, and you need to fix it immediately. With Git, you don’t have to deploy your fix along with the **iss53** changes you’ve made, and you don’t have to put a lot of effort into reverting those changes before you can work on applying your fix to what is in production. All you have to do is switch back to your `master` branch.
 
@@ -215,7 +215,7 @@ After we finished our work we can commit changes.
 
 	$ git commit -am "Fixed the broken email address"
 
-![Images](merge_new_branch_hotfix.png)
+![Images](img/merge_new_branch_hotfix.png)
 
 You can run your tests, make sure the hotfix is what you want, and **merge it back into your `master` branch** to deploy to production. You do this with the `git merge` command:
 
@@ -224,7 +224,7 @@ You can run your tests, make sure the hotfix is what you want, and **merge it ba
 
 Your change is now in the snapshot of the commit pointed to by the `master` branch, and you can deploy the fix.
 
-![Images](merge_new_branch_hotfix_in_master.png)
+![Images](img/merge_new_branch_hotfix_in_master.png)
 
 After your super-important fix is deployed, you’re ready to switch back to the work you were doing before you were interrupted. However, first you’ll delete the `hotfix` branch, because you no longer need it – the `master` branch points at the same place. You can delete it with the `-d` option to `git branch`:
 
@@ -238,7 +238,7 @@ Let's assume that we finished work on `iss53` branch and we want commit changes.
 
 	$ git commit -a -m "Finished the new footer [issue 53]"
 
-![Images](merge_new_branch_commit_history.png)
+![Images](img/merge_new_branch_commit_history.png)
 
 Suppose you’ve decided that your issue #53 work is complete and ready to be merged into your `maste`r branch. In order to do that, you’ll merge your `iss53` branch into `master`, much like you merged your `hotfix` branch earlier. All you have to do is check out the branch you wish to merge into and then run the `git merge` command:
 
@@ -247,7 +247,7 @@ Suppose you’ve decided that your issue #53 work is complete and ready to be me
 
 Git creates a new snapshot that results from this three-way merge and automatically creates a new commit that points to it. This is referred to as a merge commit, and is special in that it has more than one parent.
 
-![Images](merge_commit.png)
+![Images](img/merge_commit.png)
 
 Now that your work is merged in, you have no further need for the `iss53` branch. You can close the ticket in your ticket-tracking system, and delete the branch:
 
@@ -296,7 +296,7 @@ To use a graphical tool to resolve these issues, you can run git mergetool, whic
 
 After you hit Enter button, visual merge tool will show and it looks like this:
 
-![Images](merge_conflict_merge_tool.png)
+![Images](img/merge_conflict_merge_tool.png)
 
 It says we have 1 unsolved conflict, which is actually conflict at the first line in web.config file.
 
@@ -309,7 +309,7 @@ Merge tool has following windows:
 
 In this case, let's say we want result file which contains all changes from current  branch(**Window B**) and from the remote branch (**Window C**) as well. To do this we have to choose buttons **B** and **C** from tool bar.
 
-![Images](merge_conflict_resolving_conflict.png)
+![Images](img/merge_conflict_resolving_conflict.png)
 
 After clicking on **B** and **C** output window shown immediately how result file will look like. After we solve conflict we need to save result file (Ctrl + S), commit changes that we just made on web.config file and execute merge command again.
 
