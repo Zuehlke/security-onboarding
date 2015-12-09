@@ -11,7 +11,7 @@
         this.getHighScores = getHighScores;
 
         function getHighScores() {
-            var url = "http://localhost:3000/users?callback=JSON_CALLBACK";
+            var url = "http://localhost:3002/users?callback=JSON_CALLBACK";
 
             var deferred = $q.defer();
             $http.get(url)

@@ -1,0 +1,8 @@
+To run the application opend the command prompt in this directory,
+and enter the following commands:
+
+npm install (installs the node modules)
+
+bower install (installs the bower modules)
+
+gulp serve (starts the application on port 3000)
