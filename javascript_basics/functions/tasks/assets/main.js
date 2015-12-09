@@ -18,9 +18,8 @@ var verify = (function () {
                     });
                 } else {
                     showError(
-                        `<strong>${JSON.stringify(result)}</strong><br />
-                        did not equal<br />
-                        <strong>${JSON.stringify(target)}</strong>`,
+                        `Got result: <strong>${JSON.stringify(result)}</strong><br />
+                        expected: <strong>${JSON.stringify(target)}</strong>`,
                         "Wrong result"
                     );
                 }
