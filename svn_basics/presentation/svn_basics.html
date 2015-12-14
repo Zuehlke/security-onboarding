@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<h1>Subversion Basics</h1>
+<p></p>
+<h2>What is Subversion?</h2>
+<p></p>
+<p>Apache Subversion aka <strong>SVN </strong>is a <em>software versioning</em> and <em>revision control system</em> distributed as free software under Apache License. Its main goal is to be the most compatible successor to the previously widely used <strong>CVS</strong> (Concurrent Versions System). It is a <strong>centralized version control system</strong> <strong>(CVCS)</strong> with emphasis on commits as true atomic operations, versioning of binary files, predictable branching, file locking, merge tracking and reliability.</p>
+<p></p>
+<p>Unlike Git, SVN is a centralized version control system.</p>
+<figure>
+<img src="img/svn-development.png" alt="" />
+</figure>
+<p>In CVCS clients just check out the latest snapshot of the files in the central repository. They do not mirror the repository. If the central server goes down it is not possible to clone the repository from another user like in Git.</p>
+<p></p>
+<h2>Subversion’s Architecture</h2>
+<p>The following image illustrates a “mile-high” view of Subversion’s design </p>
+<figure>
+<img src="img/subversion-architecture.png" alt="" />
+</figure>
+<p>On one end is a Subversion repository that holds all of your versioned data. On the other end is your Subversion client program, which manages local parts of that versioned data. Between these extremes are multiple routes through a Repository Access (RA) layer, some of which go across computer networks and through network servers which then access the repository, others of which bypass the network altogether and access the repository directly.</p>
+<p></p>
+<h2>Subversion’s Components</h2>
+<p>Subversion, once installed, has a number of different pieces and command line utilities. In the following section we will try to mention the most important ones:</p>
+<ul>
+<li><p><strong>svn </strong>- The command-line client program</p></li>
+<li><p><strong>svnversion </strong>- A program for reporting the state (in terms of revisions of the items present) of a working copy</p></li>
+<li><p><strong>svnlook </strong>- A tool for directly inspecting a Subversion repository </p></li>
+<li><p><strong>svnadmin </strong>- A tool for creating, tweaking, or repairing a Subversion repository </p></li>
+<li><p><strong>mod_dav_svn </strong>- A plug-in module for the Apache HTTP Server, used to make your repository available to others over a network </p></li>
+<li><p><strong>svnserve </strong>- A custom standalone server program, runnable as a daemon process or invokable by SSH; another way to make your repository available to others over a network </p></li>
+<li><p><strong>svndumpfilter </strong>- A program for filtering Subversion repository dump streams </p></li>
+<li><p><strong>svnsync </strong>- A program for incrementally mirroring one repository to another over a network </p></li>
+<li><p><strong>svnrdump </strong>- A program for performing repository history dumps and loads over a network</p></li>
+</ul>
+<p></p>
+<h2>Creating the repository</h2>
+<p>Subversion repository creation is a simple task. The svnadmin utility provides a sub command for this. Once svn is installed on your server issue the following command</p>
+<pre><code>$ svnadmin create ~/myrepo</code></pre>
+<p></p>
+<p>Edit repository settings in:</p>
+<pre><code>$ vim ~/myrepo/conf/svnserve.conf</code></pre>
+<p></p>
+<p>And run the svn server as a daemon:</p>
+<pre><code>$ svnserver -d</code></pre>
+<p></p>
+<h2>Checking-out the repository</h2>
+<p>After we’ve setup a repository on the central svn server we can check it out on our local machine</p>
+<pre><code>$ cd ~/projects 
+$ svn co svn+ssh://username@host:port/path/myrepo</code></pre>
+<p></p>
+<h2>Typical workflow</h2>
+<p>Local repository consists of svn index and files checked-out from central repository.</p>
+<p>Developers check-out the changes from the central server, edit working copy files, resolve conflicts, and publish changes with the <em>svn commit</em> command</p>
+<p></p>
+<figure>
+<img src="img/svn_workflow_ongoing.png" alt="" />
+</figure>
+<p></p>
+<p>Adding a file:</p>
+<pre><code>$ svn add test.txt
+A         test.txt
+$ svn status
+A         test.txt</code></pre>
+<p>“A” indicates file is scheduled for addition.</p>
+<p></p>
+<p>Running diff:</p>
+<pre><code>$ svn diff
+Index: test.txt
+===================================================================
+--- test.txt   (revision 0)
++++ test.txt   (revision 0)
+@@ -0,0 +1 @@
++This is a test file 
+
+Property changes on: test.txt
+___________________________________________________________________
+Added: svn:eol-style
+   + native</code></pre>
+<p></p>
+<p>And finally committing a file:</p>
+<pre><code>$ svn commit test.txt -m &quot;added test.txt&quot;
+Adding         test.txt
+Transmitting file data .
+Committed revision 2.</code></pre>
+<p></p>
+<p>Update working copy:</p>
+<pre><code>$ svn update
+U    test.txt
+Updated to revision 3.
+</code></pre>
+<p>&quot;U&quot; indicates an &quot;Update&quot; to a file or directory</p>
+<p></p>
+<p>Modify the test file:</p>
+<pre><code>$ vim test.txt</code></pre>
+<p></p>
+<p>Check the status:</p>
+<pre><code>$ svn status
+M       test.txt</code></pre>
+<p>“M” indicates file has been “Modified”</p>
+<p></p>
+<pre><code>$ svn diff
+Index: test.txt
+===================================================================
+--- test.txt   (revision 3)
++++ test.txt   (working copy)
+@@ -1,2 +1,3 @@
+ This is a test file
+ This is a new line added by Fred.
++This line added by me.</code></pre>
+<p></p>
+<p>Suppose someone edits the same line as you before you commit:</p>
+<pre><code>$ svn update
+Conflict discovered in &#39;test.txt&#39;.
+Select: (p) postpone, (df) diff-full, (e) edit,
+        (mc) mine-conflict, (tc) theirs-conflict,
+        (s) show all options:</code></pre>
+<p>If you choose <em>e</em> you can edit both sets of changes. You can save changes in the editor and then select <em>r</em> (for resolved)</p>
+<pre><code>G    test.txt
+Updated to revision 4.</code></pre>
+<p>&quot;G&quot; indicates &quot;merGed&quot;</p>
+<p></p>
+<h3>Committing changes</h3>
+<p>Only committers can commit directly to the repository:</p>
+<pre><code>$ svn commit test.c --username your-name --password your-password \
+  -m &quot;added new C file&quot;
+Sending        test.c
+Transmitting file data .
+Committed revision 5.</code></pre>
+<p></p>
+<p>In general, you may not have to include always your username or password if you do a proper setup of your ssh key or have subversion store the password.</p>
+<p></p>
+<h3>Commit message</h3>
+<p>Log comments are important. Information like author, where the change start/ends, the date, the bug/issue id, and the author don't really belong in the code as SVN can keep it much more effectively without altering the coding style. Always try to use a log file for your commits. </p>
+<p></p>
+<h2>Viewing the Commit History</h2>
+<p>For generating a list of historical changes use the <em>svn log</em> command</p>
+<pre><code>$ svn log
+------------------------------------------------------------------------
+r1 | VisualSVN Server | 2012-12-13 15:10:45 +0100 (ned, 13 dec 2012) | 1 line
+Initial structure.
+------------------------------------------------------------------------</code></pre>
+<p></p>
+<p>This command will provide you with a record of who made changes at what revision an time and date. Note that the log messages are printed in <em>reverse chronological order</em> by default. If you wish to see a different range of revisions in a particular order or just a single revision, pass the <code>--revision</code> (<code>-r</code>) option:</p>
+<pre><code>svn log -r 5:19 - Display logs for revisions 5 through 19 in chronological order
+svn log -r 19:5 - Display logs for revisions 5 through 19 in reverse order 
+svn log -r 8      Display logs for revision 8 only</code></pre>
+<p></p>
+<p>You can examine the log history of a single file or directory:</p>
+<pre><code>$ svn log foo.c
+…
+$ svn log http://foo.com/svn/trunk/code/foo.c
+…</code></pre>
+<p></p>
+<p>If you want even more information about a file or directory, <strong>svn log</strong> also takes a <code>--verbose</code> (<code>-v</code>) option. Because Subversion allows you to move and copy files and directories, it is important to be able to track path changes in the file system. So, in verbose mode, <strong>svn log</strong> will include a list of changed paths in a revision in its output:</p>
+<pre><code>$ svn log -r 8 -v
+------------------------------------------------------------------------
+r8 | zeljko | 2012-05-21 13:19:25 -0500 (Wed, 21 May 2012) | 1 line
+Changed paths:
+   M /trunk/code/foo.c
+   M /trunk/code/bar.h
+   A /trunk/code/doc/README
+
+Frozzled the sub-space witch.
+
+------------------------------------------------------------------------</code></pre>
+<p><strong>svn log</strong> also takes a <code>--quiet</code> (<code>-q</code>) option, which suppresses the body of the log message. When combined with <code>--verbose</code> (<code>-v</code>), it gives just the names of the changed files.</p>
+<p></p>
+<h2>Subversion Branching and merging</h2>
+<p></p>
+<h3>What is a branch?</h3>
+<p>Branching represents a basic concept of <em>branch </em>- <em>a line of development that exists independently of another line</em>, yet still shares common history. Branch always begins a life as a copy of something. New branch then has its own history.</p>
+<figure>
+<img src="img/branches1.png" alt="" />
+</figure>
+<p></p>
+<h3>Using branches in SVN</h3>
+<p>Each commit creates a new state in the file system, called <em>revision</em>. Branching allows changing file system in parallel as independent development lines. </p>
+<p></p>
+<h3>Creating a branch</h3>
+<p>Creating a branch is very simple. You make a copy of your project tree in the repository using the <em>svn copy</em> command. Since your project’s source is rooted in the <em>trunk</em> directory:</p>
+<pre><code>$ svn copy http://svn.example.com/repos/myproject/trunk \
+           http://svn.example.com/repos/myproject/branches/test-branch \
+           -m &quot;Creating a private branch of /myproject/trunk.&quot;
+
+Committed revision 341.
+$</code></pre>
+<p></p>
+<p>This command causes a near-instantaneous commit in the repository, creating a new directory in revision 341. The new directory is a copy of <em>/myproject/trunk.</em></p>
+<p></p>
+<h3>Working with your branch</h3>
+<p>Now that your branch is created, you can check out a new working copy to start using it</p>
+<pre><code>$ svn checkout http://svn.example.com/repos/myproject/branches/test-branch
+A  test-branch/Makefile
+A  test-branch/integer.c
+A  test-branch/button.c
+Checked out revision 341.</code></pre>
+<p></p>
+<p>There is nothing special about this working copy, it just mirrors a different directory in the repository</p>
+<p></p>
+<p>Let's pretend that a week goes by, and the following commits happen:</p>
+<ul>
+<li><p>You make a change to <code>/myproject/branches/test-branch/button.c</code>, which creates revision 342.</p></li>
+<li><p>You make a change to <code>/myproject/branches/test-branch/integer.c</code>, which creates revision 343.</p></li>
+<li><p>Fred makes a change to <code>/myproject/trunk/integer.c</code>, which creates revision 344.</p></li>
+</ul>
+<p>Now two independent lines of development are happening on <code>integer.c</code>.</p>
+<p></p>
+<figure>
+<img src="img/svn-branches.png" alt="" />
+</figure>
+<p></p>
+<p>To see how this timeline is represented in Subversion let’s see the log of the integer.c</p>
+<pre><code>$ cd ~/myproject/branches/test-branch
+$ svn log -v integer.c
+------------------------------------------------------------------------
+r343 | user | 2012-11-07 15:27:56 -0600 (Thu, 07 Nov 2012) | 2 lines
+Changed paths:
+   M /myproject/branches/test-branch/integer.c
+
+* integer.c:  frozzled the wazjub.
+
+------------------------------------------------------------------------
+r341 | user | 2012-11-03 15:27:56 -0600 (Thu, 07 Nov 2012) | 2 lines
+Changed paths:
+   A /myproject/branches/test-branch (from /myproject/trunk:340)
+
+Creating a private branch of /myproject/trunk.
+
+------------------------------------------------------------------------
+r303 | fred | 2012-10-29 21:14:35 -0600 (Tue, 29 Oct 2012) | 2 lines
+Changed paths:
+   M /myproject/trunk/integer.c
+
+* integer.c:  changed a docstring.
+
+------------------------------------------------------------------------
+r98 | fred | 2012-02-22 15:35:29 -0600 (Fri, 22 Feb 2012) | 2 lines
+Changed paths:
+   A /myproject/trunk/integer.c
+
+* integer.c:  adding this file to the project.
+
+------------------------------------------------------------------------</code></pre>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<div class="references">
+
+</div>
+</body>
+</html>
