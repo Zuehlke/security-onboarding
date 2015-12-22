@@ -259,17 +259,23 @@ JavaScript has all the usual flow control & loop concepts:
 	}
 
 ### `for` vs `forEach()` vs `for`...`in`
+	var array = ["one", "hundered", "three"]; 
 
+	// Example: There are 2 ways to concatenate the texts in array
+
+	// with for
 	for (i = 0; i < array.length; i++) { ​
 	    text += array[i];​
 	}​
-	​
+	
+	// with forEach function, where "item" is the current item of the loop
 	array.forEach(function (item, index, originalArray) {​
 	    text += item;​
 	});​
 	​
-	​
+		​
 	// for…in iterates through properties of an object​
+	// it should not be used for iterating through an arrray 
 	​
 	for (prop in object) {​
 	    console.log(prop); // outputs property name​

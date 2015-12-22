@@ -38,23 +38,6 @@ Users will thank us in the long run for building a more accessible website, and 
 
 If you are ever unsure of your code, find a friend to help out and perform routine code reviews.
 
-Bad code:
-
-	<span class="heading">
-		<strong>Welcome Back</span>
-	</strong> 
-	<br>
-	<br>
-	 	It has been a while. What have you been up to lately? 
-	<br>
-	<br>
-
-
-Good code:
-
-	<h1>Welcome Back</h1> 
-	<p>It has been a while. What have you been up to lately?</p>
-
 
 **Use the Proper Document Structure**
 
@@ -235,16 +218,24 @@ This will:
 
 **Never Declare Number, String, or Boolean Objects**
 
-Always treat numbers, strings, or booleans as primitive values. Not as objects.
+Always treat numbers, strings, or booleans as primitive values and not as objects.
 
-Declaring these types as objects, slows down execution speed, and produces unwanted side effects:
+Declaring these types as objects slows down execution speed, and produces unwanted side effects:
 
-    var x = "John"; 
-    var y = new String("John");
+    var x = "John"; // This is a prefered way to define a string
+    var y = new String("John"); // This is NOT a good way to define a string
+
     (x === y) // is false because x is a string and y is an object.
+
+This is also true for arrays:
+
+var arr = []; // Preferred way to initialize an array, more readable, and better performance.
+var arr = new Array(); // NOT a preferred way to initialize an array 
 
 
 **Don't Use new Object()**
+
+Avoid using the base Object type.
 
     var x1 = {};   // new object
     var x2 = "";   // new primitive string
@@ -285,11 +276,11 @@ Because it allows arbitrary code to be run, it also represents a security proble
 
 **Avoid Globals**
 
-You run the danger of your code being overwritten by any other JavaScript added to the page after yours.
+You run the danger of your code being overwritten by any other JavaScript added to the page after yours if you declare global variables.
 
 Revealing Module Pattern: Keep consistent syntax and mix and match what to make global:
 
-    module = function(){
+    var module = function(){
        var current = null;
        var labels = {
 	      'home':'home',
@@ -313,3 +304,5 @@ Revealing Module Pattern: Keep consistent syntax and mix and match what to make 
     }();
 
     module.init();
+
+In this example only module is global, and namespaces functions in itself, so that the functions themselves are not global. The module pattern is a good way to avoid global variables, making only one global variable that holds other variables and functions, similar to namespaces in other languages.
