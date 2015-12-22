@@ -8,11 +8,11 @@ What is Subversion?
 
  
 
-Apache Subversion aka **SVN **is a *software versioning* and *revision control
+Apache Subversion aka **SVN** is a *software versioning* and *revision control
 system* distributed as free software under Apache License. Its main goal is to
 be the most compatible successor to the previously widely used **CVS**
-(Concurrent Versions System). It is a **centralized version control system**
-**(CVCS)** with emphasis on commits as true atomic operations, versioning of
+(Concurrent Versions System). It is a **centralized version control system
+(CVCS)** with emphasis on commits as true atomic operations, versioning of
 binary files, predictable branching, file locking, merge tracking and
 reliability.
 
@@ -51,30 +51,30 @@ Subversion, once installed, has a number of different pieces and command line
 utilities. In the following section we will try to mention the most important
 ones:
 
--   **svn **- The command-line client program
+-   **svn** - The command-line client program
 
--   **svnversion **- A program for reporting the state (in terms of revisions of
+-   **svnversion** - A program for reporting the state (in terms of revisions of
     the items present) of a working copy
 
--   **svnlook **- A tool for directly inspecting a Subversion repository
+-   **svnlook** - A tool for directly inspecting a Subversion repository
 
--   **svnadmin **- A tool for creating, tweaking, or repairing a Subversion
+-   **svnadmin** - A tool for creating, tweaking, or repairing a Subversion
     repository
 
--   **mod\_dav\_svn **- A plug-in module for the Apache HTTP Server, used to
+-   **mod\_dav\_svn** - A plug-in module for the Apache HTTP Server, used to
     make your repository available to others over a network
 
--   **svnserve **- A custom standalone server program, runnable as a daemon
+-   **svnserve** - A custom standalone server program, runnable as a daemon
     process or invokable by SSH; another way to make your repository available
     to others over a network
 
--   **svndumpfilter **- A program for filtering Subversion repository dump
+-   **svndumpfilter** - A program for filtering Subversion repository dump
     streams
 
--   **svnsync **- A program for incrementally mirroring one repository to
+-   **svnsync** - A program for incrementally mirroring one repository to
     another over a network
 
--   **svnrdump **- A program for performing repository history dumps and loads
+-   **svnrdump** - A program for performing repository history dumps and loads
     over a network
 
  
@@ -92,7 +92,7 @@ $ svnadmin create ~/myrepo
 
  
 
-Edit repository settings  in:
+Edit repository settings in:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $ vim ~/myrepo/conf/svnserve.conf
@@ -185,7 +185,6 @@ Update working copy:
 $ svn update
 U    test.txt
 Updated to revision 3.
-
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 "U" indicates an "Update" to a file or directory
@@ -347,7 +346,7 @@ Subversion Branching and Merging
 
 ### What is a branch?
 
-Branching represents a basic concept of *branch *- *a line of development that
+Branching represents a basic concept of *branch* - *a line of development that
 exists independently of another line*, yet still shares common history. Branch
 always begins a life as a copy of something. New branch then has its own
 history.
@@ -415,7 +414,6 @@ Let's pretend that a week goes by, and the following commits happen:
     creates revision 343.
 
 -   Fred makes a change to `/myproject/trunk/integer.c`, which creates revision
-    344.
 
 Now two independent lines of development are happening on `integer.c`.
 
@@ -425,7 +423,7 @@ Now two independent lines of development are happening on `integer.c`.
 
  
 
-To see how this timeline is represented in Subversion let’s  see the log of the
+To see how this timeline is represented in Subversion let’s see the log of the
 integer.c
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -466,9 +464,9 @@ is only a “branch” because you attach the meaning to it. Subversion treats t
 “branch” as an ordinary directory that happens to carry some extra historical
 information.
 
-Subversion branches exist as* normal file system directories* in the repository.
-Also, the location of the branch directory does not matter to Subversion, it is
-by the convention that */branches*  is the parent directory.
+Subversion branches exist as\* normal file system directories\* in the
+repository. Also, the location of the branch directory does not matter to
+Subversion, it is by the convention that */branches* is the parent directory.
 
  
 
@@ -482,8 +480,6 @@ your own branch, just to make sure they mesh well with your changes. This is
 done by performing a *sync merge*—a merge operation designed to bring your
 branch up to date with any changes made to its ancestral parent branch since
 your branch was created.
-
-
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $ pwd 
@@ -510,7 +506,7 @@ $ svn status
 
  
 
-At this point it is wise to inspect all changes using* svn diff*. After
+At this point it is wise to inspect all changes using\* svn diff\*. After
 everything is resolved, you need to commit the merge to the repository:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -590,7 +586,7 @@ Committed revision 390.
  
 
 Now, use **svn merge** with the `--reintegrate` option to replicate your branch
-changes back into the trunk. You'll need a working copy of `/trunk`.  Once you
+changes back into the trunk. You'll need a working copy of `/trunk`. Once you
 have a clean working copy of the trunk, you're ready to merge your branch back
 into it:
 
@@ -754,7 +750,6 @@ Index: integer.c
 @@ -147,7 +147,7 @@
 -    case 9:  sprintf(info->operating_system, "CP/MM");
 +    case 9:  sprintf(info->operating_system, "CP/M"); break;
-
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  
@@ -965,7 +960,7 @@ At revision 353.
 
 The **svn switch** command, like **svn update**, preserves your local edits. At
 this point, your working copy is now a reflection of the newly created branch,
-and your next** svn commit** invocation will send your changes there.
+and your next\*\* svn commit\*\* invocation will send your changes there.
 
  
 
@@ -1087,5 +1082,380 @@ A    newdirectory/newfile
 U   .
 …
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ 
+
+Subversion Clients
+==================
+
+In this section we will try to describe features of the most used SVN clients.
+
+When installing Subversion, we will also install the command line *svn* client
+program. This tool should be enough for all types of repository handling and
+manipulation. Issue *svn help* command for more details.
+
+As far as the GUI clients are concerned there exists a plethora of clients both
+for Windows and Linux/Mac.
+
+ 
+
+The most popular one on Windows is [TortoiseSVN](<https://tortoisesvn.net/>).
+Its interface is implemented as Shell extension context menu with action
+dialogs. TortoiseSVN is tightly integrated with SVN and it has many options with
+the goal of simplifying the workflow:
+
+![](<img/tortoise-svn-menu.png>)
+
+ 
+
+![](<img/tortoise-svn-gui.png>)
+
+ 
+
+[SmartSVN ](<http://www.smartsvn.com/>)is another very popular client. This
+client is written as Java application so it can run of Windows, Linux and Mac.
+It offers amazing number of options which are organized very good and can
+simplify the workflow dramatically:
+
+![](<img/smart-svn-gui.png>)
+
+ 
+
+The most popular SVN client on Linux is [RabbitVCS](<http://rabbitvcs.org/>). It
+tries to mimic the behavior of the TortoiseSVN and is also available as a shell
+extension:
+
+![](<http://wiki.rabbitvcs.org/wiki/_media/about/context_menu.png?cache=&w=827&h=559&tok=a68301>)
+
+ 
+
+All major IDEs have very good and mature support for SVN. Starting from
+IntelliJ, Eclipse, Netbeans, Visual Studio
+
+to Delphi and Xcode.
+
+ 
+
+There are also many web interfaces and clients for the SVN. The most popular one
+is [VisualSVN ](<https://www.visualsvn.com/server/>)which has very good support
+for SVN features although it is a web app:
+
+![](<img/svn-new-branch-copy.png>)
+
+ 
+
+Subversion And Docker
+=====================
+
+In order to test and get to know the features of the SVN, we will need server
+running. For that purpose, we can use Docker image with SVN server preset.
+
+ 
+
+To get, install, and configure Docker for your operating system check out the
+following [link](<https://www.docker.com/docker-toolbox>).
+
+ 
+
+After you have Docker up and running execute the following commands:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$ docker login -u <username> # your docker user name
+$ docker-machine ssh default # Windows only; default or other name you configured 
+$ docker pull zeljko/svn-server-final 
+$ docker run -t -i -p 2222:22 -p 8089:80 zeljko/svn-server-final /bin/bash
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ 
+
+This will download preset Ubuntu image with SVN server configured. When the
+container is running start the Apache server:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$ service apache2 status
+$ service apache2 start
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ 
+
+Now, detach from docker and check out the SVN repository on the host (you should
+install SVN client if you have not done that already)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Press Ctrl+p and Ctrl+q to detach 
+
+$ docker-machine ip default # Windows/Toolbox only; or other name you configured
+192.168.99.100 # this IP will be different in your config
+$ cd work-dir && \
+svn co http://192.168.99.100:8089/svn/myrepo  --username user2 --password test2 .
+
+$ sudo netstat -tunap | grep docker # Linux only
+tcp6          0       0 :::8089           :::*        LISTEN    19969/docker-proxy
+tcp6          0       0 :::2222           :::*        LISTEN    19969/docker-proxy
+$ sudo docker ps
+CONTAINER ID  IMAGE                   COMMAND      CREATED      STATUS      
+ca2c9869c3a5        zeljko/svn-server-final "/bin/bash"  13 hours ago Up 13 hours
+PORTS         NAMES
+0.0.0.0:2222->22/tcp, 0.0.0.0:8089->80/tcp       focused_tesla
+$ cd work-dir && \
+svn co http://localhost:8089/svn/myrepo  --username user2 --password test2 .
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ 
+
+This will check-out the repository running inside the Docker container. After
+check-out is complete issue log command:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$ svn log
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ 
+
+You should get the following response:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------------------------------------
+r2 | user2 | 2015-12-19 22:44:30 +0100 (sub, 19 dec 2015) | 3 lines
+
+Adding readme file
+------------------------------------------------------------------------
+r1 | user2 | 2015-12-19 22:29:56 +0100 (sub, 19 dec 2015) | 1 line
+
+Initial import
+------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ 
+
+When you are done working and want to close docker remember to commit changes on
+our image:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$  docker images zeljko/*
+REPOSITORY                 TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+zeljko/svn-server-final    latest              9b79b32e845a        20 hours ago         555.7 MB
+
+$ docker ps
+CONTAINER ID        IMAGE                     COMMAND             CREATED             STATUS              PORTS                                                  
+NAMES
+ca2c9869c3a5        zeljko/svn-server-final   "/bin/bash"         About an hour ago   Up About an hour    3690/tcp, 0.0.0.0:2222->22/tcp, 0.0.0.0:8089->80/tcp   focused_tesla
+
+$ docker commit -m "Repo structure change" -a "Zeljko Marjanovic"  focused_tesla
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ 
+
+Subversion Exercises
+====================
+
+ 
+
+Creating Default Structure
+--------------------------
+
+After we’ve checked out the repository *myrepo*, we will create SVN structure
+with *branches*, *tags* and *trunks* that is used by  SVN convention:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$ cd work-dir
+$ mkdir branches && mkdir tags && mkdir trunk
+$ mv .hg trunk/ && mv src trunk/ && mv bin trunk/
+$ svn add .
+$ svn status
+!       .hg
+!       README
+!       bin
+!       bin\Project1.exe
+!       bin\libssh2.dll
+A       branches
+!       src
+!       src\comp
+!       src\comp\uMySFTPClient.pas
+!       src\demo
+!       src\demo\Project1.dpr
+!       src\demo\Unit3.dfm
+!       src\demo\Unit3.pas
+!       src\demo\Unit4.dfm
+!       src\demo\Unit4.pas
+!       src\libssh2.pas
+!       src\libssh2_publickey.pas
+!       src\libssh2_sftp.pas
+A       tags
+A       trunk
+A       trunk\.hg
+A       trunk\README
+A       trunk\bin
+A       trunk\bin\Project1.exe
+A       trunk\bin\libssh2.dll
+A       trunk\src
+A       trunk\src\comp
+A       trunk\src\comp\uMySFTPClient.pas
+A       trunk\src\demo
+A       trunk\src\demo\Project1.dpr
+A       trunk\src\demo\Unit3.dfm
+A       trunk\src\demo\Unit3.pas
+A       trunk\src\demo\Unit4.dfm
+A       trunk\src\demo\Unit4.pas
+A       trunk\src\libssh2.pas
+A       trunk\src\libssh2_publickey.pas
+A       trunk\src\libssh2_sftp.pas
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ 
+
+We then commit new structure:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$ svn ci -m “Creating default structure”
+$ svn up
+$ svn log
+------------------------------------------------------------------------
+r3 | user2 | 2015-12-20 14:23:34 +0100 (ned, 20 dec 2015) | 3 lines
+Creating default structure
+
+
+------------------------------------------------------------------------
+r2 | user2 | 2015-12-19 22:44:30 +0100 (sub, 19 dec 2015) | 3 lines
+Adding readme file
+
+
+------------------------------------------------------------------------
+r1 | user2 | 2015-12-19 22:29:56 +0100 (sub, 19 dec 2015) | 1 line
+Initial import
+------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ 
+
+Creating New Branch
+-------------------
+
+To create a new branch issue the *svn copy* command:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$ svn copy http://192.168.99.100:8089/svn/myrepo/trunk http://192.168.99.100:8089/svn/myrepo/branches/work-branch
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ 
+
+The previous example copies *trunk *to new directory creating the *work branch*.
+After the creation completes successfully, we can *switch* to the new branch:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$ svn switch http://192.168.99.100:8089/svn/myrepo/branches/work-branch --ignore-ancestry 
+$ svn log
+------------------------------------------------------------------------
+r4 | user2 | 2015-12-20 14:32:34 +0100 (ned, 20 dec 2015) | 3 lines
+Changed paths:
+   A /branches/work-branch (from /trunk:3)
+
+Creating work branch
+
+------------------------------------------------
+...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ 
+
+Option  *--ignore-ancestry* tells svn to generate differences anyway, the same
+way the *svn diff* does.
+
+The following image shows current structure of our repository, where we can see
+*work-branch* and *trunk:*
+
+![](<img/tortoise-svn-branch-structure.png>)
+
+ 
+
+Synchronizing Branches
+----------------------
+
+When working in a branch you often want to sync the changes from trunk in order
+to be up to date with mainstream changes and to make the merging later much
+easier. SVN is not particularly good with merging, so you are advised to sync
+with branch that you are gonna merge with, as much as possible.
+
+ 
+
+The following command will merge all new changes from trunk into the selected
+branch:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$ svn merge -r<TrunkRevision>:HEAD http://192.168.99.100:8089/svn/myrepo/trunk http://192.168.99.100:8089/svn/myrepo/branches/work-branch 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ 
+
+Where *TrunkRevision* is the last revision merged from trunk to current working
+branch.
+
+ 
+
+Exercise I
+----------
+
+ 
+
+Synchronize your local copy of the repository
+*http://\<docker-machine-ip\>:8089/svn/myrepo.*
+
+Create a new branch  called *\<username\>-work* and switch to it.
+
+Remove all of the Mercurial version control files by deleting the *.hg*
+directory and commit you changes.
+
+Merge your branch to trunk and delete it.
+
+ 
+
+Exercise II 
+------------
+
+ 
+
+Synchronize your local copy of the repository
+*http://\<docker-machine-ip\>:8089/svn/myrepo.*
+
+Create 2 new branches *bug-fix* and *develop* by copying trunk. Switch to
+bug-fix branch and delete binary files in *bin* directory.
+
+Commit the changes and merge them back to trunk.
+
+Now switch to develop branch and sync with  the trunk.
+
+Revert changes in the binary directory and merge them back to trunk.
+
+ 
+
+Exercise III
+------------
+
+ 
+
+Synchronize your local copy of the repository
+*http://\<docker-machine-ip\>:8089/svn/myrepo.*
+
+Cherry pick the commit which added the README file.
+
+Create a patch from this commit by piping the output of *svn diff *to a file.
+
+Create and switch to new *work-branch*.
+
+Revert all changes to the revision before the README file was added.
+
+Copy diff file created in the previous step and apply the patch.
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
 
  
