@@ -82,9 +82,9 @@ ones:
 Creating The Repository
 -----------------------
 
-Subversion repository creation is a simple task. The svnadmin utility provides a
-sub command for this. Once svn is installed on your server issue the following
-command
+Subversion repository creation is a simple task. The *svnadmin *utility provides
+a sub-command for this. Once svn is installed on your server, issue the
+following command:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $ svnadmin create ~/myrepo
@@ -127,8 +127,9 @@ Typical Workflow
 Local repository consists of svn index and files checked-out from central
 repository.
 
-Developers check-out the changes from the central server, edit working copy
-files, resolve conflicts, and publish changes with the *svn commit* command
+Developers check-out the changes from the central server with *svn update*, edit
+working copy files, resolve conflicts, and publish changes with the *svn commit*
+command
 
  
 
@@ -482,7 +483,7 @@ branch up to date with any changes made to its ancestral parent branch since
 your branch was created.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-$ pwd 
+$ pwd # dir on windows
 ~/myproject/branches/test-branch
 $ svn merge ^/myproject/trunk
 --- Merging r345 through r356 into '.':
@@ -720,11 +721,11 @@ discusses a number of common scenarios that require it.
 
  
 
-### Cherrypicking
+### Cherry-picking
 
 Just as the term “changeset” is often used in version control systems, so is the
-term *cherrypicking*. This word refers to the act of choosing *one* specific
-changeset from a branch and replicating it to another. Cherrypicking may also
+term *cherry-picking*. This word refers to the act of choosing *one* specific
+changeset from a branch and replicating it to another. Cherry-picking may also
 refer to the act of duplicating a particular set of (not necessarily
 contiguous!) changesets from one branch to another. This is in contrast to more
 typical merging scenarios, where the “next” contiguous range of revisions is
@@ -1179,7 +1180,7 @@ $ service apache2 start
  
 
 Now, detach from docker and check out the SVN repository on the host (you should
-install SVN client if you have not done that already)
+install SVN client if you have not done that already):
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Press Ctrl+p and Ctrl+q to detach 
@@ -1255,7 +1256,7 @@ Creating Default Structure
 --------------------------
 
 After we’ve checked out the repository *myrepo*, we will create SVN structure
-with *branches*, *tags* and *trunks* that is used by  SVN convention:
+with *branches*, *tags* and *trunks* that is used by SVN convention:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 $ cd work-dir
@@ -1339,7 +1340,7 @@ $ svn copy http://192.168.99.100:8089/svn/myrepo/trunk http://192.168.99.100:808
 
  
 
-The previous example copies *trunk *to new directory creating the *work branch*.
+The previous example copies *trunk* to new directory creating the *work branch*.
 After the creation completes successfully, we can *switch* to the new branch:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1358,7 +1359,7 @@ Creating work branch
 
  
 
-Option  *--ignore-ancestry* tells svn to generate differences anyway, the same
+Option *--ignore-ancestry* tells svn to generate differences anyway, the same
 way the *svn diff* does.
 
 The following image shows current structure of our repository, where we can see
@@ -1400,7 +1401,7 @@ Exercise I
 Synchronize your local copy of the repository
 *http://\<docker-machine-ip\>:8089/svn/myrepo.*
 
-Create a new branch  called *\<username\>-work* and switch to it.
+Create a new branch called *\<username\>-work* and switch to it.
 
 Remove all of the Mercurial version control files by deleting the *.hg*
 directory and commit you changes.
@@ -1409,8 +1410,8 @@ Merge your branch to trunk and delete it.
 
  
 
-Exercise II 
-------------
+Exercise II
+-----------
 
  
 
@@ -1422,7 +1423,7 @@ bug-fix branch and delete binary files in *bin* directory.
 
 Commit the changes and merge them back to trunk.
 
-Now switch to develop branch and sync with  the trunk.
+Now switch to develop branch and sync with the trunk.
 
 Revert changes in the binary directory and merge them back to trunk.
 
@@ -1438,7 +1439,7 @@ Synchronize your local copy of the repository
 
 Cherry pick the commit which added the README file.
 
-Create a patch from this commit by piping the output of *svn diff *to a file.
+Create a patch from this commit by piping the output of *svn diff* to a file.
 
 Create and switch to new *work-branch*.
 
