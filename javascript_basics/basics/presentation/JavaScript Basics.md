@@ -13,7 +13,7 @@ Characteristics:
 	- Objects are created by cloning existing objects and extending them​
 - Functional​
     - Everything is a function (even objects)​
-    - Function is a “base type” (like object in C# & JAVA)​​
+    - Function is a “base type” (like `object` in C# & JAVA)​​
 - Runs in a web browser script engine
 
 ### Including JS file in HTML
@@ -22,7 +22,7 @@ Characteristics:
 - JavaScript files have .js extension​
 ​
 > **Always include script references at the end of the `<body>` of the page**   
-> This will first load the HTML (UI) and then the scripts​​​​, improving user experience
+> This will first load the HTML (UI) and then the scripts​​​​, improving user experience, because there is no blocking of interface. Loading of resources (HTML, images, scripts) happening synchronously. 
 >
 > **Use relative paths to JavaScript files**   
 > It makes migrating web applications to different domains **much** easier.
