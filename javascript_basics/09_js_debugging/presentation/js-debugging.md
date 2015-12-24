@@ -94,3 +94,29 @@ The **Resources** panel lets you inspect resources that are loaded in the inspec
 <figcaption>The JavaScript file of the [Web Starter Kit](https://developers.google.com/web/starter-kit/) as displayed in the resources panel.</figcaption>
 
 </figure>
+
+
+## Practical exercises with Chrome DevTools
+
+### Task 1
+1. Open DevTools
+2. Open the console
+3. Define a variable x containing string "Hello"
+4. Define a variable y containing string " world"
+5. concatenate two variables to see the result
+
+
+### Task 2
+1. Open [B92 - sport](http://www.b92.net/sport/) page
+2. Open "Elements" tab
+3. Select the site's purple header element 
+5. Make the header background-color: pink
+
+### Task 3
+1. Open [a solution of the events chapter](../../06_events/solution/task.html)
+2. Open "Sources" tab
+3. Open "app.js" file in the sources tab
+4. Set a break point in all of the onClick handlers
+5. Click on an individual div elements and watch JS execution halt at break points
+6. Continue execution of javascript
+7. Repeat steps 5-6 to find out which event handler is attached to which div element
