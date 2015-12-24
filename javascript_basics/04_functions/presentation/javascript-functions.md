@@ -167,10 +167,15 @@ Quiz 2:
 		console.log(a);
 	}, 3); // ???
 
-## Module pattern
-When organizing javascript code in a large code base, for maintenance reasons it is required to separate the code into separate smaller units (*modules*) avoiding usage of global variables, because each module has:
 
--  locally scoped variables/functions
+**Best Practice: Avoid Globals**
+
+You run the danger of your code being overwritten by any other JavaScript added to the page after yours if you declare global variables.
+
+## Revealing Module Pattern
+When organizing javascript code in a large code base, in order to avoid polluting global namespace with global variables and for maintenance reasons it is required to separate the code into separate smaller units (*modules*) avoiding usage of global variables, because each module has:
+
+-  locally scoped variables/functions (avoiding global namespace pollution)
 -  while having access to other modules *public* variables/functions
 
 		//forming a module pattern
@@ -218,3 +223,6 @@ When organizing javascript code in a large code base, for maintenance reasons it
 		    //... do sth with myModule
 		})(myModule);
 
+- Practical examples of usage of module pattern can be found in the following files:
+	- [Module pattern usage example 1](../../05_dom_manipulation/exercise/task/native.js)
+	- [Module pattern usage example 2](../tasks/assets/main.js)

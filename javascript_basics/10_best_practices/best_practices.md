@@ -272,37 +272,3 @@ Avoid using the base Object type.
 The eval() function is used to run text as code. In almost all cases, it should not be necessary to use it.
 
 Because it allows arbitrary code to be run, it also represents a security problem.
-
-
-**Avoid Globals**
-
-You run the danger of your code being overwritten by any other JavaScript added to the page after yours if you declare global variables.
-
-Revealing Module Pattern: Keep consistent syntax and mix and match what to make global:
-
-    var module = function(){
-       var current = null;
-       var labels = {
-	      'home':'home',
-	      'articles':'articles',
-	      'contact':'contact'
-       };
-
-		var init = function(){
-		  //some code
-       };
-
-		var show = function(){
-      		current = 1;
-       };
-
-       var hide = function(){
-      		show();
-       }
-
-       return { init:init, show:show, current:current }
-    }();
-
-    module.init();
-
-In this example only module is global, and namespaces functions in itself, so that the functions themselves are not global. The module pattern is a good way to avoid global variables, making only one global variable that holds other variables and functions, similar to namespaces in other languages.
