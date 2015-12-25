@@ -48,6 +48,16 @@ Variables are declared using the `var` keyword.
 > **Never declare a variable without the `var` keyword!​**   
 > It will automatically become a global variable, and can cause problems.
 
+> **Try to always initialize variables when declaring them.​**   
+> This will: make code cleaner & avoid undefined variables.
+
+> **Never declare number, string, or boolean as Objects**
+> Always declare numbers, strings, or booleans as primitive values and not as objects.  
+> Declaring these types as objects slows down execution speed, and you can't compare primitives to objects.  
+> Good: `var x = "John";`   
+> Bad: `var y = new String("John");`  
+> `"John" === new String("John"); // This is false` 
+
 ## Data types
 - Primitives:​
 	- Boolean​
@@ -76,8 +86,10 @@ Example:
 	// Avoid declaration with the new keyword, it is not conventional
 	var arr3 = new Array(1, 2, 3); 
 
-> **Try to avoid arrays with different types and jagged arrays**.   
-> They bring complexity to code and are rarely useful.
+> **Try to avoid arrays with multiple types and jagged arrays**.   
+> They bring complexity to code and are rarely useful.  
+> Avoid multiple types: `["b", 4, true]`.   
+> Avoid jagged arrays: `[[1, 2], [1, 2, 3, 4], [1]]`
 
 
 ### Equality

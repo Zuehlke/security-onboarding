@@ -152,3 +152,16 @@
 		</tr>
 	</tbody>
 </table>
+
+## Best Practices ##
+
+You may come upon the eval function. It is used to evaluate any string as JavaScript code. Example:
+
+	var someText = "4 + 5";
+	var a = eval(someText); // Here a === 9
+
+The eval() function is used to run text as code. In almost all cases, it should not be necessary to use it.
+
+Because it allows arbitrary code to be run, it also represents a security problem.
+
+> **Avoid using eval() function!**
