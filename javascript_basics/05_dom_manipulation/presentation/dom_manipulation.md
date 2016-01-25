@@ -103,7 +103,7 @@ Your Javascript code can also create new windows and interact with them. For eve
 	// call a method on the created window object
 	w.alert('Hello');
 	
-	// access the opener of the window (current window)
+	// access the window that created w (current window)
 	w.opener;
 
 	// close the opened window
@@ -391,10 +391,10 @@ Common use case of the <code>document</code> object is locating and modifying a 
 					templateParagraph.innerHTML = 'From template.'
 					parent.appendChild(templateParagraph);				
 	
-					// we have created new DOM objects from a string
-					// if we want to copy an existing DOM object we can use cloneNode()
+					// we have created new DOM objects from a string.
+					// if we want to copy an existing DOM object we can call cloneNode().
 					// parameter passed to the cloneNode method defines if we want to 
-					// perform a deep copy of the node
+					// perform a deep copy of the node.
 					// var cloned = templateParagraph.cloneNode(true);
 				});
 			</script>
@@ -487,7 +487,7 @@ jQuery function <code>$()</code> returns a jQuery object which represents a set 
 	// check if element has the class 'active' attached
 	$('#container').hasClass('active');
 
-To you can also check whether a set of elements matches a certain selector using the <code>is()</code> function. Function will return true if at least one element in the set is a match.
+To check whether a set of elements matches a certain selector use the <code>is()</code> function. Function will return true if at least one element in the set is a match.
 
 	var element = $('#container');
 	
@@ -508,7 +508,7 @@ To access and modify state of the <code>value</code> attribute of HTML input ele
 	// set the value of the text field 'email'
 	$('#email').val('Please enter an email address.');
 
-Modifying document content using jQuery is straightforward. We can also register our script to run when DOM is ready using <code>$(document).ready()</code> function or it's shorthand <code>$(function() {...})</code>. The event is fired as soon the DOM structure of the page is constructed without waiting for all the resources (like images) to be loaded.
+Modifying document content using jQuery is straightforward. We can also register our script to run when DOM is ready using <code>$(document).ready()</code> function or it's shorthand form <code>$(function() {...})</code>. The event is fired as soon the DOM structure of the page is constructed without waiting for all the resources (like images) to be loaded.
 
 	<!DOCTYPE HTML>
 		<html>
@@ -565,9 +565,9 @@ Modifying document content using jQuery is straightforward. We can also register
 						templateParagraph.text('From template.');
 						$('body').append(templateParagraph);
 	
-						// we have created a new jQuery / DOM object from a string
+						// we have created a new jQuery / DOM object from a string.
 						// if we want to create a copy of an existing jQuery 
-						// object we could do the following
+						// object we could do the following:
 						// var clone = clonedParagraph.clone();
 					});
 				</script>

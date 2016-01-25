@@ -5,14 +5,6 @@
 		<link rel="stylesheet" type="text/css" href="shopping_cart.css" />
 	</head>
 	<body>
-		<!-- Populate the product table using the provided product list and product row template.
-			 User should be able to add products from the presented list to the shopping cart by clicking on a button next to the product name. Use the cart row template to populate the cart table.			 
-			 Shopping cart should be shown by clicking on the button in the upper right corner. 
-			 Shopping cart items should contain name of the product and amount.
-			 User should be able to remove the products from the cart by clicking on the button next to the amount.
-			 User should be able to close the cart by clicking on the Close button in the upper right corner of the cart window.
-			 If there is nothing in the cart the user should see the message "There are no items in the cart."
-		-->
 		<div class="header">
 			<span class="title">Shopping cart</span>
 			<button class="btn-shopping-cart" onclick="shoppingCartApp.showCart()">Show cart</button>
@@ -26,6 +18,7 @@
 				</tr>
 			</table>
 		</div>
+		<!-- modal dialog that contains the shopping cart table - hidden by default -->
 		<div class="shopping-cart modal">
 			<div>
 				<h2>Shopping cart</h2>
@@ -39,7 +32,7 @@
 				</table>
 			</div>
 		</div>
-		<!-- templates -->
+		<!-- template for generating rows in the product table -->
 		<script id="product-row-template" type="text/template">
 			<tr>
 				<td></td>
@@ -48,6 +41,7 @@
 				</td>
 			</tr>
 		</script>
+		<!-- template for generating rows in the cart table -->
 		<script id="shopping-cart-item-template" type="text/template">
 			<tr>
 				<td></td>
@@ -57,13 +51,14 @@
 				<td>
 			</tr>			
 		</script>
-		<!-- scripts -->
+		<!-- jquery reference -->
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<!-- script that loads a collection of products in the products variable -->
 		<script src="products.js"></script>
 		<!-- <script src="task/native.js"></script> -->
 		<!-- <script src="task/jquery.js"></script> -->
 		
-		<!-- initializing script -->
+		<!-- initializing script - init is called when the document is loaded -->
 		<script>
 			$(function() {
 				shoppingCartApp.init(products);
