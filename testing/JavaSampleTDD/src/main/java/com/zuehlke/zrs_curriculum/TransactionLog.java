@@ -5,7 +5,7 @@ import java.util.UUID;
 
 public interface TransactionLog {
 
-	Collection<Transaction> getTransactions();
+    Collection<Transaction> getTransactions();
 
-	Transaction addTransactionToLog(UUID fromAccountId, UUID toAccountId, int amount);
+    Transaction addTransactionToLog(UUID fromAccountId, UUID toAccountId, int amount);
 }
