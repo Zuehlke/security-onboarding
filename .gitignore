@@ -35,6 +35,4 @@ _ReSharper*/
 *.resharper
 [Tt]est[Rr]esult*
 *.sass-cache
-javascript_basics/ajax/task/myapp/node_modules/
-javascript_basics/js_debugging/myapp/node_modules/raw-body/node_modules/iconv-lite/encodings/internal.js
-javascript_basics/js_debugging/myapp/node_modules/
+node_modules/
