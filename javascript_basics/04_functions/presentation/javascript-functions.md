@@ -123,10 +123,6 @@ Since functions can be stored in variables and used as literals, functions can a
 			alert("I get executed after 1s");
 		}, 1000);
 
-	- [Exercise 1](../tasks/index.html#1)
-	- [Exercise 2](../tasks/index.html#2)
-
-
 - returned as a result of a function
 
 		function multiplier(factor) {
@@ -137,7 +133,6 @@ Since functions can be stored in variables and used as literals, functions can a
 		
 		var twice = multiplier(2);
 		twice(5) === 10;
-
 
 ### Quiz time:
 Quiz 1:
@@ -166,6 +161,14 @@ Quiz 2:
 	setTimeout(function() {
 		console.log(a);
 	}, 3); // ???
+	
+### Interactive exercises
+
+The following excercises should be opened in a web browser.
+When opened: an in-browser code editor will be show together with the explanation of the goal of the exercise and some hints regarding to what needs to be done
+
+- [Exercise 1](../tasks/index.html#1)
+- [Exercise 2](../tasks/index.html#2)
 
 
 **Best Practice: Avoid Globals**
@@ -226,3 +229,10 @@ When organizing javascript code in a large code base, in order to avoid pollutin
 - Practical examples of usage of module pattern can be found in the following files:
 	- [Module pattern usage example 1](../../05_dom_manipulation/exercise/task/native.js)
 	- [Module pattern usage example 2](../tasks/assets/main.js)
+
+
+### Quiz time solutions
+
+- Solution for quiz 1: Console would log: 1 and then 2
+- Solution for quiz 1: Console would log: 2
+

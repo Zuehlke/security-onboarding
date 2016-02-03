@@ -42,6 +42,7 @@ $(function () {
     var title = $(`#exercise-${exerciseId}-title`).html();
     var code = $(`#exercise-${exerciseId}-code`).html();
     var solution = $(`#exercise-${exerciseId}-solution`).html();
+    var solutionCode = $(`#exercise-${exerciseId}-solution-code`).html();
 
     if (!code || !title || !solution) {
         showError("Exercise does not exist");
@@ -49,8 +50,14 @@ $(function () {
     }
     renderTitleAndCode(exerciseId, title, codeTextArea, code);
 
-    var codeMirror = CodeMirror.fromTextArea(codeTextArea, {
+    var codeMirror = CodeMirror.fromTextArea( document.querySelector('.code'), {
         lineNumbers: true
+    });
+
+    $(".solution-code").html(solutionCode).hide();
+
+    $('.show-solution').click(function() {
+        $(".solution-code").toggle();
     });
 
     $(".go").on("click", function () {
