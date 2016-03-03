@@ -14,7 +14,7 @@ Bitbucket repository that we will use is `https://bitbucket.org/zuehlke/gitworks
 5. [Viewing the Commit history](#markdown-header-viewing-the-commit-history)  
 5. [Registering our repository to the GitCommander](#markdown-header-registering-our-repository-to-the-gitcommander)  
 6. [Create and commit one change](#markdown-header-create-and-commit-one-change)  
-7. [Create and commit multiple changes](#markdown-header-create-and-commit-mutliple-changes)  
+7. [Create and commit multiple changes](#markdown-header-create-and-commit-multiple-changes)  
 8. [Pull changes from remote repository](#markdown-header-pull-changes-from-remote-repository)  
 9. [Edit file content and commit changes](#markdown-header-edit-file-content-and-commit-changes)  
 10. [Edit deleted file](#markdown-header-edit-deleted-file)  
