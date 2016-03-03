@@ -22,7 +22,7 @@ Bitbucket repository that we will use is `https://bitbucket.org/zuehlke/gitworks
 12. [Revert file to previous commit](#revert)  
 13. [References](#references)  
 
-##Installation <a name="installation"></a>
+##<a name="installation"> Installation </a>
 
 Install Git - `https://git-scm.com/downloads`
 
