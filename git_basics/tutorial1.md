@@ -11,7 +11,7 @@ Bitbucket repository that we will use is `https://bitbucket.org/zuehlke/gitworks
 2. [Initial setup](#markdown-header-initial-setup)  
 3. [Cloning the project](#markdown-header-cloning-the-project)  
 4. [Checking the state of local repository](#markdown-header-checking-the-state-of-local-repository)  
-5. [Viewing the Commit history](#markdown-header-view-the-commit-history)  
+5. [Viewing the Commit history](#markdown-header-viewing-the-commit-history)  
 5. [Registering our repository to the GitCommander](#markdown-header-registering-our-repository-to-the-gitcommander)  
 6. [Create and commit one change](#markdown-header-create-and-commit-one-change)  
 7. [Create and commit multiple changes](#markdown-header-create-and-commit-mutliple-changes)  
@@ -65,7 +65,7 @@ You will be prompt to type in your password to complete the clone.
 After the clone command is finished you should see the new folder `gitworkshop` with it's content copied into your repository folder.  
 We will be working with the `gitworkshop` project so note that all other git commands will be executed inside this folder.
 
-##Checking the state of local repository <a name="stateofrepository"></a>
+##Checking the state of local repository
 
 Now we will use command `git status`. This command will generate an output that tells us the state of the local repository. It also produces the action suggestions that can be executed in that current state. 
 
