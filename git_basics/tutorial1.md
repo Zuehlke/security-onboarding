@@ -6,8 +6,23 @@ Note that you will be cloning and working with your own branch from the Bitbucke
 
 Bitbucket repository that we will use is `https://bitbucket.org/zuehlke/gitworkshop`
 
+##Table of content:  
+1. [Installation](#installation)  
+2. [Initial setup](#initialsetup)  
+3. [Cloning the project](#cloningtheproject)  
+4. [Checking the state of local repository](#stateofrepository)  
+5. [Viewing the Commit history](#commithistory)  
+5. [Registering our repository to the GitCommander](#registerrepository)  
+6. [Create and commit one change](#commitonechange)  
+7. [Create and commit multiple changes](#commitmultiplechanges)  
+8. [Pull changes from remote repository](#pullchanges)  
+9. [Edit file content and commit changes](#editfilecontent)  
+10. [Edit deleted file](#editdeletedfile)  
+11. [Resolving a content conflict](#resolveconflict)  
+12. [Revert file to previous commit](#revert)  
+13. [References](#references)  
 
-##Installation
+##Installation <a id="installation"></a>
 
 Install Git - `https://git-scm.com/downloads`
 
@@ -19,7 +34,7 @@ Edit System variable called Path to contain Git installation paths:
 
 Try to run `git --version.` If You are still having issues with running the git in command line don't hesitate to ask a colleague for help :)
 
-##Initial setup
+##Initial setup <a id="initialsetup"></a>
 
 Now we will setup our user for the git. You should use your Zuhlke mail for setting up the user.
 
@@ -29,7 +44,7 @@ Now we will setup our user for the git. You should use your Zuhlke mail for sett
 You can always check the config with the command `git config --list`. This will list all your current config settings for the git.  
 Note that if you call this command in your local repository list can contain more and different configuration setup.
 
-##Cloning the project
+##Cloning the project <a id="cloningtheproject"></a>
 
 Now let's navigate to the desires folder where we will clone our git project. For example I am using folder `C:\Users\ivma\Desktop\Git workshop\repo`.  
 You can initialize your local git repository in this folder by running the command `git init` and then `git remote add origin git@bitbucket.org:your_username/your_repo_name.git` to add your repository as a remote repository.  
@@ -50,7 +65,7 @@ You will be prompt to type in your password to complete the clone.
 After the clone command is finished you should see the new folder `gitworkshop` with it's content copied into your repository folder.  
 We will be working with the `gitworkshop` project so note that all other git commands will be executed inside this folder.
 
-##Checking the state of local repository
+##Checking the state of local repository <a id="stateofrepository"></a>
 
 Now we will use command `git status`. This command will generate an output that tells us the state of the local repository. It also produces the action suggestions that can be executed in that current state. 
 
@@ -64,7 +79,7 @@ Let's execute git status command in our working directory:
 
 As we can see it tells us on which branch are currently working on and what is the state of our working directory.
 
-##Viewing the Commit history:
+##Viewing the Commit history <a id="commithistory"></a>
 
 To view the commit history for the project we could call the `git log` command. This command outputs the list of commits with information about commit hash, author, date of commit and commit message.  
 It can be used to track changes for specific files that can be reverted later.  
@@ -77,7 +92,7 @@ Note: To navigate through commit history use `arrow keys` and to quit type `:q` 
 >
 >   start up project
 
-##REGISTERING OUR REPOSITORY TO THE GITCOMMANDER
+##Registering our repository to the GitCommander <a id="registerrepository"></a>
 
 Now let's register our repository branch to our helper server `GitCommander`. This server will provide some services that will help us to simulate the work of another developer on the same code that we are working on.
 
@@ -103,7 +118,7 @@ If you made a typo with some registration or just simply want to unregister you 
 
 This call will delete your registration with given `ID` from `GitCommander`.
 
-##CREATE AND COMMIT ONE NEW CHANGE
+##Create and commit one change <a id="commitonechange"></a>
 
 Now let's do some work on our project. We will create some changes and we will push them to the remote repository.
 Since the theme of our project is the Solar System let's do some planet discovering.
@@ -150,7 +165,7 @@ Now that we synchronized the changes from the remote repository let's push our c
 
 Now the world knows what have you discovered, planet explorer.
 
-##CREATE AND COMMIT MULTIPLE CHANGES
+##Create and commit multiple changes <a id="commitmultiplechanges"></a>
 
 Now that we now how to publish our changes let's create some new changes and push them to remote repository.
 
@@ -213,7 +228,7 @@ Now let's execute a new block of publishing commands to push our changes:
 
 Now we have publish new discovered planets to the world!
 
-##PULL CHANGES FROM REPOSITORY
+##Pull changes from remote repository <a id="pullchanges"></a>
 
 Let's check what discoveries have our colleague made.
 
@@ -229,7 +244,7 @@ OK... It seems that there is some "planet" file called pluto.js that was misplac
 
 As we already explained the common usage of command `git log` from now onward `git log` is optional.
 
-##EDIT FILE CONTENT AND COMMIT CHANGE##
+##Edit file content and commit changes <a id="editfilecontent"></a>
 
 Now let's put discovered planets on our solar system map represented in the `index.html` file.
 
@@ -318,7 +333,7 @@ Push your changes by executing this set of commands:
 
 As we already demonstrated the common usage of command `git status` from now onward this command is optional.
 
-##EDIT DELETED FILE
+##Edit deleted file <a id="editdeletedfile"></a>
 
 Open index.html to check if our planets have showed up. If there is a picture of a planet by hovering over it's image you can see the basic planet information.  
 Check the content of pluto.js file. It seems that it is missing the information about it's diameter. Edit it's content to look like this:  
@@ -371,7 +386,7 @@ Execute this block of commands to reintroduce the pluto.js into project again:
 
 >Note: this can be handy if somebody accidentally removes some file that is still needed in the project. This is one of the ways to retrieve the file state.
 
-##RESOLVING A CONFLICT
+##Resolving a content conflict <a id="resolveconflict"></a>
 
 Now we will simulate an editing conflict situation and resolve it by hand, and we will use poor Pluto to demonstrate this.  
 This is also called `merge conflict` as the git fails to automatically merge changes to the same file. `This conflict occurs when the same line is changed on the same file`.
@@ -532,7 +547,7 @@ Execute `git push`.
 
 As you can see we have successfully resolved our first merge conflict, even by hand. We still believe that the Pluto is a planet. Keep you hops up Pluto!
 
-##REVERT FILE TO LAST COMMIT
+##Revert file to previous commit <a id="revert"></a>
 
 Now we will demonstrate how to `revert` some file to the previous state to the previous commit, or in other words undo our changes.
 
@@ -555,6 +570,9 @@ Push the changes by calling the commands set:
 Now you have pushed the newest changes and our little planet exploration has ended.
 
 Congrats! You have experienced the basics of git. Of course there's more to come of what can we do with GIT.  
+
+##References <a id="references"></a>
+
 For more free exploration you can have a look at the outside resources:  
 `https://www.atlassian.com/git/tutorials/setting-up-a-repository/`  
 `http://git-scm.com/book/en/v2`  
