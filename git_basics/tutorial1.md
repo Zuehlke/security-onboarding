@@ -23,8 +23,8 @@ Try to run `git --version.` If You are still having issues with running the git 
 
 Now we will setup our user for the git. You should use your Zuhlke mail for setting up the user.
 
->git config --global user.name "John Doe"  
->git config --global user.email johndoe@zuehlke.com
+`git config --global user.name "John Doe"`  
+`git config --global user.email johndoe@zuehlke.com`
 
 You can always check the config with the command `git config --list`. This will list all your current config settings for the git.  
 Note that if you call this command in your local repository list can contain more and different configuration setup.
@@ -575,9 +575,9 @@ For more free exploration you can have a look at the outside resources:
 Try out some other scenarios with the help of GitCommander. 
 It supports:  
 * File deletion: `http://gitcommander.eu-central-1.elasticbeanstalk.com/GitServlet?action=removeFile&ID=<your_registration_ID>&fileName=<filename.fileextention>`  
-* Adding random content as new line in file:  `http://gitcommander.eu-central-1.elasticbeanstalk.com/GitServlet?action=addNewLineToFile&ID=<your_registration_ID>&fileName=<filename.fileextention>`
-* File line editing:  `http://gitcommander.eu-central-1.elasticbeanstalk.com/GitServlet?action=editFile&ID=<your_registration_ID>&fileName=<filename.fileextention>&lineNumber=<file_line_number_to_edit>&content=<content_to_write_in_file>`
-* Adding new random named file:  `http://gitcommander.eu-central-1.elasticbeanstalk.com/GitServlet?action=addNewFile&ID=<your_registration_ID>`
+* Adding random content as new line in file:  `http://gitcommander.eu-central-1.elasticbeanstalk.com/GitServlet?action=addNewLineToFile&ID=<your_registration_ID>&fileName=<filename.fileextention>`  
+* File line editing:  `http://gitcommander.eu-central-1.elasticbeanstalk.com/GitServlet?action=editFile&ID=<your_registration_ID>&fileName=<filename.fileextention>&lineNumber=<file_line_number_to_edit>&content=<content_to_write_in_file>`  
+* Adding new random named file:  `http://gitcommander.eu-central-1.elasticbeanstalk.com/GitServlet?action=addNewFile&ID=<your_registration_ID>`  
 
 Try recreating the conflict scenarios and resolve them.
 
