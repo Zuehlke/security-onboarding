@@ -110,19 +110,19 @@ Since the theme of our project is the Solar System let's do some planet discover
 
 Create new JavaScript file in the folder `gitworkshop/solar system/js` (create new folder named `js`) and name it name mercury.js with content:
 
-   var planetInfo = {name: 'Mercury', diameter: '4,878 km', orbitTime: '88 Earth days'}
-   
-   function getMercuryName() {
-	   return planetInfo.name;
-   }
-   
-   function getMercuryDiameter(){
-      return planetInfo.diameter;
-   }
-   
-   function getMercuryOrbitTime() {
-      return planetInfo.orbitTime;
-   }
+    var planetInfo = {name: 'Mercury', diameter: '4,878 km', orbitTime: '88 Earth days'}
+    
+    function getMercuryName() {
+ 	   return planetInfo.name;
+    }
+    
+    function getMercuryDiameter(){
+       return planetInfo.diameter;
+    }
+    
+    function getMercuryOrbitTime() {
+       return planetInfo.orbitTime;
+    }
 
 Congratulations! You have discovered Mercury planet. Now let's share your discovery with the world.  
 We will use a group of commands (called one at the time of course) to commit our changes from the working directory to our local repository and then push our changed local repository to remote repository.
@@ -157,51 +157,51 @@ Now that we now how to publish our changes let's create some new changes and pus
 Create these new JavaScript files in the folder folder `gitworkshop/solar system/js`:  
 File `venus.js` with content:
 
-   var planetInfo = {name: 'Venus', diameter: '12,104 km', orbitTime: '225 Earth days'}
-   
-   function getVenusName() {
-      return planetInfo.name;
-   }
-   
-   function getVenusDiameter(){
-	  return planetInfo.diameter;
-   }
-
-   function getVenusOrbitTime() {
-      return planetInfo.orbitTime;
-   }
+    var planetInfo = {name: 'Venus', diameter: '12,104 km', orbitTime: '225 Earth days'}
+    
+    function getVenusName() {
+       return planetInfo.name;
+    }
+    
+    function getVenusDiameter(){
+ 	  return planetInfo.diameter;
+    }
+ 
+    function getVenusOrbitTime() {
+       return planetInfo.orbitTime;
+    }
 
 File `earth.js` with content:
 
-   var planetInfo = {name: 'Earth', diameter: '12,760 km', orbitTime: '365 days'}
-   
-   function getEarthName() {
-      return planetInfo.name;
-   }
-   
-   function getEarthDiameter(){
-      return planetInfo.diameter;
-   }
-   
-   function getEarthOrbitTime() {
-      return planetInfo.orbitTime;
-   }
+    var planetInfo = {name: 'Earth', diameter: '12,760 km', orbitTime: '365 days'}
+    
+    function getEarthName() {
+       return planetInfo.name;
+    }
+    
+    function getEarthDiameter(){
+       return planetInfo.diameter;
+    }
+    
+    function getEarthOrbitTime() {
+       return planetInfo.orbitTime;
+    }
 
 and file `mars.js` with content:
 
-   var planetInfo = {name: 'Mars', diameter: '6,787 km', orbitTime: '687 Earth days'}
-   
-   function getMarsName() {
-      return planetInfo.name;
-   }
-   
-   function getMarsDiameter(){
-      return planetInfo.diameter;
-   }
-   
-   function getMarsOrbitTime() {
-      return planetInfo.orbitTime;
-   }
+    var planetInfo = {name: 'Mars', diameter: '6,787 km', orbitTime: '687 Earth days'}
+    
+    function getMarsName() {
+       return planetInfo.name;
+    }
+    
+    function getMarsDiameter(){
+       return planetInfo.diameter;
+    }
+    
+    function getMarsOrbitTime() {
+       return planetInfo.orbitTime;
+    }
 
 Now let's execute a new block of publishing commands to push our changes:  
 `git status` - Note that with this command we can check the working directory state and see if there is any files that we need to stage/commit.  
@@ -323,19 +323,19 @@ As we already demonstrated the common usage of command `git status` from now onw
 Open index.html to check if our planets have showed up. If there is a picture of a planet by hovering over it's image you can see the basic planet information.  
 Check the content of pluto.js file. It seems that it is missing the information about it's diameter. Edit it's content to look like this:  
 
-   var planetInfo = {name: 'Pluto', diameter: '2,301 km', orbitTime: '248 Earth years'}
+    var planetInfo = {name: 'Pluto', diameter: '2,301 km', orbitTime: '248 Earth years'}
    
-   function getPlutoName() {
-   return planetInfo.name;
-   }
-   
-   function getPlutoDiameter(){
-      return planetInfo.diameter;
-   }
-   
-   function getPlutoOrbitTime() {
-      return planetInfo.orbitTime;
-   }
+    function getPlutoName() {
+       return planetInfo.name;
+    }
+    
+    function getPlutoDiameter(){
+       return planetInfo.diameter;
+    }
+    
+    function getPlutoOrbitTime() {
+       return planetInfo.orbitTime;
+    }
 
 We will now demonstrate the effect of editing the file and publishing it which was deleted by the other developer.
 
