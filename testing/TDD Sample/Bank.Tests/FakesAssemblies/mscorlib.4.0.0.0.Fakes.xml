@@ -3925,6 +3925,150 @@
         <member name="P:System.Diagnostics.SymbolStore.Fakes.StubSymLanguageVendor.InstanceObserver">
             <summary>Gets or sets the instance observer.</summary>
         </member>
+        <member name="T:System.Diagnostics.Tracing.Fakes.StubEventDataAttribute">
+            <summary>Stub type of System.Diagnostics.Tracing.EventDataAttribute</summary>
+        </member>
+        <member name="M:System.Diagnostics.Tracing.Fakes.StubEventDataAttribute.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Diagnostics.Tracing.Fakes.StubEventDataAttribute.Equals(System.Object)">
+            <summary>Sets the stub of Attribute.Equals(Object obj)</summary>
+        </member>
+        <member name="F:System.Diagnostics.Tracing.Fakes.StubEventDataAttribute.EqualsObject">
+            <summary>Sets the stub of Attribute.Equals(Object obj)</summary>
+        </member>
+        <member name="M:System.Diagnostics.Tracing.Fakes.StubEventDataAttribute.GetHashCode">
+            <summary>Sets the stub of Attribute.GetHashCode()</summary>
+        </member>
+        <member name="F:System.Diagnostics.Tracing.Fakes.StubEventDataAttribute.GetHashCode01">
+            <summary>Sets the stub of Attribute.GetHashCode()</summary>
+        </member>
+        <member name="M:System.Diagnostics.Tracing.Fakes.StubEventDataAttribute.InitializeStub">
+            <summary>Initializes a new instance of type StubEventDataAttribute</summary>
+        </member>
+        <member name="M:System.Diagnostics.Tracing.Fakes.StubEventDataAttribute.IsDefaultAttribute">
+            <summary>Sets the stub of Attribute.IsDefaultAttribute()</summary>
+        </member>
+        <member name="F:System.Diagnostics.Tracing.Fakes.StubEventDataAttribute.IsDefaultAttribute01">
+            <summary>Sets the stub of Attribute.IsDefaultAttribute()</summary>
+        </member>
+        <member name="M:System.Diagnostics.Tracing.Fakes.StubEventDataAttribute.Match(System.Object)">
+            <summary>Sets the stub of Attribute.Match(Object obj)</summary>
+        </member>
+        <member name="F:System.Diagnostics.Tracing.Fakes.StubEventDataAttribute.MatchObject">
+            <summary>Sets the stub of Attribute.Match(Object obj)</summary>
+        </member>
+        <member name="F:System.Diagnostics.Tracing.Fakes.StubEventDataAttribute.TypeIdGet">
+            <summary>Sets the stub of Attribute.get_TypeId()</summary>
+        </member>
+        <member name="P:System.Diagnostics.Tracing.Fakes.StubEventDataAttribute.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:System.Diagnostics.Tracing.Fakes.StubEventDataAttribute.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:System.Diagnostics.Tracing.Fakes.StubEventDataAttribute.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="P:System.Diagnostics.Tracing.Fakes.StubEventDataAttribute.TypeId">
+            <summary>Sets the stub of Attribute.get_TypeId()</summary>
+        </member>
+        <member name="T:System.Diagnostics.Tracing.Fakes.StubEventFieldAttribute">
+            <summary>Stub type of System.Diagnostics.Tracing.EventFieldAttribute</summary>
+        </member>
+        <member name="M:System.Diagnostics.Tracing.Fakes.StubEventFieldAttribute.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Diagnostics.Tracing.Fakes.StubEventFieldAttribute.Equals(System.Object)">
+            <summary>Sets the stub of Attribute.Equals(Object obj)</summary>
+        </member>
+        <member name="F:System.Diagnostics.Tracing.Fakes.StubEventFieldAttribute.EqualsObject">
+            <summary>Sets the stub of Attribute.Equals(Object obj)</summary>
+        </member>
+        <member name="M:System.Diagnostics.Tracing.Fakes.StubEventFieldAttribute.GetHashCode">
+            <summary>Sets the stub of Attribute.GetHashCode()</summary>
+        </member>
+        <member name="F:System.Diagnostics.Tracing.Fakes.StubEventFieldAttribute.GetHashCode01">
+            <summary>Sets the stub of Attribute.GetHashCode()</summary>
+        </member>
+        <member name="M:System.Diagnostics.Tracing.Fakes.StubEventFieldAttribute.InitializeStub">
+            <summary>Initializes a new instance of type StubEventFieldAttribute</summary>
+        </member>
+        <member name="M:System.Diagnostics.Tracing.Fakes.StubEventFieldAttribute.IsDefaultAttribute">
+            <summary>Sets the stub of Attribute.IsDefaultAttribute()</summary>
+        </member>
+        <member name="F:System.Diagnostics.Tracing.Fakes.StubEventFieldAttribute.IsDefaultAttribute01">
+            <summary>Sets the stub of Attribute.IsDefaultAttribute()</summary>
+        </member>
+        <member name="M:System.Diagnostics.Tracing.Fakes.StubEventFieldAttribute.Match(System.Object)">
+            <summary>Sets the stub of Attribute.Match(Object obj)</summary>
+        </member>
+        <member name="F:System.Diagnostics.Tracing.Fakes.StubEventFieldAttribute.MatchObject">
+            <summary>Sets the stub of Attribute.Match(Object obj)</summary>
+        </member>
+        <member name="F:System.Diagnostics.Tracing.Fakes.StubEventFieldAttribute.TypeIdGet">
+            <summary>Sets the stub of Attribute.get_TypeId()</summary>
+        </member>
+        <member name="P:System.Diagnostics.Tracing.Fakes.StubEventFieldAttribute.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:System.Diagnostics.Tracing.Fakes.StubEventFieldAttribute.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:System.Diagnostics.Tracing.Fakes.StubEventFieldAttribute.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="P:System.Diagnostics.Tracing.Fakes.StubEventFieldAttribute.TypeId">
+            <summary>Sets the stub of Attribute.get_TypeId()</summary>
+        </member>
+        <member name="T:System.Diagnostics.Tracing.Fakes.StubEventIgnoreAttribute">
+            <summary>Stub type of System.Diagnostics.Tracing.EventIgnoreAttribute</summary>
+        </member>
+        <member name="M:System.Diagnostics.Tracing.Fakes.StubEventIgnoreAttribute.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Diagnostics.Tracing.Fakes.StubEventIgnoreAttribute.Equals(System.Object)">
+            <summary>Sets the stub of Attribute.Equals(Object obj)</summary>
+        </member>
+        <member name="F:System.Diagnostics.Tracing.Fakes.StubEventIgnoreAttribute.EqualsObject">
+            <summary>Sets the stub of Attribute.Equals(Object obj)</summary>
+        </member>
+        <member name="M:System.Diagnostics.Tracing.Fakes.StubEventIgnoreAttribute.GetHashCode">
+            <summary>Sets the stub of Attribute.GetHashCode()</summary>
+        </member>
+        <member name="F:System.Diagnostics.Tracing.Fakes.StubEventIgnoreAttribute.GetHashCode01">
+            <summary>Sets the stub of Attribute.GetHashCode()</summary>
+        </member>
+        <member name="M:System.Diagnostics.Tracing.Fakes.StubEventIgnoreAttribute.InitializeStub">
+            <summary>Initializes a new instance of type StubEventIgnoreAttribute</summary>
+        </member>
+        <member name="M:System.Diagnostics.Tracing.Fakes.StubEventIgnoreAttribute.IsDefaultAttribute">
+            <summary>Sets the stub of Attribute.IsDefaultAttribute()</summary>
+        </member>
+        <member name="F:System.Diagnostics.Tracing.Fakes.StubEventIgnoreAttribute.IsDefaultAttribute01">
+            <summary>Sets the stub of Attribute.IsDefaultAttribute()</summary>
+        </member>
+        <member name="M:System.Diagnostics.Tracing.Fakes.StubEventIgnoreAttribute.Match(System.Object)">
+            <summary>Sets the stub of Attribute.Match(Object obj)</summary>
+        </member>
+        <member name="F:System.Diagnostics.Tracing.Fakes.StubEventIgnoreAttribute.MatchObject">
+            <summary>Sets the stub of Attribute.Match(Object obj)</summary>
+        </member>
+        <member name="F:System.Diagnostics.Tracing.Fakes.StubEventIgnoreAttribute.TypeIdGet">
+            <summary>Sets the stub of Attribute.get_TypeId()</summary>
+        </member>
+        <member name="P:System.Diagnostics.Tracing.Fakes.StubEventIgnoreAttribute.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:System.Diagnostics.Tracing.Fakes.StubEventIgnoreAttribute.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:System.Diagnostics.Tracing.Fakes.StubEventIgnoreAttribute.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="P:System.Diagnostics.Tracing.Fakes.StubEventIgnoreAttribute.TypeId">
+            <summary>Sets the stub of Attribute.get_TypeId()</summary>
+        </member>
         <member name="T:System.Diagnostics.Tracing.Fakes.StubEventListener">
             <summary>Stub type of System.Diagnostics.Tracing.EventListener</summary>
         </member>
@@ -3968,6 +4112,21 @@
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:System.Diagnostics.Tracing.Fakes.StubEventSource.#ctor(System.Boolean)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Diagnostics.Tracing.Fakes.StubEventSource.#ctor(System.Diagnostics.Tracing.EventSourceSettings)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Diagnostics.Tracing.Fakes.StubEventSource.#ctor(System.String)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Diagnostics.Tracing.Fakes.StubEventSource.#ctor(System.Diagnostics.Tracing.EventSourceSettings,System.String[])">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Diagnostics.Tracing.Fakes.StubEventSource.#ctor(System.String,System.Diagnostics.Tracing.EventSourceSettings)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Diagnostics.Tracing.Fakes.StubEventSource.#ctor(System.String,System.Diagnostics.Tracing.EventSourceSettings,System.String[])">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:System.Diagnostics.Tracing.Fakes.StubEventSource.Dispose(System.Boolean)">
@@ -4242,12 +4401,6 @@
         </member>
         <member name="P:System.Fakes.ShimGuid.HexToCharInt32">
             <summary>Sets the shim of Guid.HexToChar(Int32 a)</summary>
-        </member>
-        <member name="P:System.Fakes.ShimGuid.HexsToCharsCharArrayInt32Int32Int32">
-            <summary>Sets the shim of Guid.HexsToChars(Char[] guidChars, Int32 offset, Int32 a, Int32 b)</summary>
-        </member>
-        <member name="P:System.Fakes.ShimGuid.HexsToCharsCharArrayInt32Int32Int32Boolean">
-            <summary>Sets the shim of Guid.HexsToChars(Char[] guidChars, Int32 offset, Int32 a, Int32 b, Boolean hex)</summary>
         </member>
         <member name="P:System.Fakes.ShimGuid.InequalityOpGuidGuid">
             <summary>Sets the shim of Guid.op_Inequality(Guid a, Guid b)</summary>
@@ -6252,6 +6405,60 @@
         </member>
         <member name="P:System.Fakes.StubFormatException.StackTrace">
             <summary>Sets the stub of Exception.get_StackTrace()</summary>
+        </member>
+        <member name="T:System.Fakes.StubFormattableString">
+            <summary>Stub type of System.FormattableString</summary>
+        </member>
+        <member name="M:System.Fakes.StubFormattableString.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="F:System.Fakes.StubFormattableString.ArgumentCountGet">
+            <summary>Sets the stub of FormattableString.get_ArgumentCount()</summary>
+        </member>
+        <member name="F:System.Fakes.StubFormattableString.FormatGet">
+            <summary>Sets the stub of FormattableString.get_Format()</summary>
+        </member>
+        <member name="M:System.Fakes.StubFormattableString.GetArgument(System.Int32)">
+            <summary>Sets the stub of FormattableString.GetArgument(Int32 index)</summary>
+        </member>
+        <member name="F:System.Fakes.StubFormattableString.GetArgumentInt32">
+            <summary>Sets the stub of FormattableString.GetArgument(Int32 index)</summary>
+        </member>
+        <member name="M:System.Fakes.StubFormattableString.GetArguments">
+            <summary>Sets the stub of FormattableString.GetArguments()</summary>
+        </member>
+        <member name="F:System.Fakes.StubFormattableString.GetArguments01">
+            <summary>Sets the stub of FormattableString.GetArguments()</summary>
+        </member>
+        <member name="M:System.Fakes.StubFormattableString.InitializeStub">
+            <summary>Initializes a new instance of type StubFormattableString</summary>
+        </member>
+        <member name="M:System.Fakes.StubFormattableString.ToString">
+            <summary>Sets the stub of FormattableString.ToString()</summary>
+        </member>
+        <member name="M:System.Fakes.StubFormattableString.ToString(System.IFormatProvider)">
+            <summary>Sets the stub of FormattableString.ToString(IFormatProvider formatProvider)</summary>
+        </member>
+        <member name="F:System.Fakes.StubFormattableString.ToString01">
+            <summary>Sets the stub of FormattableString.ToString()</summary>
+        </member>
+        <member name="F:System.Fakes.StubFormattableString.ToStringIFormatProvider">
+            <summary>Sets the stub of FormattableString.ToString(IFormatProvider formatProvider)</summary>
+        </member>
+        <member name="P:System.Fakes.StubFormattableString.ArgumentCount">
+            <summary>Sets the stub of FormattableString.get_ArgumentCount()</summary>
+        </member>
+        <member name="P:System.Fakes.StubFormattableString.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:System.Fakes.StubFormattableString.Format">
+            <summary>Sets the stub of FormattableString.get_Format()</summary>
+        </member>
+        <member name="P:System.Fakes.StubFormattableString.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:System.Fakes.StubFormattableString.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
         </member>
         <member name="T:System.Fakes.StubIAppDomainSetup">
             <summary>Stub type of System.IAppDomainSetup</summary>
@@ -15220,9 +15427,6 @@
         <member name="P:System.IO.Fakes.ShimFileStream.SetLengthInt64">
             <summary>Sets the shim of FileStream.SetLength(Int64 value)</summary>
         </member>
-        <member name="P:System.IO.Fakes.ShimFileStream.StaticConstructor">
-            <summary>Sets the shim of FileStream.FileStream()</summary>
-        </member>
         <member name="P:System.IO.Fakes.ShimFileStream.UnlockInt64Int64">
             <summary>Sets the shim of FileStream.Unlock(Int64 position, Int64 length)</summary>
         </member>
@@ -15243,9 +15447,6 @@
         </member>
         <member name="P:System.IO.Fakes.ShimFileStream.WriteCoreByteArrayInt32Int32">
             <summary>Sets the shim of FileStream.WriteCore(Byte[] buffer, Int32 offset, Int32 count)</summary>
-        </member>
-        <member name="P:System.IO.Fakes.ShimFileStream._FlushAsyncb__0Object">
-            <summary>Sets the shim of FileStream.&lt;FlushAsync&gt;b__0(Object state)</summary>
         </member>
         <member name="T:System.IO.Fakes.ShimFileStream.AllInstances">
             <summary>Define shims for all instances members</summary>
@@ -15493,6 +15694,9 @@
         <member name="P:System.IO.Fakes.ShimMemoryStream.ToArray">
             <summary>Sets the shim of MemoryStream.ToArray()</summary>
         </member>
+        <member name="P:System.IO.Fakes.ShimMemoryStream.TryGetBufferArraySegmentOfByteOut">
+            <summary>Sets the shim of MemoryStream.TryGetBuffer(ArraySegment`1&lt;Byte&gt;&amp; buffer)</summary>
+        </member>
         <member name="P:System.IO.Fakes.ShimMemoryStream.WriteAsyncByteArrayInt32Int32CancellationToken">
             <summary>Sets the shim of MemoryStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)</summary>
         </member>
@@ -15585,6 +15789,9 @@
         </member>
         <member name="P:System.IO.Fakes.ShimMemoryStream.AllInstances.ToArray">
             <summary>Sets the shim of MemoryStream.ToArray()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimMemoryStream.AllInstances.TryGetBufferArraySegmentOfByteOut">
+            <summary>Sets the shim of MemoryStream.TryGetBuffer(ArraySegment`1&lt;Byte&gt;&amp; buffer)</summary>
         </member>
         <member name="P:System.IO.Fakes.ShimMemoryStream.AllInstances.WriteAsyncByteArrayInt32Int32CancellationToken">
             <summary>Sets the shim of MemoryStream.WriteAsync(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken)</summary>
@@ -15738,24 +15945,6 @@
         </member>
         <member name="P:System.IO.Fakes.ShimStream.WriteTimeoutSetInt32">
             <summary>Sets the shim of Stream.set_WriteTimeout(Int32 value)</summary>
-        </member>
-        <member name="P:System.IO.Fakes.ShimStream._BeginEndReadAsyncb__eStreamIAsyncResult">
-            <summary>Sets the shim of Stream.&lt;BeginEndReadAsync&gt;b__e(Stream stream, IAsyncResult asyncResult)</summary>
-        </member>
-        <member name="P:System.IO.Fakes.ShimStream._BeginReadInternalb__aObject">
-            <summary>Sets the shim of Stream.&lt;BeginReadInternal&gt;b__a(Object param0)</summary>
-        </member>
-        <member name="P:System.IO.Fakes.ShimStream._BeginWriteInternalb__11Object">
-            <summary>Sets the shim of Stream.&lt;BeginWriteInternal&gt;b__11(Object param0)</summary>
-        </member>
-        <member name="P:System.IO.Fakes.ShimStream._EnsureAsyncActiveSemaphoreInitializedb__0">
-            <summary>Sets the shim of Stream.&lt;EnsureAsyncActiveSemaphoreInitialized&gt;b__0()</summary>
-        </member>
-        <member name="P:System.IO.Fakes.ShimStream._FlushAsyncb__8Object">
-            <summary>Sets the shim of Stream.&lt;FlushAsync&gt;b__8(Object state)</summary>
-        </member>
-        <member name="P:System.IO.Fakes.ShimStream._RunReadWriteTaskWhenReadyb__13TaskObject">
-            <summary>Sets the shim of Stream.&lt;RunReadWriteTaskWhenReady&gt;b__13(Task t, Object state)</summary>
         </member>
         <member name="T:System.IO.Fakes.ShimStream.AllInstances">
             <summary>Define shims for all instances members</summary>
@@ -15978,6 +16167,9 @@
         </member>
         <member name="P:System.IO.Fakes.ShimStreamReader.Decoder_PropGet">
             <summary>Sets the shim of StreamReader.get_Decoder_Prop()</summary>
+        </member>
+        <member name="P:System.IO.Fakes.ShimStreamReader.DefaultBufferSizeGet">
+            <summary>Sets the shim of StreamReader.get_DefaultBufferSize()</summary>
         </member>
         <member name="P:System.IO.Fakes.ShimStreamReader.DetectEncoding">
             <summary>Sets the shim of StreamReader.DetectEncoding()</summary>
@@ -16525,12 +16717,6 @@
         <member name="P:System.IO.Fakes.ShimTextReader.SynchronizedTextReader">
             <summary>Sets the shim of TextReader.Synchronized(TextReader reader)</summary>
         </member>
-        <member name="P:System.IO.Fakes.ShimTextReader._cctorb__bObject">
-            <summary>Sets the shim of TextReader.&lt;.cctor&gt;b__b(Object state)</summary>
-        </member>
-        <member name="P:System.IO.Fakes.ShimTextReader._cctorb__cObject">
-            <summary>Sets the shim of TextReader.&lt;.cctor&gt;b__c(Object state)</summary>
-        </member>
         <member name="T:System.IO.Fakes.ShimTextReader.AllInstances">
             <summary>Define shims for all instances members</summary>
         </member>
@@ -16764,27 +16950,6 @@
         </member>
         <member name="P:System.IO.Fakes.ShimTextWriter.WriteUInt64">
             <summary>Sets the shim of TextWriter.Write(UInt64 value)</summary>
-        </member>
-        <member name="P:System.IO.Fakes.ShimTextWriter._cctorb__0Object">
-            <summary>Sets the shim of TextWriter.&lt;.cctor&gt;b__0(Object state)</summary>
-        </member>
-        <member name="P:System.IO.Fakes.ShimTextWriter._cctorb__1Object">
-            <summary>Sets the shim of TextWriter.&lt;.cctor&gt;b__1(Object state)</summary>
-        </member>
-        <member name="P:System.IO.Fakes.ShimTextWriter._cctorb__2Object">
-            <summary>Sets the shim of TextWriter.&lt;.cctor&gt;b__2(Object state)</summary>
-        </member>
-        <member name="P:System.IO.Fakes.ShimTextWriter._cctorb__3Object">
-            <summary>Sets the shim of TextWriter.&lt;.cctor&gt;b__3(Object state)</summary>
-        </member>
-        <member name="P:System.IO.Fakes.ShimTextWriter._cctorb__4Object">
-            <summary>Sets the shim of TextWriter.&lt;.cctor&gt;b__4(Object state)</summary>
-        </member>
-        <member name="P:System.IO.Fakes.ShimTextWriter._cctorb__5Object">
-            <summary>Sets the shim of TextWriter.&lt;.cctor&gt;b__5(Object state)</summary>
-        </member>
-        <member name="P:System.IO.Fakes.ShimTextWriter._cctorb__6Object">
-            <summary>Sets the shim of TextWriter.&lt;.cctor&gt;b__6(Object state)</summary>
         </member>
         <member name="T:System.IO.Fakes.ShimTextWriter.AllInstances">
             <summary>Define shims for all instances members</summary>
@@ -18124,10 +18289,10 @@
         <member name="M:System.IO.Fakes.StubMemoryStream.#ctor">
             <summary>Initializes a new instance</summary>
         </member>
-        <member name="M:System.IO.Fakes.StubMemoryStream.#ctor(System.Int32)">
+        <member name="M:System.IO.Fakes.StubMemoryStream.#ctor(System.Byte[])">
             <summary>Initializes a new instance</summary>
         </member>
-        <member name="M:System.IO.Fakes.StubMemoryStream.#ctor(System.Byte[])">
+        <member name="M:System.IO.Fakes.StubMemoryStream.#ctor(System.Int32)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:System.IO.Fakes.StubMemoryStream.#ctor(System.Byte[],System.Boolean)">
@@ -18279,6 +18444,12 @@
         </member>
         <member name="F:System.IO.Fakes.StubMemoryStream.ToArray01">
             <summary>Sets the stub of MemoryStream.ToArray()</summary>
+        </member>
+        <member name="M:System.IO.Fakes.StubMemoryStream.TryGetBuffer(System.ArraySegment{System.Byte}@)">
+            <summary>Sets the stub of MemoryStream.TryGetBuffer(ArraySegment`1&lt;Byte&gt;&amp; buffer)</summary>
+        </member>
+        <member name="F:System.IO.Fakes.StubMemoryStream.TryGetBufferArraySegmentOfByteOut">
+            <summary>Sets the stub of MemoryStream.TryGetBuffer(ArraySegment`1&lt;Byte&gt;&amp; buffer)</summary>
         </member>
         <member name="M:System.IO.Fakes.StubMemoryStream.Write(System.Byte[],System.Int32,System.Int32)">
             <summary>Sets the stub of MemoryStream.Write(Byte[] buffer, Int32 offset, Int32 count)</summary>
@@ -35203,6 +35374,12 @@
         <member name="T:System.Security.AccessControl.Fakes.StubObjectSecurity">
             <summary>Stub type of System.Security.AccessControl.ObjectSecurity</summary>
         </member>
+        <member name="M:System.Security.AccessControl.Fakes.StubObjectSecurity.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Security.AccessControl.Fakes.StubObjectSecurity.#ctor(System.Security.AccessControl.CommonSecurityDescriptor)">
+            <summary>Initializes a new instance</summary>
+        </member>
         <member name="M:System.Security.AccessControl.Fakes.StubObjectSecurity.#ctor(System.Boolean,System.Boolean)">
             <summary>Initializes a new instance</summary>
         </member>
@@ -35305,7 +35482,19 @@
         <member name="T:System.Security.Claims.Fakes.StubClaim">
             <summary>Stub type of System.Security.Claims.Claim</summary>
         </member>
+        <member name="M:System.Security.Claims.Fakes.StubClaim.#ctor(System.IO.BinaryReader)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Security.Claims.Fakes.StubClaim.#ctor(System.Security.Claims.Claim)">
+            <summary>Initializes a new instance</summary>
+        </member>
         <member name="M:System.Security.Claims.Fakes.StubClaim.#ctor(System.String,System.String)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Security.Claims.Fakes.StubClaim.#ctor(System.IO.BinaryReader,System.Security.Claims.ClaimsIdentity)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Security.Claims.Fakes.StubClaim.#ctor(System.Security.Claims.Claim,System.Security.Claims.ClaimsIdentity)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:System.Security.Claims.Fakes.StubClaim.#ctor(System.String,System.String,System.String)">
@@ -35332,6 +35521,9 @@
         <member name="F:System.Security.Claims.Fakes.StubClaim.CloneClaimsIdentity">
             <summary>Sets the stub of Claim.Clone(ClaimsIdentity identity)</summary>
         </member>
+        <member name="F:System.Security.Claims.Fakes.StubClaim.CustomSerializationDataGet">
+            <summary>Sets the stub of Claim.get_CustomSerializationData()</summary>
+        </member>
         <member name="M:System.Security.Claims.Fakes.StubClaim.InitializeStub">
             <summary>Initializes a new instance of type StubClaim</summary>
         </member>
@@ -35341,8 +35533,23 @@
         <member name="F:System.Security.Claims.Fakes.StubClaim.ToString01">
             <summary>Sets the stub of Claim.ToString()</summary>
         </member>
+        <member name="M:System.Security.Claims.Fakes.StubClaim.WriteTo(System.IO.BinaryWriter)">
+            <summary>Sets the stub of Claim.WriteTo(BinaryWriter writer)</summary>
+        </member>
+        <member name="M:System.Security.Claims.Fakes.StubClaim.WriteTo(System.IO.BinaryWriter,System.Byte[])">
+            <summary>Sets the stub of Claim.WriteTo(BinaryWriter writer, Byte[] userData)</summary>
+        </member>
+        <member name="F:System.Security.Claims.Fakes.StubClaim.WriteToBinaryWriter">
+            <summary>Sets the stub of Claim.WriteTo(BinaryWriter writer)</summary>
+        </member>
+        <member name="F:System.Security.Claims.Fakes.StubClaim.WriteToBinaryWriterByteArray">
+            <summary>Sets the stub of Claim.WriteTo(BinaryWriter writer, Byte[] userData)</summary>
+        </member>
         <member name="P:System.Security.Claims.Fakes.StubClaim.CallBase">
             <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:System.Security.Claims.Fakes.StubClaim.CustomSerializationData">
+            <summary>Sets the stub of Claim.get_CustomSerializationData()</summary>
         </member>
         <member name="P:System.Security.Claims.Fakes.StubClaim.InstanceBehavior">
             <summary>Gets or sets the instance behavior.</summary>
@@ -35362,7 +35569,13 @@
         <member name="M:System.Security.Claims.Fakes.StubClaimsIdentity.#ctor(System.Collections.Generic.IEnumerable{System.Security.Claims.Claim})">
             <summary>Initializes a new instance</summary>
         </member>
+        <member name="M:System.Security.Claims.Fakes.StubClaimsIdentity.#ctor(System.IO.BinaryReader)">
+            <summary>Initializes a new instance</summary>
+        </member>
         <member name="M:System.Security.Claims.Fakes.StubClaimsIdentity.#ctor(System.Runtime.Serialization.SerializationInfo)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Security.Claims.Fakes.StubClaimsIdentity.#ctor(System.Security.Claims.ClaimsIdentity)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:System.Security.Claims.Fakes.StubClaimsIdentity.#ctor(System.Security.Principal.IIdentity)">
@@ -35409,6 +35622,15 @@
         </member>
         <member name="F:System.Security.Claims.Fakes.StubClaimsIdentity.Clone01">
             <summary>Sets the stub of ClaimsIdentity.Clone()</summary>
+        </member>
+        <member name="M:System.Security.Claims.Fakes.StubClaimsIdentity.CreateClaim(System.IO.BinaryReader)">
+            <summary>Sets the stub of ClaimsIdentity.CreateClaim(BinaryReader reader)</summary>
+        </member>
+        <member name="F:System.Security.Claims.Fakes.StubClaimsIdentity.CreateClaimBinaryReader">
+            <summary>Sets the stub of ClaimsIdentity.CreateClaim(BinaryReader reader)</summary>
+        </member>
+        <member name="F:System.Security.Claims.Fakes.StubClaimsIdentity.CustomSerializationDataGet">
+            <summary>Sets the stub of ClaimsIdentity.get_CustomSerializationData()</summary>
         </member>
         <member name="M:System.Security.Claims.Fakes.StubClaimsIdentity.FindAll(System.String)">
             <summary>Sets the stub of ClaimsIdentity.FindAll(String type)</summary>
@@ -35473,6 +35695,18 @@
         <member name="F:System.Security.Claims.Fakes.StubClaimsIdentity.TryRemoveClaimClaim">
             <summary>Sets the stub of ClaimsIdentity.TryRemoveClaim(Claim claim)</summary>
         </member>
+        <member name="M:System.Security.Claims.Fakes.StubClaimsIdentity.WriteTo(System.IO.BinaryWriter)">
+            <summary>Sets the stub of ClaimsIdentity.WriteTo(BinaryWriter writer)</summary>
+        </member>
+        <member name="M:System.Security.Claims.Fakes.StubClaimsIdentity.WriteTo(System.IO.BinaryWriter,System.Byte[])">
+            <summary>Sets the stub of ClaimsIdentity.WriteTo(BinaryWriter writer, Byte[] userData)</summary>
+        </member>
+        <member name="F:System.Security.Claims.Fakes.StubClaimsIdentity.WriteToBinaryWriter">
+            <summary>Sets the stub of ClaimsIdentity.WriteTo(BinaryWriter writer)</summary>
+        </member>
+        <member name="F:System.Security.Claims.Fakes.StubClaimsIdentity.WriteToBinaryWriterByteArray">
+            <summary>Sets the stub of ClaimsIdentity.WriteTo(BinaryWriter writer, Byte[] userData)</summary>
+        </member>
         <member name="P:System.Security.Claims.Fakes.StubClaimsIdentity.AuthenticationType">
             <summary>Sets the stub of ClaimsIdentity.get_AuthenticationType()</summary>
         </member>
@@ -35481,6 +35715,9 @@
         </member>
         <member name="P:System.Security.Claims.Fakes.StubClaimsIdentity.Claims">
             <summary>Sets the stub of ClaimsIdentity.get_Claims()</summary>
+        </member>
+        <member name="P:System.Security.Claims.Fakes.StubClaimsIdentity.CustomSerializationData">
+            <summary>Sets the stub of ClaimsIdentity.get_CustomSerializationData()</summary>
         </member>
         <member name="P:System.Security.Claims.Fakes.StubClaimsIdentity.InstanceBehavior">
             <summary>Gets or sets the instance behavior.</summary>
@@ -35501,6 +35738,9 @@
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:System.Security.Claims.Fakes.StubClaimsPrincipal.#ctor(System.Collections.Generic.IEnumerable{System.Security.Claims.ClaimsIdentity})">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Security.Claims.Fakes.StubClaimsPrincipal.#ctor(System.IO.BinaryReader)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:System.Security.Claims.Fakes.StubClaimsPrincipal.#ctor(System.Security.Principal.IIdentity)">
@@ -35526,6 +35766,21 @@
         </member>
         <member name="F:System.Security.Claims.Fakes.StubClaimsPrincipal.ClaimsGet">
             <summary>Sets the stub of ClaimsPrincipal.get_Claims()</summary>
+        </member>
+        <member name="M:System.Security.Claims.Fakes.StubClaimsPrincipal.Clone">
+            <summary>Sets the stub of ClaimsPrincipal.Clone()</summary>
+        </member>
+        <member name="F:System.Security.Claims.Fakes.StubClaimsPrincipal.Clone01">
+            <summary>Sets the stub of ClaimsPrincipal.Clone()</summary>
+        </member>
+        <member name="M:System.Security.Claims.Fakes.StubClaimsPrincipal.CreateClaimsIdentity(System.IO.BinaryReader)">
+            <summary>Sets the stub of ClaimsPrincipal.CreateClaimsIdentity(BinaryReader reader)</summary>
+        </member>
+        <member name="F:System.Security.Claims.Fakes.StubClaimsPrincipal.CreateClaimsIdentityBinaryReader">
+            <summary>Sets the stub of ClaimsPrincipal.CreateClaimsIdentity(BinaryReader reader)</summary>
+        </member>
+        <member name="F:System.Security.Claims.Fakes.StubClaimsPrincipal.CustomSerializationDataGet">
+            <summary>Sets the stub of ClaimsPrincipal.get_CustomSerializationData()</summary>
         </member>
         <member name="M:System.Security.Claims.Fakes.StubClaimsPrincipal.FindAll(System.String)">
             <summary>Sets the stub of ClaimsPrincipal.FindAll(String type)</summary>
@@ -35584,11 +35839,26 @@
         <member name="F:System.Security.Claims.Fakes.StubClaimsPrincipal.IsInRoleString">
             <summary>Sets the stub of ClaimsPrincipal.IsInRole(String role)</summary>
         </member>
+        <member name="M:System.Security.Claims.Fakes.StubClaimsPrincipal.WriteTo(System.IO.BinaryWriter)">
+            <summary>Sets the stub of ClaimsPrincipal.WriteTo(BinaryWriter writer)</summary>
+        </member>
+        <member name="M:System.Security.Claims.Fakes.StubClaimsPrincipal.WriteTo(System.IO.BinaryWriter,System.Byte[])">
+            <summary>Sets the stub of ClaimsPrincipal.WriteTo(BinaryWriter writer, Byte[] userData)</summary>
+        </member>
+        <member name="F:System.Security.Claims.Fakes.StubClaimsPrincipal.WriteToBinaryWriter">
+            <summary>Sets the stub of ClaimsPrincipal.WriteTo(BinaryWriter writer)</summary>
+        </member>
+        <member name="F:System.Security.Claims.Fakes.StubClaimsPrincipal.WriteToBinaryWriterByteArray">
+            <summary>Sets the stub of ClaimsPrincipal.WriteTo(BinaryWriter writer, Byte[] userData)</summary>
+        </member>
         <member name="P:System.Security.Claims.Fakes.StubClaimsPrincipal.CallBase">
             <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
         </member>
         <member name="P:System.Security.Claims.Fakes.StubClaimsPrincipal.Claims">
             <summary>Sets the stub of ClaimsPrincipal.get_Claims()</summary>
+        </member>
+        <member name="P:System.Security.Claims.Fakes.StubClaimsPrincipal.CustomSerializationData">
+            <summary>Sets the stub of ClaimsPrincipal.get_CustomSerializationData()</summary>
         </member>
         <member name="P:System.Security.Claims.Fakes.StubClaimsPrincipal.Identities">
             <summary>Sets the stub of ClaimsPrincipal.get_Identities()</summary>
@@ -38275,6 +38545,12 @@
         <member name="M:System.Security.Cryptography.Fakes.StubRSA.AttachBackingFieldToKeySize">
             <summary>Attaches delegates to emulate StubRSA.KeySize as a property with a backing field.</summary>
         </member>
+        <member name="M:System.Security.Cryptography.Fakes.StubRSA.Decrypt(System.Byte[],System.Security.Cryptography.RSAEncryptionPadding)">
+            <summary>Sets the stub of RSA.Decrypt(Byte[] data, RSAEncryptionPadding padding)</summary>
+        </member>
+        <member name="F:System.Security.Cryptography.Fakes.StubRSA.DecryptByteArrayRSAEncryptionPadding">
+            <summary>Sets the stub of RSA.Decrypt(Byte[] data, RSAEncryptionPadding padding)</summary>
+        </member>
         <member name="M:System.Security.Cryptography.Fakes.StubRSA.DecryptValue(System.Byte[])">
             <summary>Sets the stub of RSA.DecryptValue(Byte[] rgb)</summary>
         </member>
@@ -38286,6 +38562,12 @@
         </member>
         <member name="F:System.Security.Cryptography.Fakes.StubRSA.DisposeBoolean">
             <summary>Sets the stub of AsymmetricAlgorithm.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="M:System.Security.Cryptography.Fakes.StubRSA.Encrypt(System.Byte[],System.Security.Cryptography.RSAEncryptionPadding)">
+            <summary>Sets the stub of RSA.Encrypt(Byte[] data, RSAEncryptionPadding padding)</summary>
+        </member>
+        <member name="F:System.Security.Cryptography.Fakes.StubRSA.EncryptByteArrayRSAEncryptionPadding">
+            <summary>Sets the stub of RSA.Encrypt(Byte[] data, RSAEncryptionPadding padding)</summary>
         </member>
         <member name="M:System.Security.Cryptography.Fakes.StubRSA.EncryptValue(System.Byte[])">
             <summary>Sets the stub of RSA.EncryptValue(Byte[] rgb)</summary>
@@ -38305,6 +38587,18 @@
         <member name="F:System.Security.Cryptography.Fakes.StubRSA.FromXmlStringString">
             <summary>Sets the stub of RSA.FromXmlString(String xmlString)</summary>
         </member>
+        <member name="M:System.Security.Cryptography.Fakes.StubRSA.HashData(System.IO.Stream,System.Security.Cryptography.HashAlgorithmName)">
+            <summary>Sets the stub of RSA.HashData(Stream data, HashAlgorithmName hashAlgorithm)</summary>
+        </member>
+        <member name="M:System.Security.Cryptography.Fakes.StubRSA.HashData(System.Byte[],System.Int32,System.Int32,System.Security.Cryptography.HashAlgorithmName)">
+            <summary>Sets the stub of RSA.HashData(Byte[] data, Int32 offset, Int32 count, HashAlgorithmName hashAlgorithm)</summary>
+        </member>
+        <member name="F:System.Security.Cryptography.Fakes.StubRSA.HashDataByteArrayInt32Int32HashAlgorithmName">
+            <summary>Sets the stub of RSA.HashData(Byte[] data, Int32 offset, Int32 count, HashAlgorithmName hashAlgorithm)</summary>
+        </member>
+        <member name="F:System.Security.Cryptography.Fakes.StubRSA.HashDataStreamHashAlgorithmName">
+            <summary>Sets the stub of RSA.HashData(Stream data, HashAlgorithmName hashAlgorithm)</summary>
+        </member>
         <member name="M:System.Security.Cryptography.Fakes.StubRSA.ImportParameters(System.Security.Cryptography.RSAParameters)">
             <summary>Sets the stub of RSA.ImportParameters(RSAParameters parameters)</summary>
         </member>
@@ -38315,7 +38609,7 @@
             <summary>Initializes a new instance of type StubRSA</summary>
         </member>
         <member name="F:System.Security.Cryptography.Fakes.StubRSA.KeyExchangeAlgorithmGet">
-            <summary>Sets the stub of AsymmetricAlgorithm.get_KeyExchangeAlgorithm()</summary>
+            <summary>Sets the stub of RSA.get_KeyExchangeAlgorithm()</summary>
         </member>
         <member name="F:System.Security.Cryptography.Fakes.StubRSA.KeySizeGet">
             <summary>Sets the stub of AsymmetricAlgorithm.get_KeySize()</summary>
@@ -38326,14 +38620,44 @@
         <member name="F:System.Security.Cryptography.Fakes.StubRSA.LegalKeySizesGet">
             <summary>Sets the stub of AsymmetricAlgorithm.get_LegalKeySizes()</summary>
         </member>
+        <member name="M:System.Security.Cryptography.Fakes.StubRSA.SignData(System.IO.Stream,System.Security.Cryptography.HashAlgorithmName,System.Security.Cryptography.RSASignaturePadding)">
+            <summary>Sets the stub of RSA.SignData(Stream data, HashAlgorithmName hashAlgorithm, RSASignaturePadding padding)</summary>
+        </member>
+        <member name="M:System.Security.Cryptography.Fakes.StubRSA.SignData(System.Byte[],System.Int32,System.Int32,System.Security.Cryptography.HashAlgorithmName,System.Security.Cryptography.RSASignaturePadding)">
+            <summary>Sets the stub of RSA.SignData(Byte[] data, Int32 offset, Int32 count, HashAlgorithmName hashAlgorithm, RSASignaturePadding padding)</summary>
+        </member>
+        <member name="F:System.Security.Cryptography.Fakes.StubRSA.SignDataByteArrayInt32Int32HashAlgorithmNameRSASignaturePadding">
+            <summary>Sets the stub of RSA.SignData(Byte[] data, Int32 offset, Int32 count, HashAlgorithmName hashAlgorithm, RSASignaturePadding padding)</summary>
+        </member>
+        <member name="F:System.Security.Cryptography.Fakes.StubRSA.SignDataStreamHashAlgorithmNameRSASignaturePadding">
+            <summary>Sets the stub of RSA.SignData(Stream data, HashAlgorithmName hashAlgorithm, RSASignaturePadding padding)</summary>
+        </member>
+        <member name="M:System.Security.Cryptography.Fakes.StubRSA.SignHash(System.Byte[],System.Security.Cryptography.HashAlgorithmName,System.Security.Cryptography.RSASignaturePadding)">
+            <summary>Sets the stub of RSA.SignHash(Byte[] hash, HashAlgorithmName hashAlgorithm, RSASignaturePadding padding)</summary>
+        </member>
+        <member name="F:System.Security.Cryptography.Fakes.StubRSA.SignHashByteArrayHashAlgorithmNameRSASignaturePadding">
+            <summary>Sets the stub of RSA.SignHash(Byte[] hash, HashAlgorithmName hashAlgorithm, RSASignaturePadding padding)</summary>
+        </member>
         <member name="F:System.Security.Cryptography.Fakes.StubRSA.SignatureAlgorithmGet">
-            <summary>Sets the stub of AsymmetricAlgorithm.get_SignatureAlgorithm()</summary>
+            <summary>Sets the stub of RSA.get_SignatureAlgorithm()</summary>
         </member>
         <member name="M:System.Security.Cryptography.Fakes.StubRSA.ToXmlString(System.Boolean)">
             <summary>Sets the stub of RSA.ToXmlString(Boolean includePrivateParameters)</summary>
         </member>
         <member name="F:System.Security.Cryptography.Fakes.StubRSA.ToXmlStringBoolean">
             <summary>Sets the stub of RSA.ToXmlString(Boolean includePrivateParameters)</summary>
+        </member>
+        <member name="M:System.Security.Cryptography.Fakes.StubRSA.VerifyData(System.Byte[],System.Int32,System.Int32,System.Byte[],System.Security.Cryptography.HashAlgorithmName,System.Security.Cryptography.RSASignaturePadding)">
+            <summary>Sets the stub of RSA.VerifyData(Byte[] data, Int32 offset, Int32 count, Byte[] signature, HashAlgorithmName hashAlgorithm, RSASignaturePadding padding)</summary>
+        </member>
+        <member name="F:System.Security.Cryptography.Fakes.StubRSA.VerifyDataByteArrayInt32Int32ByteArrayHashAlgorithmNameRSASignaturePadding">
+            <summary>Sets the stub of RSA.VerifyData(Byte[] data, Int32 offset, Int32 count, Byte[] signature, HashAlgorithmName hashAlgorithm, RSASignaturePadding padding)</summary>
+        </member>
+        <member name="M:System.Security.Cryptography.Fakes.StubRSA.VerifyHash(System.Byte[],System.Byte[],System.Security.Cryptography.HashAlgorithmName,System.Security.Cryptography.RSASignaturePadding)">
+            <summary>Sets the stub of RSA.VerifyHash(Byte[] hash, Byte[] signature, HashAlgorithmName hashAlgorithm, RSASignaturePadding padding)</summary>
+        </member>
+        <member name="F:System.Security.Cryptography.Fakes.StubRSA.VerifyHashByteArrayByteArrayHashAlgorithmNameRSASignaturePadding">
+            <summary>Sets the stub of RSA.VerifyHash(Byte[] hash, Byte[] signature, HashAlgorithmName hashAlgorithm, RSASignaturePadding padding)</summary>
         </member>
         <member name="P:System.Security.Cryptography.Fakes.StubRSA.CallBase">
             <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
@@ -38345,7 +38669,7 @@
             <summary>Gets or sets the instance observer.</summary>
         </member>
         <member name="P:System.Security.Cryptography.Fakes.StubRSA.KeyExchangeAlgorithm">
-            <summary>Sets the stub of AsymmetricAlgorithm.get_KeyExchangeAlgorithm()</summary>
+            <summary>Sets the stub of RSA.get_KeyExchangeAlgorithm()</summary>
         </member>
         <member name="P:System.Security.Cryptography.Fakes.StubRSA.KeySize">
             <summary>Sets the stub of AsymmetricAlgorithm.get_KeySize()</summary>
@@ -38354,7 +38678,7 @@
             <summary>Sets the stub of AsymmetricAlgorithm.get_LegalKeySizes()</summary>
         </member>
         <member name="P:System.Security.Cryptography.Fakes.StubRSA.SignatureAlgorithm">
-            <summary>Sets the stub of AsymmetricAlgorithm.get_SignatureAlgorithm()</summary>
+            <summary>Sets the stub of RSA.get_SignatureAlgorithm()</summary>
         </member>
         <member name="T:System.Security.Cryptography.Fakes.StubRSAOAEPKeyExchangeDeformatter">
             <summary>Stub type of System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter</summary>
@@ -38641,8 +38965,14 @@
         <member name="M:System.Security.Cryptography.Fakes.StubRandomNumberGenerator.GetBytes(System.Byte[])">
             <summary>Sets the stub of RandomNumberGenerator.GetBytes(Byte[] data)</summary>
         </member>
+        <member name="M:System.Security.Cryptography.Fakes.StubRandomNumberGenerator.GetBytes(System.Byte[],System.Int32,System.Int32)">
+            <summary>Sets the stub of RandomNumberGenerator.GetBytes(Byte[] data, Int32 offset, Int32 count)</summary>
+        </member>
         <member name="F:System.Security.Cryptography.Fakes.StubRandomNumberGenerator.GetBytesByteArray">
             <summary>Sets the stub of RandomNumberGenerator.GetBytes(Byte[] data)</summary>
+        </member>
+        <member name="F:System.Security.Cryptography.Fakes.StubRandomNumberGenerator.GetBytesByteArrayInt32Int32">
+            <summary>Sets the stub of RandomNumberGenerator.GetBytes(Byte[] data, Int32 offset, Int32 count)</summary>
         </member>
         <member name="M:System.Security.Cryptography.Fakes.StubRandomNumberGenerator.GetNonZeroBytes(System.Byte[])">
             <summary>Sets the stub of RandomNumberGenerator.GetNonZeroBytes(Byte[] data)</summary>
@@ -39877,10 +40207,10 @@
         <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.#ctor">
             <summary>Initializes a new instance</summary>
         </member>
-        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.#ctor(System.String)">
+        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.#ctor(System.Byte[])">
             <summary>Initializes a new instance</summary>
         </member>
-        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.#ctor(System.Byte[])">
+        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.#ctor(System.String)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.#ctor(System.Security.Cryptography.X509Certificates.X509Certificate)">
@@ -39889,19 +40219,22 @@
         <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.#ctor(System.IntPtr)">
             <summary>Initializes a new instance</summary>
         </member>
-        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.#ctor(System.String,System.String)">
-            <summary>Initializes a new instance</summary>
-        </member>
-        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.#ctor(System.String,System.Security.SecureString)">
-            <summary>Initializes a new instance</summary>
-        </member>
         <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.#ctor(System.Byte[],System.String)">
             <summary>Initializes a new instance</summary>
         </member>
+        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.#ctor(System.String,System.String)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.#ctor(System.String,System.Security.SecureString)">
+            <summary>Initializes a new instance</summary>
+        </member>
         <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.#ctor(System.Byte[],System.Security.SecureString)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.#ctor(System.Byte[],System.Security.SecureString,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.#ctor(System.String,System.String,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)">
@@ -39913,8 +40246,11 @@
         <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.#ctor(System.Byte[],System.String,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)">
             <summary>Initializes a new instance</summary>
         </member>
-        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.#ctor(System.Byte[],System.Security.SecureString,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)">
-            <summary>Initializes a new instance</summary>
+        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.Dispose(System.Boolean)">
+            <summary>Sets the stub of X509Certificate.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="F:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.DisposeBoolean">
+            <summary>Sets the stub of X509Certificate.Dispose(Boolean disposing)</summary>
         </member>
         <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.Equals(System.Object)">
             <summary>Sets the stub of X509Certificate.Equals(Object obj)</summary>
@@ -40054,17 +40390,17 @@
         <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.Import(System.Byte[])">
             <summary>Sets the stub of X509Certificate.Import(Byte[] rawData)</summary>
         </member>
-        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.Import(System.String,System.String,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)">
-            <summary>Sets the stub of X509Certificate.Import(String fileName, String password, X509KeyStorageFlags keyStorageFlags)</summary>
+        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.Import(System.Byte[],System.String,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)">
+            <summary>Sets the stub of X509Certificate.Import(Byte[] rawData, String password, X509KeyStorageFlags keyStorageFlags)</summary>
         </member>
         <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.Import(System.String,System.Security.SecureString,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)">
             <summary>Sets the stub of X509Certificate.Import(String fileName, SecureString password, X509KeyStorageFlags keyStorageFlags)</summary>
         </member>
-        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.Import(System.Byte[],System.String,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)">
-            <summary>Sets the stub of X509Certificate.Import(Byte[] rawData, String password, X509KeyStorageFlags keyStorageFlags)</summary>
-        </member>
         <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.Import(System.Byte[],System.Security.SecureString,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)">
             <summary>Sets the stub of X509Certificate.Import(Byte[] rawData, SecureString password, X509KeyStorageFlags keyStorageFlags)</summary>
+        </member>
+        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.Import(System.String,System.String,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)">
+            <summary>Sets the stub of X509Certificate.Import(String fileName, String password, X509KeyStorageFlags keyStorageFlags)</summary>
         </member>
         <member name="F:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate.ImportByteArray">
             <summary>Sets the stub of X509Certificate.Import(Byte[] rawData)</summary>
@@ -41491,6 +41827,15 @@
         <member name="F:System.Security.Principal.Fakes.StubGenericIdentity.Clone01">
             <summary>Sets the stub of GenericIdentity.Clone()</summary>
         </member>
+        <member name="M:System.Security.Principal.Fakes.StubGenericIdentity.CreateClaim(System.IO.BinaryReader)">
+            <summary>Sets the stub of ClaimsIdentity.CreateClaim(BinaryReader reader)</summary>
+        </member>
+        <member name="F:System.Security.Principal.Fakes.StubGenericIdentity.CreateClaimBinaryReader">
+            <summary>Sets the stub of ClaimsIdentity.CreateClaim(BinaryReader reader)</summary>
+        </member>
+        <member name="F:System.Security.Principal.Fakes.StubGenericIdentity.CustomSerializationDataGet">
+            <summary>Sets the stub of ClaimsIdentity.get_CustomSerializationData()</summary>
+        </member>
         <member name="M:System.Security.Principal.Fakes.StubGenericIdentity.FindAll(System.String)">
             <summary>Sets the stub of ClaimsIdentity.FindAll(String type)</summary>
         </member>
@@ -41554,6 +41899,18 @@
         <member name="F:System.Security.Principal.Fakes.StubGenericIdentity.TryRemoveClaimClaim">
             <summary>Sets the stub of ClaimsIdentity.TryRemoveClaim(Claim claim)</summary>
         </member>
+        <member name="M:System.Security.Principal.Fakes.StubGenericIdentity.WriteTo(System.IO.BinaryWriter)">
+            <summary>Sets the stub of ClaimsIdentity.WriteTo(BinaryWriter writer)</summary>
+        </member>
+        <member name="M:System.Security.Principal.Fakes.StubGenericIdentity.WriteTo(System.IO.BinaryWriter,System.Byte[])">
+            <summary>Sets the stub of ClaimsIdentity.WriteTo(BinaryWriter writer, Byte[] userData)</summary>
+        </member>
+        <member name="F:System.Security.Principal.Fakes.StubGenericIdentity.WriteToBinaryWriter">
+            <summary>Sets the stub of ClaimsIdentity.WriteTo(BinaryWriter writer)</summary>
+        </member>
+        <member name="F:System.Security.Principal.Fakes.StubGenericIdentity.WriteToBinaryWriterByteArray">
+            <summary>Sets the stub of ClaimsIdentity.WriteTo(BinaryWriter writer, Byte[] userData)</summary>
+        </member>
         <member name="P:System.Security.Principal.Fakes.StubGenericIdentity.AuthenticationType">
             <summary>Sets the stub of GenericIdentity.get_AuthenticationType()</summary>
         </member>
@@ -41562,6 +41919,9 @@
         </member>
         <member name="P:System.Security.Principal.Fakes.StubGenericIdentity.Claims">
             <summary>Sets the stub of GenericIdentity.get_Claims()</summary>
+        </member>
+        <member name="P:System.Security.Principal.Fakes.StubGenericIdentity.CustomSerializationData">
+            <summary>Sets the stub of ClaimsIdentity.get_CustomSerializationData()</summary>
         </member>
         <member name="P:System.Security.Principal.Fakes.StubGenericIdentity.InstanceBehavior">
             <summary>Gets or sets the instance behavior.</summary>
@@ -41595,6 +41955,21 @@
         </member>
         <member name="F:System.Security.Principal.Fakes.StubGenericPrincipal.ClaimsGet">
             <summary>Sets the stub of ClaimsPrincipal.get_Claims()</summary>
+        </member>
+        <member name="M:System.Security.Principal.Fakes.StubGenericPrincipal.Clone">
+            <summary>Sets the stub of ClaimsPrincipal.Clone()</summary>
+        </member>
+        <member name="F:System.Security.Principal.Fakes.StubGenericPrincipal.Clone01">
+            <summary>Sets the stub of ClaimsPrincipal.Clone()</summary>
+        </member>
+        <member name="M:System.Security.Principal.Fakes.StubGenericPrincipal.CreateClaimsIdentity(System.IO.BinaryReader)">
+            <summary>Sets the stub of ClaimsPrincipal.CreateClaimsIdentity(BinaryReader reader)</summary>
+        </member>
+        <member name="F:System.Security.Principal.Fakes.StubGenericPrincipal.CreateClaimsIdentityBinaryReader">
+            <summary>Sets the stub of ClaimsPrincipal.CreateClaimsIdentity(BinaryReader reader)</summary>
+        </member>
+        <member name="F:System.Security.Principal.Fakes.StubGenericPrincipal.CustomSerializationDataGet">
+            <summary>Sets the stub of ClaimsPrincipal.get_CustomSerializationData()</summary>
         </member>
         <member name="M:System.Security.Principal.Fakes.StubGenericPrincipal.FindAll(System.String)">
             <summary>Sets the stub of ClaimsPrincipal.FindAll(String type)</summary>
@@ -41653,11 +42028,26 @@
         <member name="F:System.Security.Principal.Fakes.StubGenericPrincipal.IsInRoleString">
             <summary>Sets the stub of GenericPrincipal.IsInRole(String role)</summary>
         </member>
+        <member name="M:System.Security.Principal.Fakes.StubGenericPrincipal.WriteTo(System.IO.BinaryWriter)">
+            <summary>Sets the stub of ClaimsPrincipal.WriteTo(BinaryWriter writer)</summary>
+        </member>
+        <member name="M:System.Security.Principal.Fakes.StubGenericPrincipal.WriteTo(System.IO.BinaryWriter,System.Byte[])">
+            <summary>Sets the stub of ClaimsPrincipal.WriteTo(BinaryWriter writer, Byte[] userData)</summary>
+        </member>
+        <member name="F:System.Security.Principal.Fakes.StubGenericPrincipal.WriteToBinaryWriter">
+            <summary>Sets the stub of ClaimsPrincipal.WriteTo(BinaryWriter writer)</summary>
+        </member>
+        <member name="F:System.Security.Principal.Fakes.StubGenericPrincipal.WriteToBinaryWriterByteArray">
+            <summary>Sets the stub of ClaimsPrincipal.WriteTo(BinaryWriter writer, Byte[] userData)</summary>
+        </member>
         <member name="P:System.Security.Principal.Fakes.StubGenericPrincipal.CallBase">
             <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
         </member>
         <member name="P:System.Security.Principal.Fakes.StubGenericPrincipal.Claims">
             <summary>Sets the stub of ClaimsPrincipal.get_Claims()</summary>
+        </member>
+        <member name="P:System.Security.Principal.Fakes.StubGenericPrincipal.CustomSerializationData">
+            <summary>Sets the stub of ClaimsPrincipal.get_CustomSerializationData()</summary>
         </member>
         <member name="P:System.Security.Principal.Fakes.StubGenericPrincipal.Identities">
             <summary>Sets the stub of ClaimsPrincipal.get_Identities()</summary>
@@ -41737,13 +42127,13 @@
         <member name="T:System.Security.Principal.Fakes.StubWindowsIdentity">
             <summary>Stub type of System.Security.Principal.WindowsIdentity</summary>
         </member>
+        <member name="M:System.Security.Principal.Fakes.StubWindowsIdentity.#ctor(System.IntPtr)">
+            <summary>Initializes a new instance</summary>
+        </member>
         <member name="M:System.Security.Principal.Fakes.StubWindowsIdentity.#ctor(System.String)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:System.Security.Principal.Fakes.StubWindowsIdentity.#ctor(System.Security.Principal.WindowsIdentity)">
-            <summary>Initializes a new instance</summary>
-        </member>
-        <member name="M:System.Security.Principal.Fakes.StubWindowsIdentity.#ctor(System.IntPtr)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:System.Security.Principal.Fakes.StubWindowsIdentity.#ctor(System.IntPtr,System.String)">
@@ -41781,6 +42171,15 @@
         </member>
         <member name="F:System.Security.Principal.Fakes.StubWindowsIdentity.Clone01">
             <summary>Sets the stub of WindowsIdentity.Clone()</summary>
+        </member>
+        <member name="M:System.Security.Principal.Fakes.StubWindowsIdentity.CreateClaim(System.IO.BinaryReader)">
+            <summary>Sets the stub of ClaimsIdentity.CreateClaim(BinaryReader reader)</summary>
+        </member>
+        <member name="F:System.Security.Principal.Fakes.StubWindowsIdentity.CreateClaimBinaryReader">
+            <summary>Sets the stub of ClaimsIdentity.CreateClaim(BinaryReader reader)</summary>
+        </member>
+        <member name="F:System.Security.Principal.Fakes.StubWindowsIdentity.CustomSerializationDataGet">
+            <summary>Sets the stub of ClaimsIdentity.get_CustomSerializationData()</summary>
         </member>
         <member name="F:System.Security.Principal.Fakes.StubWindowsIdentity.DeviceClaimsGet">
             <summary>Sets the stub of WindowsIdentity.get_DeviceClaims()</summary>
@@ -41869,11 +42268,26 @@
         <member name="F:System.Security.Principal.Fakes.StubWindowsIdentity.UserClaimsGet">
             <summary>Sets the stub of WindowsIdentity.get_UserClaims()</summary>
         </member>
+        <member name="M:System.Security.Principal.Fakes.StubWindowsIdentity.WriteTo(System.IO.BinaryWriter)">
+            <summary>Sets the stub of ClaimsIdentity.WriteTo(BinaryWriter writer)</summary>
+        </member>
+        <member name="M:System.Security.Principal.Fakes.StubWindowsIdentity.WriteTo(System.IO.BinaryWriter,System.Byte[])">
+            <summary>Sets the stub of ClaimsIdentity.WriteTo(BinaryWriter writer, Byte[] userData)</summary>
+        </member>
+        <member name="F:System.Security.Principal.Fakes.StubWindowsIdentity.WriteToBinaryWriter">
+            <summary>Sets the stub of ClaimsIdentity.WriteTo(BinaryWriter writer)</summary>
+        </member>
+        <member name="F:System.Security.Principal.Fakes.StubWindowsIdentity.WriteToBinaryWriterByteArray">
+            <summary>Sets the stub of ClaimsIdentity.WriteTo(BinaryWriter writer, Byte[] userData)</summary>
+        </member>
         <member name="P:System.Security.Principal.Fakes.StubWindowsIdentity.CallBase">
             <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
         </member>
         <member name="P:System.Security.Principal.Fakes.StubWindowsIdentity.Claims">
             <summary>Sets the stub of WindowsIdentity.get_Claims()</summary>
+        </member>
+        <member name="P:System.Security.Principal.Fakes.StubWindowsIdentity.CustomSerializationData">
+            <summary>Sets the stub of ClaimsIdentity.get_CustomSerializationData()</summary>
         </member>
         <member name="P:System.Security.Principal.Fakes.StubWindowsIdentity.DeviceClaims">
             <summary>Sets the stub of WindowsIdentity.get_DeviceClaims()</summary>
@@ -41925,6 +42339,21 @@
         </member>
         <member name="F:System.Security.Principal.Fakes.StubWindowsPrincipal.ClaimsGet">
             <summary>Sets the stub of ClaimsPrincipal.get_Claims()</summary>
+        </member>
+        <member name="M:System.Security.Principal.Fakes.StubWindowsPrincipal.Clone">
+            <summary>Sets the stub of ClaimsPrincipal.Clone()</summary>
+        </member>
+        <member name="F:System.Security.Principal.Fakes.StubWindowsPrincipal.Clone01">
+            <summary>Sets the stub of ClaimsPrincipal.Clone()</summary>
+        </member>
+        <member name="M:System.Security.Principal.Fakes.StubWindowsPrincipal.CreateClaimsIdentity(System.IO.BinaryReader)">
+            <summary>Sets the stub of ClaimsPrincipal.CreateClaimsIdentity(BinaryReader reader)</summary>
+        </member>
+        <member name="F:System.Security.Principal.Fakes.StubWindowsPrincipal.CreateClaimsIdentityBinaryReader">
+            <summary>Sets the stub of ClaimsPrincipal.CreateClaimsIdentity(BinaryReader reader)</summary>
+        </member>
+        <member name="F:System.Security.Principal.Fakes.StubWindowsPrincipal.CustomSerializationDataGet">
+            <summary>Sets the stub of ClaimsPrincipal.get_CustomSerializationData()</summary>
         </member>
         <member name="F:System.Security.Principal.Fakes.StubWindowsPrincipal.DeviceClaimsGet">
             <summary>Sets the stub of WindowsPrincipal.get_DeviceClaims()</summary>
@@ -41980,14 +42409,14 @@
         <member name="M:System.Security.Principal.Fakes.StubWindowsPrincipal.InitializeStub">
             <summary>Initializes a new instance of type StubWindowsPrincipal</summary>
         </member>
-        <member name="M:System.Security.Principal.Fakes.StubWindowsPrincipal.IsInRole(System.String)">
-            <summary>Sets the stub of WindowsPrincipal.IsInRole(String role)</summary>
-        </member>
         <member name="M:System.Security.Principal.Fakes.StubWindowsPrincipal.IsInRole(System.Security.Principal.SecurityIdentifier)">
             <summary>Sets the stub of WindowsPrincipal.IsInRole(SecurityIdentifier sid)</summary>
         </member>
         <member name="M:System.Security.Principal.Fakes.StubWindowsPrincipal.IsInRole(System.Int32)">
             <summary>Sets the stub of WindowsPrincipal.IsInRole(Int32 rid)</summary>
+        </member>
+        <member name="M:System.Security.Principal.Fakes.StubWindowsPrincipal.IsInRole(System.String)">
+            <summary>Sets the stub of WindowsPrincipal.IsInRole(String role)</summary>
         </member>
         <member name="M:System.Security.Principal.Fakes.StubWindowsPrincipal.IsInRole(System.Security.Principal.WindowsBuiltInRole)">
             <summary>Sets the stub of WindowsPrincipal.IsInRole(WindowsBuiltInRole role)</summary>
@@ -42007,11 +42436,26 @@
         <member name="F:System.Security.Principal.Fakes.StubWindowsPrincipal.UserClaimsGet">
             <summary>Sets the stub of WindowsPrincipal.get_UserClaims()</summary>
         </member>
+        <member name="M:System.Security.Principal.Fakes.StubWindowsPrincipal.WriteTo(System.IO.BinaryWriter)">
+            <summary>Sets the stub of ClaimsPrincipal.WriteTo(BinaryWriter writer)</summary>
+        </member>
+        <member name="M:System.Security.Principal.Fakes.StubWindowsPrincipal.WriteTo(System.IO.BinaryWriter,System.Byte[])">
+            <summary>Sets the stub of ClaimsPrincipal.WriteTo(BinaryWriter writer, Byte[] userData)</summary>
+        </member>
+        <member name="F:System.Security.Principal.Fakes.StubWindowsPrincipal.WriteToBinaryWriter">
+            <summary>Sets the stub of ClaimsPrincipal.WriteTo(BinaryWriter writer)</summary>
+        </member>
+        <member name="F:System.Security.Principal.Fakes.StubWindowsPrincipal.WriteToBinaryWriterByteArray">
+            <summary>Sets the stub of ClaimsPrincipal.WriteTo(BinaryWriter writer, Byte[] userData)</summary>
+        </member>
         <member name="P:System.Security.Principal.Fakes.StubWindowsPrincipal.CallBase">
             <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
         </member>
         <member name="P:System.Security.Principal.Fakes.StubWindowsPrincipal.Claims">
             <summary>Sets the stub of ClaimsPrincipal.get_Claims()</summary>
+        </member>
+        <member name="P:System.Security.Principal.Fakes.StubWindowsPrincipal.CustomSerializationData">
+            <summary>Sets the stub of ClaimsPrincipal.get_CustomSerializationData()</summary>
         </member>
         <member name="P:System.Security.Principal.Fakes.StubWindowsPrincipal.DeviceClaims">
             <summary>Sets the stub of WindowsPrincipal.get_DeviceClaims()</summary>
@@ -42556,6 +43000,9 @@
         <member name="M:System.Text.Fakes.StubEncoding.#ctor(System.Int32)">
             <summary>Initializes a new instance</summary>
         </member>
+        <member name="M:System.Text.Fakes.StubEncoding.#ctor(System.Int32,System.Text.EncoderFallback,System.Text.DecoderFallback)">
+            <summary>Initializes a new instance</summary>
+        </member>
         <member name="F:System.Text.Fakes.StubEncoding.BodyNameGet">
             <summary>Sets the stub of Encoding.get_BodyName()</summary>
         </member>
@@ -42577,11 +43024,11 @@
         <member name="F:System.Text.Fakes.StubEncoding.EqualsObject">
             <summary>Sets the stub of Encoding.Equals(Object value)</summary>
         </member>
-        <member name="M:System.Text.Fakes.StubEncoding.GetByteCount(System.String)">
-            <summary>Sets the stub of Encoding.GetByteCount(String s)</summary>
-        </member>
         <member name="M:System.Text.Fakes.StubEncoding.GetByteCount(System.Char[])">
             <summary>Sets the stub of Encoding.GetByteCount(Char[] chars)</summary>
+        </member>
+        <member name="M:System.Text.Fakes.StubEncoding.GetByteCount(System.String)">
+            <summary>Sets the stub of Encoding.GetByteCount(String s)</summary>
         </member>
         <member name="M:System.Text.Fakes.StubEncoding.GetByteCount(System.Char*,System.Int32)">
             <summary>Sets the stub of Encoding.GetByteCount(Char* chars, Int32 count)</summary>
@@ -42601,17 +43048,17 @@
         <member name="M:System.Text.Fakes.StubEncoding.GetBytes(System.Char*,System.Int32,System.Byte*,System.Int32)">
             <summary>Sets the stub of Encoding.GetBytes(Char* chars, Int32 charCount, Byte* bytes, Int32 byteCount)</summary>
         </member>
-        <member name="M:System.Text.Fakes.StubEncoding.GetBytes(System.Char[],System.Int32,System.Int32,System.Byte[],System.Int32)">
-            <summary>Sets the stub of Encoding.GetBytes(Char[] chars, Int32 charIndex, Int32 charCount, Byte[] bytes, Int32 byteIndex)</summary>
-        </member>
         <member name="M:System.Text.Fakes.StubEncoding.GetBytes(System.String,System.Int32,System.Int32,System.Byte[],System.Int32)">
             <summary>Sets the stub of Encoding.GetBytes(String s, Int32 charIndex, Int32 charCount, Byte[] bytes, Int32 byteIndex)</summary>
+        </member>
+        <member name="M:System.Text.Fakes.StubEncoding.GetBytes(System.String)">
+            <summary>Sets the stub of Encoding.GetBytes(String s)</summary>
         </member>
         <member name="M:System.Text.Fakes.StubEncoding.GetBytes(System.Char[])">
             <summary>Sets the stub of Encoding.GetBytes(Char[] chars)</summary>
         </member>
-        <member name="M:System.Text.Fakes.StubEncoding.GetBytes(System.String)">
-            <summary>Sets the stub of Encoding.GetBytes(String s)</summary>
+        <member name="M:System.Text.Fakes.StubEncoding.GetBytes(System.Char[],System.Int32,System.Int32,System.Byte[],System.Int32)">
+            <summary>Sets the stub of Encoding.GetBytes(Char[] chars, Int32 charIndex, Int32 charCount, Byte[] bytes, Int32 byteIndex)</summary>
         </member>
         <member name="M:System.Text.Fakes.StubEncoding.GetBytes(System.Char[],System.Int32,System.Int32)">
             <summary>Sets the stub of Encoding.GetBytes(Char[] chars, Int32 index, Int32 count)</summary>
@@ -42652,11 +43099,11 @@
         <member name="M:System.Text.Fakes.StubEncoding.GetChars(System.Byte*,System.Int32,System.Char*,System.Int32)">
             <summary>Sets the stub of Encoding.GetChars(Byte* bytes, Int32 byteCount, Char* chars, Int32 charCount)</summary>
         </member>
-        <member name="M:System.Text.Fakes.StubEncoding.GetChars(System.Byte[],System.Int32,System.Int32)">
-            <summary>Sets the stub of Encoding.GetChars(Byte[] bytes, Int32 index, Int32 count)</summary>
-        </member>
         <member name="M:System.Text.Fakes.StubEncoding.GetChars(System.Byte[],System.Int32,System.Int32,System.Char[],System.Int32)">
             <summary>Sets the stub of Encoding.GetChars(Byte[] bytes, Int32 byteIndex, Int32 byteCount, Char[] chars, Int32 charIndex)</summary>
+        </member>
+        <member name="M:System.Text.Fakes.StubEncoding.GetChars(System.Byte[],System.Int32,System.Int32)">
+            <summary>Sets the stub of Encoding.GetChars(Byte[] bytes, Int32 index, Int32 count)</summary>
         </member>
         <member name="F:System.Text.Fakes.StubEncoding.GetCharsByteArray">
             <summary>Sets the stub of Encoding.GetChars(Byte[] bytes)</summary>
@@ -42789,6 +43236,48 @@
         </member>
         <member name="P:System.Text.Fakes.StubEncoding.WindowsCodePage">
             <summary>Sets the stub of Encoding.get_WindowsCodePage()</summary>
+        </member>
+        <member name="T:System.Text.Fakes.StubEncodingProvider">
+            <summary>Stub type of System.Text.EncodingProvider</summary>
+        </member>
+        <member name="M:System.Text.Fakes.StubEncodingProvider.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Text.Fakes.StubEncodingProvider.GetEncoding(System.String)">
+            <summary>Sets the stub of EncodingProvider.GetEncoding(String name)</summary>
+        </member>
+        <member name="M:System.Text.Fakes.StubEncodingProvider.GetEncoding(System.Int32)">
+            <summary>Sets the stub of EncodingProvider.GetEncoding(Int32 codepage)</summary>
+        </member>
+        <member name="M:System.Text.Fakes.StubEncodingProvider.GetEncoding(System.Int32,System.Text.EncoderFallback,System.Text.DecoderFallback)">
+            <summary>Sets the stub of EncodingProvider.GetEncoding(Int32 codepage, EncoderFallback encoderFallback, DecoderFallback decoderFallback)</summary>
+        </member>
+        <member name="M:System.Text.Fakes.StubEncodingProvider.GetEncoding(System.String,System.Text.EncoderFallback,System.Text.DecoderFallback)">
+            <summary>Sets the stub of EncodingProvider.GetEncoding(String name, EncoderFallback encoderFallback, DecoderFallback decoderFallback)</summary>
+        </member>
+        <member name="F:System.Text.Fakes.StubEncodingProvider.GetEncodingInt32">
+            <summary>Sets the stub of EncodingProvider.GetEncoding(Int32 codepage)</summary>
+        </member>
+        <member name="F:System.Text.Fakes.StubEncodingProvider.GetEncodingInt32EncoderFallbackDecoderFallback">
+            <summary>Sets the stub of EncodingProvider.GetEncoding(Int32 codepage, EncoderFallback encoderFallback, DecoderFallback decoderFallback)</summary>
+        </member>
+        <member name="F:System.Text.Fakes.StubEncodingProvider.GetEncodingString">
+            <summary>Sets the stub of EncodingProvider.GetEncoding(String name)</summary>
+        </member>
+        <member name="F:System.Text.Fakes.StubEncodingProvider.GetEncodingStringEncoderFallbackDecoderFallback">
+            <summary>Sets the stub of EncodingProvider.GetEncoding(String name, EncoderFallback encoderFallback, DecoderFallback decoderFallback)</summary>
+        </member>
+        <member name="M:System.Text.Fakes.StubEncodingProvider.InitializeStub">
+            <summary>Initializes a new instance of type StubEncodingProvider</summary>
+        </member>
+        <member name="P:System.Text.Fakes.StubEncodingProvider.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:System.Text.Fakes.StubEncodingProvider.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:System.Text.Fakes.StubEncodingProvider.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
         </member>
         <member name="T:System.Text.Fakes.StubUTF7Encoding">
             <summary>Stub type of System.Text.UTF7Encoding</summary>

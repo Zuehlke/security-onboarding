@@ -6451,6 +6451,9 @@
         <member name="P:System.Collections.Specialized.Fakes.ShimStringDictionary.AddStringString">
             <summary>Sets the shim of StringDictionary.Add(String key, String value)</summary>
         </member>
+        <member name="P:System.Collections.Specialized.Fakes.ShimStringDictionary.AsGenericDictionary">
+            <summary>Sets the shim of StringDictionary.AsGenericDictionary()</summary>
+        </member>
         <member name="P:System.Collections.Specialized.Fakes.ShimStringDictionary.Behavior">
             <summary>Assigns the behavior for all methods of the shimmed type</summary>
         </member>
@@ -6504,6 +6507,9 @@
         </member>
         <member name="P:System.Collections.Specialized.Fakes.ShimStringDictionary.AllInstances.AddStringString">
             <summary>Sets the shim of StringDictionary.Add(String key, String value)</summary>
+        </member>
+        <member name="P:System.Collections.Specialized.Fakes.ShimStringDictionary.AllInstances.AsGenericDictionary">
+            <summary>Sets the shim of StringDictionary.AsGenericDictionary()</summary>
         </member>
         <member name="P:System.Collections.Specialized.Fakes.ShimStringDictionary.AllInstances.Clear">
             <summary>Sets the shim of StringDictionary.Clear()</summary>
@@ -27571,10 +27577,10 @@
         <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.#ctor">
             <summary>Initializes a new instance</summary>
         </member>
-        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.#ctor(System.String)">
+        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.#ctor(System.Byte[])">
             <summary>Initializes a new instance</summary>
         </member>
-        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.#ctor(System.Byte[])">
+        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.#ctor(System.String)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.#ctor(System.Security.Cryptography.X509Certificates.X509Certificate)">
@@ -27583,19 +27589,22 @@
         <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.#ctor(System.IntPtr)">
             <summary>Initializes a new instance</summary>
         </member>
-        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.#ctor(System.String,System.String)">
-            <summary>Initializes a new instance</summary>
-        </member>
-        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.#ctor(System.String,System.Security.SecureString)">
-            <summary>Initializes a new instance</summary>
-        </member>
         <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.#ctor(System.Byte[],System.String)">
             <summary>Initializes a new instance</summary>
         </member>
+        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.#ctor(System.String,System.String)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.#ctor(System.String,System.Security.SecureString)">
+            <summary>Initializes a new instance</summary>
+        </member>
         <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.#ctor(System.Byte[],System.Security.SecureString)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.#ctor(System.Byte[],System.Security.SecureString,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.#ctor(System.String,System.String,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)">
@@ -27607,8 +27616,11 @@
         <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.#ctor(System.Byte[],System.String,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)">
             <summary>Initializes a new instance</summary>
         </member>
-        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.#ctor(System.Byte[],System.Security.SecureString,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)">
-            <summary>Initializes a new instance</summary>
+        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.Dispose(System.Boolean)">
+            <summary>Sets the stub of X509Certificate.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="F:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.DisposeBoolean">
+            <summary>Sets the stub of X509Certificate.Dispose(Boolean disposing)</summary>
         </member>
         <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.Equals(System.Object)">
             <summary>Sets the stub of X509Certificate.Equals(Object obj)</summary>
@@ -27742,23 +27754,23 @@
         <member name="F:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.GetSerialNumberString01">
             <summary>Sets the stub of X509Certificate.GetSerialNumberString()</summary>
         </member>
-        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.Import(System.String)">
-            <summary>Sets the stub of X509Certificate2.Import(String fileName)</summary>
-        </member>
         <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.Import(System.Byte[])">
             <summary>Sets the stub of X509Certificate2.Import(Byte[] rawData)</summary>
+        </member>
+        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.Import(System.String)">
+            <summary>Sets the stub of X509Certificate2.Import(String fileName)</summary>
         </member>
         <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.Import(System.String,System.Security.SecureString,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)">
             <summary>Sets the stub of X509Certificate2.Import(String fileName, SecureString password, X509KeyStorageFlags keyStorageFlags)</summary>
         </member>
-        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.Import(System.Byte[],System.Security.SecureString,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)">
-            <summary>Sets the stub of X509Certificate2.Import(Byte[] rawData, SecureString password, X509KeyStorageFlags keyStorageFlags)</summary>
+        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.Import(System.Byte[],System.String,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)">
+            <summary>Sets the stub of X509Certificate2.Import(Byte[] rawData, String password, X509KeyStorageFlags keyStorageFlags)</summary>
         </member>
         <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.Import(System.String,System.String,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)">
             <summary>Sets the stub of X509Certificate2.Import(String fileName, String password, X509KeyStorageFlags keyStorageFlags)</summary>
         </member>
-        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.Import(System.Byte[],System.String,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)">
-            <summary>Sets the stub of X509Certificate2.Import(Byte[] rawData, String password, X509KeyStorageFlags keyStorageFlags)</summary>
+        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.Import(System.Byte[],System.Security.SecureString,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)">
+            <summary>Sets the stub of X509Certificate2.Import(Byte[] rawData, SecureString password, X509KeyStorageFlags keyStorageFlags)</summary>
         </member>
         <member name="F:System.Security.Cryptography.X509Certificates.Fakes.StubX509Certificate2.ImportByteArray">
             <summary>Sets the stub of X509Certificate2.Import(Byte[] rawData)</summary>
@@ -27990,6 +28002,12 @@
         </member>
         <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Chain.#ctor(System.IntPtr)">
             <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Chain.Dispose(System.Boolean)">
+            <summary>Sets the stub of X509Chain.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="F:System.Security.Cryptography.X509Certificates.Fakes.StubX509Chain.DisposeBoolean">
+            <summary>Sets the stub of X509Chain.Dispose(Boolean disposing)</summary>
         </member>
         <member name="M:System.Security.Cryptography.X509Certificates.Fakes.StubX509Chain.InitializeStub">
             <summary>Initializes a new instance of type StubX509Chain</summary>
