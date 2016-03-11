@@ -4,13 +4,13 @@ namespace Bank
 {
     public class Account
     {
-        public Account(ITransactionLog transactionLog)
+        public Account()
         {
             throw new NotImplementedException();
         }
 
-        public Account(ITransactionLog transactionLog, int initialDeposit)
-            : this(transactionLog)
+        public Account(int initialDeposit)
+            : this()
         {
             throw new NotImplementedException();
         }

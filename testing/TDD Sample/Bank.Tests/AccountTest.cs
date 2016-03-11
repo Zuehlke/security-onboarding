@@ -1,11 +1,8 @@
 ﻿using Moq;
 using NUnit.Framework;
-using System;
 
 namespace Bank.Tests
 {
-    using System.Security.Cryptography;
-
     [TestFixture]
     public class AccountTest
     {
