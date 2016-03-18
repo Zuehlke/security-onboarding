@@ -54,12 +54,14 @@ The only way of creating a scope for variables in javascript is by declaring a f
 	if(true) {
 		var iShouldBeLocal = "right?";
 	}
+>
 	iShouldBeLocal !== undefined; //Variable is defined!
 >
 	while(true) {
 		var iShouldBeLocalToo = "right?";
 	 	break;
 	}
+>
 	iShouldBeLocalToo !== undefined; //Variable is defined!
 >
 	for(var i = 0; i < 5; i++) {

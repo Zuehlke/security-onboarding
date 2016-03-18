@@ -57,7 +57,7 @@ When an inherited function is executed, the value of this points to the inheriti
 
 JavaScript objects are mutable: They are addressed by reference, not by value.
 
-    var person = {firstName:"John", lastName:"Doe", age:50}
+    var person = {firstName:"John", lastName:"Doe", age:50};
     
     var x = person;
     x.age = 10; 
@@ -139,7 +139,7 @@ Note that this behavior is not at all affected by how or where the function was 
 
 Where a function uses the this keyword in its body, its value can be bound to a particular object in the call using the call or apply methods that all functions inherit from Function.prototype.
 
-    function add(c, d){
+    function add(c, d) {
       return this.a + this.b + c + d;
     }
     
@@ -158,7 +158,7 @@ With **.apply()** the first parameter is the object to use as 'this', the second
 The **.bind()** method creates a new function that, when called, has its this keyword set to the provided value, with a 
 given sequence of arguments preceding any provided when the new function is called.
 
-    function add(c, d){
+    function add(c, d) {
       	return this.a + this.b + c + d;
     }
     

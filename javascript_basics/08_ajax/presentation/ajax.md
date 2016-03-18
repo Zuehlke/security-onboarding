@@ -122,9 +122,7 @@ If you need multiple AJAX requests whose results you would like to have at the s
         })
 
     ).then(function() {
-
         console.dir(posts);
-
     });
 
 The jqXHR objects returned by $.ajax() as of jQuery 1.5 implement the Promise interface, giving them all the properties, methods, and behaviour of a Promise. You can read more about promises on the Q promise framework documentation [page](https://github.com/kriskowal/q).
