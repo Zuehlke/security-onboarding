@@ -8,8 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.List;
-
 /**
  * Created by nesp on 21-Sep-16.
  */
@@ -26,8 +24,8 @@ public class HomeController {
 
     @RequestMapping("/")
     @ResponseBody
-    List<City> home() {
-        return cityRepository.findAll();
+    Iterable<City> home() {
+        return  cityRepository.findAll();
     }
 
 }
