@@ -1,7 +1,7 @@
 package com.zuehlke.zrs.security;
 
-import com.zuehlke.zrs.security.models.City;
-import com.zuehlke.zrs.security.repositories.CityRepository;
+import com.zuehlke.zrs.security.models.Employee;
+import com.zuehlke.zrs.security.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,22 +11,25 @@ import java.util.Arrays;
  * Created by nesp on 21-Sep-16.
  */
 @Component
-public class Bootstrapper {
+class Bootstrapper {
 
-    private CityRepository cityRepository;
+    private EmployeeRepository employeeRepository;
 
     @Autowired
-    public Bootstrapper(CityRepository cityRepository) {
-        this.cityRepository = cityRepository;
+    public Bootstrapper(EmployeeRepository employeeRepository) {
+        this.employeeRepository = employeeRepository;
     }
 
-    public void onStartup() {
+    void onStartup() {
         Arrays.asList(
-                new City("Belgrade", "Serbia"),
-                new City("Novi Sad", "Serbia"),
-                new City("Zagreb", "Croatia"),
-                new City("Nis", "Serbia")
-        ).forEach(cityRepository::save);
+                new Employee("Name1", "Lastname1", "Expert Software Engineer"),
+                new Employee("Name2", "Lastname2", "Software Engineer"),
+                new Employee("Name3", "Lastname3", "Junior Software Engineer"),
+                new Employee("Name11", "Lastname11", "Junior Software Engineer"),
+                new Employee("Name4", "Lastname4", "Trainee"),
+                new Employee("Name5", "Lastname5", "Trainee"),
+                new Employee("Name9", "Lastname9", "Junior Software Engineer")
+        ).forEach(employeeRepository::save);
 
     }
 }
