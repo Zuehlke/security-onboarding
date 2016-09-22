@@ -1,3 +1,10 @@
-export class Employee {
-  constructor(public firstName: string, public lastName: string, public title: string){}
+export interface Employee {
+  links: EntityRestEndpointUrl;
+  firstName: string;
+  lastName: string;
+  title: string;
+}
+
+interface EntityRestEndpointUrl {
+  self: { href: string; };
 }

@@ -5,15 +5,18 @@ import {Employee} from "./employee.model";
 @Component({
   selector: 'employee-list',
   templateUrl: './employee-list.html',
+
   moduleId: module.id,
 })
 export class EmployeeListComponent {
-  constructor(private employeeService: EmployeeService) {
-    this.getEmployees();
-  }
 
-  getEmployees(): Promise<Employee[]> {
-    return this.employeeService.getEmployees();
-  }
+  employees: Employee[];
 
+  constructor(private employeeService: EmployeeService) {}
+
+  ngOnInit(): void {
+    this.employeeService.getEmployees().then(employees => {
+      this.employees = employees;
+    });
+  }
 }
