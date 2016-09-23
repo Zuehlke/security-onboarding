@@ -1,13 +1,13 @@
 buildscript {
-	ext {
-		springBootVersion = '1.4.1.RELEASE'
-	}
-	repositories {
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
+    ext {
+        springBootVersion = '1.4.1.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
 }
 
 apply plugin: 'java'
@@ -15,25 +15,26 @@ apply plugin: 'idea'
 apply plugin: 'spring-boot'
 
 jar {
-	baseName = 'missing-function-level-access-control'
-	version = '0.0.1-SNAPSHOT'
+    baseName = 'missing-function-level-access-control'
+    version = '0.0.1-SNAPSHOT'
 }
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-web:1.4.0.RELEASE')
-	compile("org.springframework.boot:spring-boot-devtools")
-	compile("org.springframework.boot:spring-boot-starter-data-jpa:1.4.0.RELEASE")
-	compile("com.google.guava:guava:19.0")
-	compile("org.springframework.boot:spring-boot-starter-data-rest:1.4.0.RELEASE")
+    compile('org.springframework.boot:spring-boot-starter-web:1.4.0.RELEASE')
+    compile("org.springframework.boot:spring-boot-devtools")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa:1.4.0.RELEASE")
+    compile("com.google.guava:guava:19.0")
+//    compile("org.springframework.boot:spring-boot-starter-data-rest:1.4.0.RELEASE")
+    compile("org.springframework.boot:spring-boot-starter-security")
 
-	runtime "com.h2database:h2:1.4.190"
+    runtime "com.h2database:h2:1.4.190"
 
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
 }
