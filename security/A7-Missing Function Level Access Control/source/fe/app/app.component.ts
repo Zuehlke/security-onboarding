@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute, Router, NavigationEnd, Event, NavigationStart, RoutesRecognized} from "@angular/router";
-import * as _ from 'lodash';
 
 @Component({
   selector: 'my-app',
@@ -23,13 +22,9 @@ export class AppComponent {
   }
 
   private getTitleOfTheRoute() {
-    _.flatten([this.route, this.route.children])
-      .map(r => r.data)
-      .forEach(dataObservable => {
-        dataObservable.subscribe((data: any) => {
-          this.title = data.title;
-        });
-      });
+    this.route.children[0].data.subscribe((data: any) => {
+      this.title = data.title;
+    });
   }
 
 }
