@@ -13,19 +13,26 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 @EnableAutoConfiguration
-public class HomeController {
+@RequestMapping("/employees")
+public class EmployeeController {
 
     private EmployeeRepository employeeRepository;
 
     @Autowired
-    public HomeController(EmployeeRepository employeeRepository) {
+    public EmployeeController(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
     }
 
-    @RequestMapping("/")
+    @RequestMapping("")
     @ResponseBody
-    Iterable<Employee> home() {
+    Iterable<Employee> index() {
         return  employeeRepository.findAll();
     }
+
+
+
+
+
+
 
 }
