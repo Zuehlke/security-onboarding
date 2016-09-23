@@ -8,11 +8,13 @@ import {EmployeeService} from "./employee-list/employee.service";
 import {CommonModule} from "@angular/common";
 import {routing, appRoutingProviders} from "./app.routing";
 import {LoginComponent} from "./login/login.component";
+import {AuthGuard} from "./auth/auth-guard.service";
+import {AuthService} from "./auth/auth.service";
 
 @NgModule({
   imports: [ BrowserModule, HttpModule, CommonModule, routing],
   declarations: [ AppComponent, EmployeeListComponent , LoginComponent],
-  providers: [EmployeeService, appRoutingProviders],
+  providers: [EmployeeService, appRoutingProviders, AuthGuard, AuthService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

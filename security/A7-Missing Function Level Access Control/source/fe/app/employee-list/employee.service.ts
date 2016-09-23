@@ -15,7 +15,7 @@ export class EmployeeService {
    */
   getEmployees(): Promise<Employee[]> {
     return this.http.get(this.restEndpoint).toPromise()
-      .then(response => response.json()._embedded.employees as Employee[])
+      .then(response => response.json() as Employee[])
       .catch(console.error);
   }
 }
