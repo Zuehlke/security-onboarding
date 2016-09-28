@@ -14,20 +14,5 @@ export class LoginComponent {
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
-    // this.route.data.subscribe((data: any) => {
-    //   this.title = data.title;
-    //   console.log(data);
-    // });
-    // this.router.events.subscribe( (ev: Event) => {
-    //   if(ev instanceof NavigationEnd) {
-    //     this.router;
-    //     this.route;
-    //     this.route.data.subscribe(d => console.log(d));
-    //     this.route.children.forEach(r => {
-    //       console.log(this.route.snapshot.data);
-    //     })
-    //   }
-    // });
-
   }
 }
