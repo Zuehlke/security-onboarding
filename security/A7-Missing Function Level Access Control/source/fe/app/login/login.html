@@ -1,17 +1,23 @@
-<form class="row">
+<form class="row" (ngSubmit)="onSubmit()" #loginForm="ngForm">
     <div class="medium-12 columns">
       <div class="input-group">
         <span class="input-group-label">Username</span>
-        <input class="input-group-field" type="text">
+        <input class="input-group-field" type="text" [(ngModel)]="user.name" required name="name"  #name="ngModel">
+      </div>
+      <div [hidden]="!name.dirty || name.valid" class="alert alert-danger">
+        Username is required
       </div>
     </div>
     <div class="medium-12 columns">
       <div class="input-group">
         <span class="input-group-label">Password</span>
-        <input class="input-group-field" type="password">
+        <input class="input-group-field" type="password" [(ngModel)]="user.password" required name="password"  #password="ngModel">
+      </div>
+      <div [hidden]="!password.dirty || password.valid" class="alert alert-danger">
+        Password is required
       </div>
     </div>
     <div class="medium-12 columns">
-      <a class="expanded button" href="#">Login</a>
+      <button [disabled]="!loginForm.form.valid" class="expanded button">Login</button>
     </div>
 </form>

@@ -10,9 +10,10 @@ import {routing, appRoutingProviders} from "./app.routing";
 import {LoginComponent} from "./login/login.component";
 import {AuthGuard} from "./auth/auth-guard.service";
 import {AuthService} from "./auth/auth.service";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
-  imports: [ BrowserModule, HttpModule, CommonModule, routing],
+  imports: [ BrowserModule, HttpModule, CommonModule, routing, FormsModule],
   declarations: [ AppComponent, EmployeeListComponent , LoginComponent],
   providers: [EmployeeService, appRoutingProviders, AuthGuard, AuthService],
   bootstrap: [ AppComponent ]

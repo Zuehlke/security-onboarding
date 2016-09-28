@@ -9,7 +9,7 @@ import {ActivatedRoute, Router, NavigationEnd, Event, NavigationStart, RoutesRec
 })
 export class LoginComponent {
 
-  title: string;
+  user: {name: string, password: string} = {name: '', password: ''};
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
