@@ -15,7 +15,17 @@
       >
     </div>
   </div>
+
   <div class="medium-12 columns">
-    <button [disabled]="!loginForm.form.valid" class="expanded button">Login</button>
+    <button [disabled]="!loginForm.form.valid" class="login-button expanded button">
+      <i *ngIf="showLoading" class="loading"></i><span>Login</span>
+    </button>
   </div>
+
+  <div *ngIf="loginError" class="medium-12 columns">
+    <div class="alert callout" >
+      <p>Incorrect credentials</p>
+    </div>
+  </div>
+
 </form>

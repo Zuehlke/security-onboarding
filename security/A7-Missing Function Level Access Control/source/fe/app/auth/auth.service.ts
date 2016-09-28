@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/delay';
+import {Injectable} from "@angular/core";
+import "rxjs/add/observable/of";
+import "rxjs/add/operator/do";
+import "rxjs/add/operator/delay";
+import {Http, Headers} from "@angular/http";
+import {UserCredentials} from "./userCredentials";
 
 @Injectable()
 export class AuthService {
@@ -12,11 +12,18 @@ export class AuthService {
   // store the URL so we can redirect after logging in
   redirectUrl: string;
 
-  login(): Observable<boolean> {
-    return Observable.of(true).delay(1000).do(val => this.isLoggedIn = true);
+  constructor(private http: Http) {}
+
+  login(user: UserCredentials): Promise<void> {
+    return this.http.get('http://localhost:8080/employees', {
+      headers: new Headers({
+        Authorization: `Basic ${btoa(user.name + ':' + user.password)}`
+      })
+    }).toPromise()
+      .then(() => {
+        this.isLoggedIn = true;
+      })
+      .then(() => {});
   }
 
-  logout(): void {
-    this.isLoggedIn = false;
-  }
 }
