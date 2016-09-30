@@ -39,4 +39,8 @@ export class AuthService {
     return this._user;
   }
 
+  logout() {
+    this.credentialsRepository.clear();
+    this._isLoggedIn = false;
+  }
 }

@@ -18,4 +18,8 @@ export class CredentialsRepository {
   private hashCredentials(user: UserCredentials): string {
     return btoa(user.name + ':' + user.password);
   }
+
+  clear(): void {
+    localStorage.removeItem(this.CREDENTIALS_HASH);
+  }
 }

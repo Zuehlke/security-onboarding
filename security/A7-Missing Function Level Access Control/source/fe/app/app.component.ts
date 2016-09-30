@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute, Router, NavigationEnd, Event, NavigationStart, RoutesRecognized} from "@angular/router";
+import {AuthService} from "./auth/auth.service";
 
 @Component({
   selector: 'my-app',
@@ -9,7 +10,7 @@ import {ActivatedRoute, Router, NavigationEnd, Event, NavigationStart, RoutesRec
 export class AppComponent {
   title: string;
 
-  constructor(private route: ActivatedRoute, private router: Router) {
+  constructor(private route: ActivatedRoute, private router: Router, private authService: AuthService) {
   }
 
   ngOnInit() {
@@ -19,6 +20,14 @@ export class AppComponent {
       }
     });
 
+  }
+
+  logout(): void {
+    this.authService.logout();
+  }
+
+  get isLoggedIn(): boolean {
+    return this.authService.isLoggedIn;
   }
 
   private getTitleOfTheRoute() {

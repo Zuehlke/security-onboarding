@@ -9,7 +9,8 @@
     <div class="top-bar-right">
       <ul class="menu">
         <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a routerLink="">Employees</a></li>
-        <li routerLinkActive="active"><a routerLink="login">Login</a></li>
+        <li *ngIf="!isLoggedIn" routerLinkActive="active"><a routerLink="login">Login</a></li>
+        <li *ngIf="isLoggedIn"><a (click)="logout()">Logout</a></li>
       </ul>
     </div>
   </div>
