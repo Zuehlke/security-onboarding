@@ -24,7 +24,7 @@ export class LoginComponent {
     }, 1000);
 
     this.authService.login(this.user).then( () => {
-      this.router.navigate(['/employees']);
+      this.router.navigate(['']);
       this.showLoading = false;
       this.loginError = false;
       clearTimeout(isLoadingTimeoutId);
