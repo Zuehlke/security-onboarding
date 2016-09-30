@@ -1,13 +1,13 @@
-import {Http} from "@angular/http";
 import {Employee} from "./employee.model";
 import {Injectable} from "@angular/core";
-import 'rxjs/add/operator/toPromise';
+import "rxjs/add/operator/toPromise";
+import {HttpClient} from "../http/http-client";
 
 @Injectable()
 export class EmployeeService {
   private restEndpoint = 'http://localhost:8080/employees';
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   /**
    * Gets the list of employees from rest endpoint
