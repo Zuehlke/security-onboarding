@@ -4,7 +4,7 @@ This is a Git basics tutorial. In this tutorial we will cover basic git commands
 Note that we will use git from command line so we need to make sure that git cmd is enabled.  
 Note that you will be cloning and working with your own branch from the Bitbucket for this tutorial so make sure that your bitbucket user is created with your zuhlke mail and that the branch is created and the branch name is provided for your before you start this tutorial.  
 
-Bitbucket repository that we will use is `https://bitbucket.org/zuehlke/gitworkshop`
+Bitbucket repository that we will use is `https://bitbucket.org/ZuehlkeGlobal/gitworkshop.git`
 
 ##Table of content:  
 1. [Installation](#markdown-header-installation)  
@@ -54,9 +54,9 @@ For more details you could have a look into resource `https://confluence.atlassi
 
 To clone remote repository run the command:
 
-`git clone -b <your_branch_name> https://<your_bitbucket_username>@bitbucket.org/zuehlke/gitworkshop.git` - by providing username when cloning the project you will not be prompted for username by git for pull and push commands.
+`git clone -b <your_branch_name> https://<your_bitbucket_username>@bitbucket.org/ZuehlkeGlobal/gitworkshop.git` - by providing username when cloning the project you will not be prompted for username by git for pull and push commands.
 
-For example `git clone -b marko_ivanovic https://markoi_13@bitbucket.org/zuehlke/gitworkshop.git`
+For example `git clone -b marko_ivanovic https://markoi_13@bitbucket.org/ZuehlkeGlobal/gitworkshop.git`
 
 You will be prompt to type in your password to complete the clone.
 
@@ -104,7 +104,7 @@ To register call register URL with your parameters in place of `<brackets>`
 
 `http://gitcommander.eu-central-1.elasticbeanstalk.com/GitServlet?action=register&user=<your_bitbucket_username>&url=<gitrepourl>&branch=<your_branch_name>`
 
-For this tutorial the `<gitrepourl>` will be `https://bitbucket.org/zuehlke/gitworkshop.git`
+For this tutorial the `<gitrepourl>` will be `https://bitbucket.org/ZuehlkeGlobal/gitworkshop.git`
 
 If you want to check your registries (maybe to retrieve forgotten ID) you can call GitCommander's action url:
 
