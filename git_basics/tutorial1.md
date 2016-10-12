@@ -123,7 +123,7 @@ This call will delete your registration with given `ID` from `GitCommander`.
 Now let's do some work on our project. We will create some changes and we will push them to the remote repository.
 Since the theme of our project is the Solar System let's do some planet discovering.
 
-Create new JavaScript file in the folder `gitworkshop/solar system/js` (create new folder named `js`) and name it name mercury.js with content:
+Create new JavaScript file in the folder `gitworkshop/solar system/js` (create new folder named `js`) and name it mercury.js with content:
 
     var planetInfo = {name: 'Mercury', diameter: '4,878 km', orbitTime: '88 Earth days'}
     
@@ -370,7 +370,7 @@ Notice the edit/delete effect.
 >remote: Compressing objects: 100% (4/4), done.  
 >remote: Total 4 (delta 2), reused 0 (delta 0)  
 >Unpacking objects: 100% (4/4), done.  
->From https://bitbucket.org/zuehlke/gitworkshop  
+>From https://bitbucket.org/ZuehlkeGlobal/gitworkshop  
 >   be3e595..cab6a13  marko_ivanovic -> origin/marko_ivanovic  
 >CONFLICT (modify/delete): solar system/js/pluto.js deleted in cab6a13d4034a3fdb7  
 >2fa4a5a6760d3653509e74 and modified in HEAD. Version HEAD of solar system/js/pluto.js left in tree.  
@@ -491,7 +491,7 @@ Now execute command `git pull` and notice the message that you will receive.
 >remote: Compressing objects: 100% (4/4), done.  
 >remote: Total 4 (delta 1), reused 0 (delta 0)  
 >Unpacking objects: 100% (4/4), done.  
->From https://bitbucket.org/zuehlke/gitworkshop  
+>From https://bitbucket.org/ZuehlkeGlobal/gitworkshop  
 >   147402f..c6c18cc  marko_ivanovic -> origin/marko_ivanovic  
 >Auto-merging solar system/index.html  
 >CONFLICT (content): Merge conflict in solar system/index.html  
