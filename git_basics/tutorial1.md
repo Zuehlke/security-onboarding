@@ -4,7 +4,7 @@ This is a Git basics tutorial. In this tutorial we will cover basic git commands
 Note that we will use git from command line so we need to make sure that git cmd is enabled.  
 Note that you will be cloning and working with your own branch from the Bitbucket for this tutorial so make sure that your bitbucket user is created with your zuhlke mail and that the branch is created and the branch name is provided for your before you start this tutorial.  
 
-Bitbucket repository that we will use is `https://bitbucket.org/ZuehlkeGlobal/gitworkshop.git`
+Bitbucket repository that we will use is `https://bitbucket.org/ZuehlkeGlobal/gitworkshop`
 
 ##Table of content:  
 1. [Installation](#markdown-header-installation)  
