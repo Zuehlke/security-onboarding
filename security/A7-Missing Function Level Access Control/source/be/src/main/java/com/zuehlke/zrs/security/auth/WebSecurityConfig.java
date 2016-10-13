@@ -1,4 +1,4 @@
-package com.zuehlke.zrs.security.config;
+package com.zuehlke.zrs.security.auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -30,8 +30,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-                .inMemoryAuthentication()
-                .withUser("user").password("pass").roles("USER");
+        auth.inMemoryAuthentication()
+            .withUser("user").password("pass").roles("USER");
+        auth.inMemoryAuthentication()
+            .withUser("admin").password("pass").roles("ADMIN");
     }
 }
