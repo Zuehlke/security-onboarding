@@ -5,7 +5,7 @@ import {HttpClient} from "../http/http-client";
 
 @Injectable()
 export class EmployeeService {
-  private restEndpoint = 'http://localhost:8080/employees';
+  private restEndpoint = 'http://localhost:9080/employees';
 
   constructor(private http: HttpClient) { }
 

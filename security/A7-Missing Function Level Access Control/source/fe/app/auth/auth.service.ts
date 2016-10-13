@@ -19,7 +19,7 @@ export class AuthService {
   }
 
   login(user: UserCredentials): Promise<void> {
-    return this.http.get('http://localhost:8080/login', {
+    return this.http.get('http://localhost:9080/login', {
       headers: new Headers({
         Authorization: `Basic ${this.credentialsRepository.saveAndGet(user)}`
       })
