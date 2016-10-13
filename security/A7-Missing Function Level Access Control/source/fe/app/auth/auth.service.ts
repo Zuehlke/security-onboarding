@@ -5,28 +5,37 @@ import "rxjs/add/operator/delay";
 import {Http, Headers} from "@angular/http";
 import {UserCredentials} from "./userCredentials";
 import {CredentialsRepository} from "./credentials-repository";
+import {AuthenticationResponse} from "./authentication-response";
+import {Roles} from "./roles";
+import {ApiEndpoints} from "../api-endpoints";
 
 @Injectable()
 export class AuthService {
   private _isLoggedIn: boolean = false;
-  private _user: UserCredentials;
+  private _isAdmin: boolean;
 
   // store the URL so we can redirect after logging in
   redirectUrl: string;
 
-  constructor(private http: Http, private credentialsRepository: CredentialsRepository) {
+  private IS_ADMIN_KEY = "IS_ADMIN";
+
+  constructor(private http: Http, private credentialsRepository: CredentialsRepository,
+              private urlConfig: ApiEndpoints) {
     this._isLoggedIn = credentialsRepository.get() !== null;
+    this._isAdmin =  localStorage.getItem(this.IS_ADMIN_KEY) === "true";
+
   }
 
   login(user: UserCredentials): Promise<void> {
-    return this.http.get('http://localhost:9080/login', {
+    return this.http.get(this.urlConfig.login, {
       headers: new Headers({
         Authorization: `Basic ${this.credentialsRepository.saveAndGet(user)}`
       })
     }).toPromise()
-      .then(() => {
+      .then( response => {
         this._isLoggedIn = true;
-        this._user = user;
+        this._isAdmin = (response.json() as AuthenticationResponse).roles.includes(Roles.ADMIN);
+        localStorage.setItem("IS_ADMIN", this._isAdmin ? "true":"false");
       })
       .then(() => {});
   }
@@ -35,8 +44,9 @@ export class AuthService {
     return this._isLoggedIn;
   }
 
-  get user():UserCredentials {
-    return this._user;
+
+  get isAdmin(): boolean {
+    return this._isAdmin;
   }
 
   logout() {

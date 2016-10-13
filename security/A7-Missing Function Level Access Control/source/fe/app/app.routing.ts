@@ -4,16 +4,21 @@ import {EmployeeListComponent} from "./employee-list/employee-list.component";
 import {LoginComponent} from "./login/login.component";
 import {AuthGuard} from "./auth/auth-guard.service";
 
+export const AppRoutes = {
+  LOGIN: 'login',
+  DEFAULT: ''
+};
+
 const appRoutes: Routes = [
   {
-    path: 'login',
+    path: AppRoutes.LOGIN,
     component: LoginComponent,
     data: {
       title: 'Login'
     }
   },
   {
-    path: '',
+    path: AppRoutes.DEFAULT,
     component: EmployeeListComponent,
     data: {
       title: 'Employees List'

@@ -2,6 +2,7 @@ import {Component} from "@angular/core";
 import {Router} from "@angular/router";
 import {AuthService} from "../auth/auth.service";
 import {UserCredentials} from "../auth/userCredentials";
+import {AppRoutes} from "../app.routing";
 
 @Component({
   selector: 'login',
@@ -24,7 +25,7 @@ export class LoginComponent {
     }, 1000);
 
     this.authService.login(this.user).then( () => {
-      this.router.navigate(['']);
+      this.router.navigate([AppRoutes.DEFAULT]);
       this.showLoading = false;
       this.loginError = false;
       clearTimeout(isLoadingTimeoutId);

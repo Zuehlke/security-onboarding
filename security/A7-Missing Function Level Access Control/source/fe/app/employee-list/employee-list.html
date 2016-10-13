@@ -4,7 +4,7 @@
     <th width="200">First name</th>
     <th width="200">Last name</th>
     <th>Title</th>
-    <th width="150">Actions</th>
+    <th width="150" *ngIf="canDelete">Actions</th>
   </tr>
   </thead>
   <tbody>
@@ -12,7 +12,7 @@
     <td>{{employee.firstName}}</td>
     <td>{{employee.lastName}}</td>
     <td>{{employee.title}}</td>
-    <td><button type="button" class="delete-button alert button">Delete</button></td>
+    <td *ngIf="canDelete"><button type="button" class="delete-button alert button">Delete</button></td>
   </tr>
   </tbody>
 </table>

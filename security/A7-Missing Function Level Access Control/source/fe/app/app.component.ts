@@ -1,6 +1,7 @@
-import {Component} from '@angular/core';
-import {ActivatedRoute, Router, NavigationEnd, Event, NavigationStart, RoutesRecognized} from "@angular/router";
+import {Component} from "@angular/core";
+import {ActivatedRoute, Router, NavigationEnd, Event} from "@angular/router";
 import {AuthService} from "./auth/auth.service";
+import {AppRoutes} from "./app.routing";
 
 @Component({
   selector: 'my-app',
@@ -24,6 +25,7 @@ export class AppComponent {
 
   logout(): void {
     this.authService.logout();
+    this.router.navigate([AppRoutes.LOGIN]);
   }
 
   get isLoggedIn(): boolean {
