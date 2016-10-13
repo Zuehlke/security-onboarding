@@ -1,6 +1,8 @@
-# Requreiments
+# Prerequisites
 - OS: Windows for using run.bat
+- Installed 'nodejs'
 
 # Running the app
-- Install node
-- Execute run.bat
+- Open command prompt
+- Change working directory to be 'A7-Missing Function Level Access Control'
+- Execute: run.bat
