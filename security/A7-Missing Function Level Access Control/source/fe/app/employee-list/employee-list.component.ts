@@ -5,7 +5,7 @@ import {Employee} from "./employee.model";
 @Component({
   selector: 'employee-list',
   templateUrl: './employee-list.html',
-
+  styleUrls: ['./employee-list.css'],
   moduleId: module.id,
 })
 export class EmployeeListComponent {
