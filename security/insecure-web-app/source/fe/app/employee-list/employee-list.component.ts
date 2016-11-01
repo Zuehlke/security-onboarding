@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from "@angular/core";
 import {EmployeeService} from "./employee.service";
 import {Employee} from "./employee.model";
 import {AuthService} from "../auth/auth.service";

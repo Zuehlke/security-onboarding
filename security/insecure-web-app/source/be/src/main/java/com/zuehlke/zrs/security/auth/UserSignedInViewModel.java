@@ -21,10 +21,8 @@ public class UserSignedInViewModel {
     }
 
     @Override
-    public String toString() {
-        return "UserSignedInViewModel{" +
-                "roles=" + roles +
-                '}';
+    public int hashCode() {
+        return roles != null ? roles.hashCode() : 0;
     }
 
     @Override
@@ -39,7 +37,9 @@ public class UserSignedInViewModel {
     }
 
     @Override
-    public int hashCode() {
-        return roles != null ? roles.hashCode() : 0;
+    public String toString() {
+        return "UserSignedInViewModel{" +
+                "roles=" + roles +
+                '}';
     }
 }
