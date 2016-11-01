@@ -1,17 +1,20 @@
-import {Http} from "@angular/http";
 import {Employee} from "./employee.model";
 import {Injectable} from "@angular/core";
-import 'rxjs/add/operator/toPromise';
+import "rxjs/add/operator/toPromise";
+import {HttpClient} from "../http/http-client";
+import {ApiEndpoints} from "../api-endpoints";
 
 @Injectable()
 export class EmployeeService {
-  private restEndpoint = 'http://localhost:8080/';  // URL to web api
+  constructor(private http: HttpClient, private urlConfig: ApiEndpoints) { }
 
-  constructor(private http: Http) { }
-
+  /**
+   * Gets the list of employees from rest endpoint
+   * @returns {Promise<Employee[]>}
+   */
   getEmployees(): Promise<Employee[]> {
-    return this.http.get(this.restEndpoint).toPromise()
-      .then(response => response.json().data as Employee[])
+    return this.http.get(this.urlConfig.employees).toPromise()
+      .then(response => response.json() as Employee[])
       .catch(console.error);
   }
 }

@@ -26,6 +26,8 @@
       // other libraries
       'rxjs':                       'npm:rxjs',
       'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
+      'lodash': 'npm:lodash',
+      'Immutable': 'npm:immutable/dist/immutable.min.js'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -35,6 +37,10 @@
       },
       rxjs: {
         defaultExtension: 'js'
+      },
+      lodash: {
+        defaultExtension: 'js',
+        main: './index.js'
       },
       'angular2-in-memory-web-api': {
         main: './index.js',

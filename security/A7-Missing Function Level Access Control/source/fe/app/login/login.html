@@ -1,0 +1,31 @@
+<form class="row" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+  <div class="medium-12 columns">
+    <div class="input-group">
+      <span class="input-group-label">Username</span>
+      <input class="input-group-field" type="text" [(ngModel)]="user.name" required name="name" #name="ngModel"
+             [placeholder]="name.dirty && !name.valid ? 'Username is required':''">
+    </div>
+  </div>
+  <div class="medium-12 columns">
+    <div class="input-group">
+      <span class="input-group-label">Password</span>
+      <input class="input-group-field" type="password" [(ngModel)]="user.password" required name="password"
+             #password="ngModel"
+             [placeholder]="password.dirty && !password.valid ? 'Password is required':''"
+      >
+    </div>
+  </div>
+
+  <div class="medium-12 columns">
+    <button [disabled]="!loginForm.form.valid" class="login-button expanded button">
+      <i *ngIf="showLoading" class="loading"></i><span>Login</span>
+    </button>
+  </div>
+
+  <div *ngIf="loginError" class="medium-12 columns">
+    <div class="alert callout" >
+      <p>Incorrect credentials</p>
+    </div>
+  </div>
+
+</form>

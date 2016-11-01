@@ -1,3 +1,5 @@
-export class Employee {
-  constructor(public firstName: string, public lastName: string, public title: string){}
+export interface Employee {
+  firstName: string;
+  lastName: string;
+  title: string;
 }
