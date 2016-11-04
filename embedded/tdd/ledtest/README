@@ -1,0 +1,69 @@
+Simple LED driver
+-----------------
+
+The goal of the exercise is to implement simple virtual LED driver by applying
+TDD principles. The driver would support 16 LED outputs, as well as some basic
+functionalities (read/write single/multiple LEDs).
+
+Project map
+-----------
+
+build - target directory for leddrivertest application
+include -- leddriver.h
+        |- runtimeerror.h
+src -- leddriver.c - the only file that the user should edit in this exercise
+    |- runtimeerror.c
+test - leddrivertest.c
+unity -- include -- unity_fixture_internals.h
+      |          |- unity_fixture_malloc_overrides.h
+      |          |- unity_fixture.h
+      |          |- unity_internals.h
+      |          |- unity.h
+      |- src -- unity_fixture.c
+             |- unity.c
+Makefile
+README
+
+First thing to do
+-----------------
+
+`make test` will compile and run all the tests. Some of them seem to pass even
+though you didn't edit anything, but don't worry - some tests may pass with the
+default behaviour of the functions, such as:
+- always return zero
+- always return false
+- always return true
+
+`make clean` will return the directories to the original state, with no
+compiled, intermediate or any other files, aside from source files, Makefile
+and this README.
+
+The way to go
+-------------
+
+The idea of TDD is to create an implementation that conforms to the tests, and
+nothing more. You will start from the first test and create a step-by-step
+implementation that will satisfy the tests that are given. Don't worry if your
+solution doesn't satisfy all the tests from the start - it's completely ok to
+refactor your code after you find out that some tests fail. In fact, that is
+one of the basic ideas of the TDD.
+Also, resist the temptation to try to create a complete solution in one go,
+just create a minimum working solution for the first test, then for the first
+two, and so on.
+
+What to do next?
+----------------
+
+Familiarize yourself with Unity test harness, and with Cmock tool for mock
+function generation. Use these two methods to create a working Modbus master
+and slave state machines for RTU, ASCII and IP datalinks. Support all of the
+read/write functions (there are eight), and as a bonus objective, add two
+functions for file access.
+Follow the TDD way and create test first, and then the code which satisfies the
+test. Good luck and have fun :-)
+
+Useful links
+------------
+http://www.throwtheswitch.org/unity
+http://www.throwtheswitch.org/cmock/
+http://www.modbus.org/specs.php

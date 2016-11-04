@@ -36,3 +36,7 @@ _ReSharper*/
 [Tt]est[Rr]esult*
 *.sass-cache
 node_modules/
+*.o
+*.d
+*~
+
