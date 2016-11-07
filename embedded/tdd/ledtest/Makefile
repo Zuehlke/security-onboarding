@@ -1,12 +1,12 @@
-PATHUI = unity/include/
-PATHUS = unity/src/
-PATHI  = include/
-PATHS  = src/
-PATHT  = test/
-PATHB  = build/
-PATHD  = build/depends/
-PATHO  = build/objs/
-PATHR  = build/results/
+PATHUI = unity/include
+PATHUS = unity/src
+PATHI  = include
+PATHS  = src
+PATHT  = test
+PATHB  = build
+PATHD  = build/depends
+PATHO  = build/objs
+PATHR  = build/results
 
 CC=gcc
 DEPEND=gcc -MM -MG
@@ -27,6 +27,9 @@ DEPENDS = $(SRCS:.c=.d)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 $(TARGET): $(OBJS)
+	mkdir -p $(PATHD)
+	mkdir -p $(PATHO)
+	mkdir -p $(PATHR)
 	$(CC) -o $(TARGET) $(OBJS)
 
 .PHONY: clean test

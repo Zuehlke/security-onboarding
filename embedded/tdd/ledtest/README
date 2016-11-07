@@ -51,6 +51,19 @@ Also, resist the temptation to try to create a complete solution in one go,
 just create a minimum working solution for the first test, then for the first
 two, and so on.
 
+Frequently Asked Questions
+--------------------------
+
+Q: RUNTIME_ERROR is a non-standard error reporting function, where can I see
+the documentation for it?
+A: include/runtimeerror.h and srd/runtimeerror.c
+
+Q: LedMemoryIsNotReadable test makes no sense. What am I supposed to do?
+A: This one is actually a bit tricky and it relates to hardware memory model.
+Driver shouldn't be able to read hardware write-only memory, such as LED output
+memory. We must make sure that our direct changing of value of virtualLeds won't
+affect LED driver by introducing a level of indirection in driver code.
+
 What to do next?
 ----------------
 
