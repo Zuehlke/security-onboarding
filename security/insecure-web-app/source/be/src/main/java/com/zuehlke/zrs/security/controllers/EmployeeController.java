@@ -7,10 +7,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by nesp on 21-Sep-16.
@@ -32,6 +29,14 @@ public class EmployeeController {
     @Secured("USER")
     Iterable<Employee> index() {
         return  employeeRepository.findAll();
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    @ResponseStatus(HttpStatus.OK)
+    @ResponseBody
+    String create(@RequestBody Employee input) {
+        System.out.print(input);
+        return "TODO: CREATION NEEDS TO BE IMPLEMENTED";
     }
 
 
