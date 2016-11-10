@@ -15,11 +15,11 @@ public class Employee implements Serializable {
     @Id
     @GeneratedValue
     private Long id;
-    @Column(nullable = false)
+    @Column(name = "FIRSTNAME", nullable = false)
     private String firstName;
-    @Column(nullable = false)
+    @Column(name = "LASTNAME", nullable = false)
     private String lastName;
-    @Column(nullable = false)
+    @Column(name = "TITLE", nullable = false)
     private String title;
 
     protected Employee() {
@@ -28,6 +28,11 @@ public class Employee implements Serializable {
     }
 
     public Employee(String firstName, String lastName, String title) {
+        this(null, firstName, lastName, title);
+    }
+
+    public Employee(Long id, String firstName, String lastName, String title) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.title = title;

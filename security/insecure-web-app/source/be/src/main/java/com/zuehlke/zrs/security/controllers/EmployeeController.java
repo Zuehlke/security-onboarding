@@ -4,10 +4,24 @@ import com.zuehlke.zrs.security.models.Employee;
 import com.zuehlke.zrs.security.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowCallbackHandler;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
+
+import static java.util.stream.Collectors.toList;
 
 /**
  * Created by nesp on 21-Sep-16.
@@ -18,33 +32,42 @@ import org.springframework.web.bind.annotation.*;
 public class EmployeeController {
 
     private EmployeeRepository employeeRepository;
+    private JdbcTemplate jdbcTemplate;
 
     @Autowired
-    public EmployeeController(EmployeeRepository employeeRepository) {
+    public EmployeeController(EmployeeRepository employeeRepository, JdbcTemplate jdbcTemplate) {
         this.employeeRepository = employeeRepository;
+        this.jdbcTemplate = jdbcTemplate;
     }
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     @Secured("USER")
     Iterable<Employee> index() {
-        return  employeeRepository.findAll();
+        return StreamSupport.stream(employeeRepository.findAll().spliterator(), false)
+                .filter(emp -> !emp.getTitle().equals("ADMIN"))
+                .collect(toList());
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    @Secured("USER")
+    Employee findByTitle(@PathVariable String id) {
+        String sql = "SELECT * FROM EMPLOYEE WHERE ID = " + id;
+        try {
+            return (Employee) jdbcTemplate.queryForObject(sql,
+                    (RowMapper) (rs, num) -> new Employee(rs.getLong("ID"), rs.getString("FIRSTNAME"), rs.getString("LASTNAME"), rs.getString("TITLE")));
+        } catch(EmptyResultDataAccessException e) {
+            return null;
+        }
+    }
+
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.OK)
-    @ResponseBody
-    String create(@RequestBody Employee input) {
-        System.out.print(input);
-        return "TODO: CREATION NEEDS TO BE IMPLEMENTED";
-    }
-
-
-    @RequestMapping(method = RequestMethod.DELETE)
-    @ResponseStatus(HttpStatus.NOT_IMPLEMENTED)
-    @ResponseBody
-    String delete() {
-        return "TODO: DELETION NEEDS TO BE IMPLEMENTED";
+    @Secured("ADMIN")
+    void delete(@PathVariable Long id) {
+        employeeRepository.delete(id);
     }
 
 
