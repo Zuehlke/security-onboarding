@@ -1,12 +1,11 @@
-# Software Security
+# Software Security - Introduction
 
-## Introduction
 
 86% percent of all websites have at least one serious vulnerability, and most of the time, they contain more than one, according to WhiteHat Security's “[2015 Website Security Statistics Report](https://info.whitehatsec.com/rs/whitehatsecurity/images/2015-Stats-Report.pdf).”
 
 Our goal with this on-boarding is to mitigate risk of attacks by exploiting vulnerabilities in the software systems our engineers create.
 
-### What is Software Security?
+## What is Software Security?
 
 First let u look at Information Security.
 
@@ -22,23 +21,29 @@ It also provides other services, like:
 
 Software Security provides these services on the application layer, which is the layer we mostly work as software engineers.
 
-### Cryptography
+## Cryptography
 
 Cryptographic systems provide help in providing all services except authorization.
 
 Some concepts in cryptography are:
 
 #### Symmetric Cryptography
+
 Symmetric Cryptography is the most traditional form of cryptography. In a symmetric cryptosystem, the involved parties share a common secret (password, pass phrase, or key). Data is encrypted and decrypted using the same key.
 
 #### Asymmetric Cryptography (also called Public/Private Key Cryptography)
+
 Asymmetric algorithms use two keys, one to encrypt the data, and either key to decrypt. These inter-dependent keys are generated together. One is labeled the Public key and is distributed freely. The other is labeled the Private Key and must be kept hidden.
 
 PGP and SSL are prime examples of a systems implementing asymmetric cryptography, using RSA or other algorithms.
 
+#### Hashes
+
+Hash functions take some data of an arbitrary length (and possibly a key or password) and generate a fixed-length hash based on this input. Hash functions used in cryptography have the property that it is easy to calculate the hash, but difficult or impossible to re-generate the original input if only the hash value is known.
+
 If interested read more on cryptography here: [https://www.owasp.org/index.php/Guide_to_Cryptography](https://www.owasp.org/index.php/Guide_to_Cryptography)
 
-### Privacy
+## Privacy
 
 Another important topic is privacy. This means mishandling private information, such as customer passwords or social security numbers, which can compromise user privacy, and is often illegal.
 
