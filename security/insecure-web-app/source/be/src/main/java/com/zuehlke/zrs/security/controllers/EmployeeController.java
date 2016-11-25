@@ -52,7 +52,7 @@ public class EmployeeController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
     @Secured("USER")
-    Employee findByTitle(@PathVariable String id) {
+    Employee findById(@PathVariable String id) {
         String sql = "SELECT * FROM EMPLOYEE WHERE ID = " + id;
         try {
             return (Employee) jdbcTemplate.queryForObject(sql,
