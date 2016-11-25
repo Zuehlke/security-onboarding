@@ -12,6 +12,7 @@ import {AuthService} from "../auth/auth.service";
 export class EmployeeListComponent {
 
   employees: Employee[];
+  searchId: string;
 
   constructor(private employeeService: EmployeeService, private authService: AuthService) {}
 
@@ -19,6 +20,14 @@ export class EmployeeListComponent {
     this.employeeService.getEmployees().then(employees => {
       this.employees = employees;
     });
+  }
+  
+  getEmployee(): void {
+	if (this.searchId == '') {
+	  this.employeeService.getEmployees().then(employees => {this.employees = employees;});
+	  return;
+	}
+	this.employeeService.getEmployeeById(this.searchId).then(employee => this.employees = [employee]);
   }
 
   get canDelete(): boolean {

@@ -11,6 +11,10 @@ export class ApiEndpoints {
   get employees(): string {
     return this.toAbsoluteUrl('employees');
   }
+  
+  employeeSearch(id: string): string {
+	  return this.toAbsoluteUrl('employees/' + id);
+  }
 
   private toAbsoluteUrl(relativeUrl: string) {
     return `${this._baseUrl}${relativeUrl}`;

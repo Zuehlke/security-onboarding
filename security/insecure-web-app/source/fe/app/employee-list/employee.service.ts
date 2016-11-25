@@ -17,4 +17,14 @@ export class EmployeeService {
       .then(response => response.json() as Employee[])
       .catch(console.error);
   }
+  
+  /**
+   * Gets the employee with specific id
+   * @returns {Promise<Employee>}
+   */
+  getEmployeeById(id: string): Promise<Employee> {
+    return this.http.get(this.urlConfig.employeeSearch(id)).toPromise()
+      .then(response => response.json() as Employee)
+      .catch(console.error);
+  }
 }
