@@ -36,14 +36,9 @@ public class EmployeeController {
 
 
     @RequestMapping(method = RequestMethod.DELETE)
-    @ResponseStatus(HttpStatus.NOT_IMPLEMENTED)
+    //@ResponseStatus(HttpStatus.NOT_IMPLEMENTED)
     @ResponseBody
-    String delete() {
-        return "TODO: DELETION NEEDS TO BE IMPLEMENTED";
+    void delete(long id) {
+        employeeRepository.delete(id);
     }
-
-
-
-
-
 }
