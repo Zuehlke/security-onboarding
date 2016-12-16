@@ -44,5 +44,5 @@ It calls the DELETE verb on the http://localhost:9080/employees/{id} endpoint, a
 Have a look into the OWASP documentation and understand how to fix this using the CSRF anti forgery token.
 
 Hint: 
-* Read following link: https://docs.spring.io/spring-security/site/docs/current/reference/html/csrf.html#csrf-using
+* Read following link: https://spring.io/blog/2015/01/12/the-login-page-angular-js-and-spring-security-part-ii
 * CSRF protection in Spring can be disabled by calling the `.csrf().disable()` of the `HttpSecurity`
