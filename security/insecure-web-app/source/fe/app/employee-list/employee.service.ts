@@ -18,6 +18,16 @@ export class EmployeeService {
       .catch(console.error);
   }
 
+  /**
+   * Gets the employee with specific id
+   * @returns {Promise<Employee>}
+   */
+  getEmployeeById(id: string): Promise<Employee> {
+    return this.http.get(this.urlConfig.employeeSearch(id)).toPromise()
+      .then(response => response.json() as Employee)
+      .catch(console.error);
+  }
+
   deleteEmployee(id: number): Promise<void> {
     return this.http.delete(this.urlConfig.employees + "?id=" + id)
       .toPromise()
