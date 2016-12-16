@@ -1,0 +1,25 @@
+<div class="container">
+
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li class="menu-text">Employees Listing Site</li>
+      </ul>
+    </div>
+    <div class="top-bar-right">
+      <ul class="menu">
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a routerLink="">Employees</a></li>
+        <li *ngIf="!isLoggedIn" routerLinkActive="active"><a routerLink="login">Login</a></li>
+        <li *ngIf="isLoggedIn"><a (click)="logout()">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <h1 class="title page-title">{{title}}</h1>
+
+    <router-outlet></router-outlet>
+  </div>
+
+</div>
+

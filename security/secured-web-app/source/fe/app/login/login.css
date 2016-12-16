@@ -1,0 +1,15 @@
+.ng-invalid:not(.ng-pristine) {
+  border-color: red;
+}
+
+.login-button {
+  font-size: 18px;
+}
+
+.login-button > * {
+  vertical-align: middle;
+}
+
+.loading {
+  margin-right: 10px;
+}
