@@ -40,3 +40,6 @@ node_modules/
 *.d
 *~
 
+build/
+.gradle/
+out/
