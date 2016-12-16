@@ -5,26 +5,30 @@
 
 OWASP documentation: https://www.owasp.org/index.php/Top_10_2013-A8-Cross-Site_Request_Forgery_(CSRF)
 
-Imagine you get an e-mail that would fool you in clicking an image. The onclick event on this image activates a JavaScript AJAX request to a DELETE action on the back-end to a user account.
+Imagine you login to your favorite website. You leave this tab with your favorite website open and open another tab to check your e-mails.
 
-Now if you have a running session, where you are logged in (authenticated) to the vulnerable website, this request would delete a user, and you wouldn't be aware what you did.
+You get an e-mail that fools you into clicking an image. The onclick event on this image activates a JavaScript AJAX request to an endpoint that deletes the user in your favorite website.
+
+Since you are logged into the website and have a running session this request is authenticated and will delete the user. You wouldn't be aware that your click caused this.
 
 
-### Example of Attack
+### Example of attack
 
 1. Login to the insecure-web-app
-2. Go to the folder `A8-Cross-Site Request Forgery (CSRF)\exploit`
-3. Run index.html
-4. Click on the prize :-)
+2. Leave it open
+3. Go to the folder `A8-Cross-Site Request Forgery (CSRF)\exploit`
+4. Run index.html
+5. Click on the prize :-)
+6. Go back to the insecure-web-app user page and you will see no user is present anymore
 
-### Analysis of the Attack
+### Analysis of the attack
 
 If you open the `exploit\index.html` you will see this function
 
 ```
 function callDelete() {
     for (let i = 0; i < 10; i++) {
-        var url = "http://localhost:9080/employees?id=" + i;
+        var url = "http://localhost:9080/employees/" + i;
         
         var xhttp = new XMLHttpRequest();
         xhttp.open("DELETE", url, true);
@@ -33,3 +37,12 @@ function callDelete() {
 }
 ```
 
+It calls the DELETE verb on the http://localhost:9080/employees/{id} endpoint, and this deletes the user.
+
+### Task: Prevent the CSRF attack
+
+Have a look into the OWASP documentation and understand how to fix this using the CSRF anti forgery token.
+
+Hint: 
+* Read following link: https://docs.spring.io/spring-security/site/docs/current/reference/html/csrf.html#csrf-using
+* CSRF protection in Spring can be disabled by calling the `.csrf().disable()` of the `HttpSecurity`
