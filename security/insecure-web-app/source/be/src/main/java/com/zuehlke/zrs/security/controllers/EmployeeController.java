@@ -7,10 +7,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by nesp on 21-Sep-16.
@@ -35,10 +32,10 @@ public class EmployeeController {
     }
 
 
-    @RequestMapping(method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     //@ResponseStatus(HttpStatus.NOT_IMPLEMENTED)
     @ResponseBody
-    void delete(long id) {
+    void delete(@PathVariable long id) {
         employeeRepository.delete(id);
     }
 }

@@ -19,7 +19,7 @@ export class EmployeeService {
   }
 
   deleteEmployee(id: number): Promise<void> {
-    return this.http.delete(this.urlConfig.employees + "?id=" + id)
+    return this.http.delete(this.urlConfig.employees + "/" + id)
       .toPromise()
       .then( ( ) => { } );
   }
