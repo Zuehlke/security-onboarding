@@ -62,16 +62,10 @@ public class EmployeeController {
         }
     }
 
-
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    @ResponseStatus(HttpStatus.OK)
-    @Secured("ADMIN")
-    void delete(@PathVariable Long id) {
+    @RequestMapping(method = RequestMethod.DELETE)
+    @ResponseBody
+    void delete(long id) {
         employeeRepository.delete(id);
     }
-
-
-
-
-
+}
 }

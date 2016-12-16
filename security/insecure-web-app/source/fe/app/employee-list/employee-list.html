@@ -12,7 +12,7 @@
     <td>{{employee.firstName}}</td>
     <td>{{employee.lastName}}</td>
     <td>{{employee.title}}</td>
-    <td *ngIf="canDelete"><button type="button" class="delete-button alert button">Delete</button></td>
+    <td *ngIf="canDelete"><button type="button" class="delete-button alert button" (click)="delete(employee);">Delete</button></td>
   </tr>
   </tbody>
 </table>

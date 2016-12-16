@@ -17,4 +17,10 @@ export class EmployeeService {
       .then(response => response.json() as Employee[])
       .catch(console.error);
   }
+
+  deleteEmployee(id: number): Promise<void> {
+    return this.http.delete(this.urlConfig.employees + "?id=" + id)
+      .toPromise()
+      .then( ( ) => { } );
+  }
 }

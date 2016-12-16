@@ -24,4 +24,11 @@ export class EmployeeListComponent {
   get canDelete(): boolean {
     return this.authService.isAdmin;
   }
+
+  delete(employee: Employee): void {
+    this.employeeService.deleteEmployee(employee.id)
+      .then(() => {        
+        this.employees.splice(this.employees.indexOf(employee), 1);
+      });
+  }
 }
