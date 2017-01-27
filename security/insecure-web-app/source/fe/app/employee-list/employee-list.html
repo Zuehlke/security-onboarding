@@ -16,3 +16,21 @@
   </tr>
   </tbody>
 </table>
+<h3>Add employee</h3>
+<table>
+  <thead>
+  <tr>
+    <th width="200">First name</th>
+    <th width="200">Last name</th>
+    <th>Title</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td> <input [(ngModel)]="newUser.FirstName" type="text" class="form-control" placeholder="First name" /></td>
+    <td> <input [(ngModel)]="newUser.LastName" type="text" class="form-control" placeholder="Last name" /></td>
+    <td> <input [(ngModel)]="newUser.Title" type="text" class="form-control" placeholder="Title" /></td>
+    <td><button type="button" class="success button add-button" (click)="add(newUser);">Add</button></td>
+  </tr>
+  </tbody>
+</table>

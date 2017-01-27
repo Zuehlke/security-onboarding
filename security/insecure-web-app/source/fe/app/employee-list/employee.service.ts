@@ -6,7 +6,8 @@ import {ApiEndpoints} from "../api-endpoints";
 
 @Injectable()
 export class EmployeeService {
-  constructor(private http: HttpClient, private urlConfig: ApiEndpoints) { }
+  constructor(private http: HttpClient, private urlConfig: ApiEndpoints) {
+  }
 
   /**
    * Gets the list of employees from rest endpoint
@@ -21,6 +22,12 @@ export class EmployeeService {
   deleteEmployee(id: number): Promise<void> {
     return this.http.delete(this.urlConfig.employees + "?id=" + id)
       .toPromise()
-      .then( ( ) => { } );
+      .then(() => {});
+  }
+
+  addEmployee(employee: Employee): Promise<void> {
+    return this.http.post(this.urlConfig.employees, employee)
+      .toPromise()
+      .then(()=>{});
   }
 }

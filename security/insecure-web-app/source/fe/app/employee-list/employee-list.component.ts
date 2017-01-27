@@ -12,6 +12,7 @@ import {AuthService} from "../auth/auth.service";
 export class EmployeeListComponent {
 
   employees: Employee[];
+  newUser: Employee = {firstName:"", lastName:"", title:"",id:0};
 
   constructor(private employeeService: EmployeeService, private authService: AuthService) {}
 
@@ -27,8 +28,15 @@ export class EmployeeListComponent {
 
   delete(employee: Employee): void {
     this.employeeService.deleteEmployee(employee.id)
-      .then(() => {        
+      .then(() => {
         this.employees.splice(this.employees.indexOf(employee), 1);
+      });
+  }
+
+  add(employee: Employee): void {
+    this.employeeService.addEmployee(employee)
+      .then(() => {
+        this.employees.push(employee);
       });
   }
 }
