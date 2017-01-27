@@ -1,5 +1,7 @@
 package com.zuehlke.zrs.security.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -63,6 +65,7 @@ public class Employee implements Serializable {
         return this.disabled;
     }
 
+    @JsonIgnore
     public String getJmbg() {
         return jmbg;
     }
