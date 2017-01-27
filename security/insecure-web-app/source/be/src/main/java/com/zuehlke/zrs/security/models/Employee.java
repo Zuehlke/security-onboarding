@@ -23,21 +23,24 @@ public class Employee implements Serializable {
     private String title;
     @Column(name = "JMBG", nullable = false)
     private String jmbg;
+    @Column(nullable=false)
+    private Boolean disabled;
 
     protected Employee() {
         // no-args constructor required by JPA spec
         // this one is protected since it shouldn't be used directly
     }
 
-    public Employee(String firstName, String lastName, String title) {
-        this(null, firstName, lastName, title);
+    public Employee(String firstName, String lastName, String title, boolean disabled) {
+        this(null, firstName, lastName, title, disabled);
     }
 
-    public Employee(Long id, String firstName, String lastName, String title) {
+    public Employee(Long id, String firstName, String lastName, String title, boolean disabled) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.title = title;
+        this.disabled = disabled;
     }
 
     public Long getId() {
@@ -54,6 +57,10 @@ public class Employee implements Serializable {
 
     public String getFirstName() {
         return this.firstName;
+    }
+
+    public Boolean getDisabled() {
+        return this.disabled;
     }
 
     public String getJmbg() {
