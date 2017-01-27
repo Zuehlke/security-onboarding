@@ -57,6 +57,16 @@ public class EmployeeController {
         }
     }
 
+    @RequestMapping(method = RequestMethod.POST)
+    @ResponseBody
+    @Secured("USER")
+    void add(Employee employee){
+        employeeRepository.save( employee);
+
+    }
+
+
+
     @RequestMapping(method = RequestMethod.DELETE)
     @ResponseBody
     void delete(long id) {
