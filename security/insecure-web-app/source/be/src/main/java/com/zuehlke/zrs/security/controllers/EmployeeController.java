@@ -57,7 +57,7 @@ public class EmployeeController {
         }
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(method = RequestMethod.DELETE)
     @ResponseBody
     void delete(@PathVariable long id) {
         employeeRepository.delete(id);
