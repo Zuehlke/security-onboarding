@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Created by nesp on 21-Sep-16.
@@ -21,7 +23,7 @@ class Bootstrapper {
     }
 
     void onStartup() {
-        Arrays.asList(
+        List<Employee> employees = Arrays.asList(
                 new Employee("Name1", "Lastname1", "Expert Software Engineer", false),
                 new Employee("Name2", "Lastname2", "Software Engineer", false),
                 new Employee("Name3", "Lastname3", "Junior Software Engineer", false),
@@ -35,7 +37,11 @@ class Bootstrapper {
                 new Employee("Name14", "Lastname14", "Trainee", true),
                 new Employee("Name15", "Lastname15", "Expert Software Engineer", true),
                 new Employee("Name16", "Lastname6", "Junior Software Engineer", true)
-        ).forEach(employeeRepository::save);
+        );
+        employees.forEach(emp -> emp.setJmbg(
+                Long.toString(ThreadLocalRandom.current().nextLong(1_000_000_000_000L, 9_999_999_999_999L)))
+        );
+        employees.forEach(employeeRepository::save);
 
     }
 }

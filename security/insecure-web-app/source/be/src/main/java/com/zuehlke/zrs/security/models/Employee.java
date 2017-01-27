@@ -21,6 +21,8 @@ public class Employee implements Serializable {
     private String lastName;
     @Column(name = "TITLE", nullable = false)
     private String title;
+    @Column(name = "JMBG", nullable = false)
+    private String jmbg;
     @Column(nullable=false)
     private Boolean disabled;
 
@@ -61,6 +63,14 @@ public class Employee implements Serializable {
         return this.disabled;
     }
 
+    public String getJmbg() {
+        return jmbg;
+    }
+
+    public void setJmbg(String jmbg) {
+        this.jmbg = jmbg;
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Employee{");
@@ -68,6 +78,7 @@ public class Employee implements Serializable {
         sb.append(", firstName='").append(firstName).append('\'');
         sb.append(", lastName='").append(lastName).append('\'');
         sb.append(", title='").append(title).append('\'');
+        sb.append(", jmbg='").append(jmbg).append('\'');
         sb.append('}');
         return sb.toString();
     }

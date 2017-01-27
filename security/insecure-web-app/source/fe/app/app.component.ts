@@ -2,6 +2,7 @@ import {Component} from "@angular/core";
 import {ActivatedRoute, Router, NavigationEnd, Event} from "@angular/router";
 import {AuthService} from "./auth/auth.service";
 import {AppRoutes} from "./app.routing";
+import {EmployeeService} from "./employee-list/employee.service"
 
 @Component({
   selector: 'my-app',
@@ -11,7 +12,7 @@ import {AppRoutes} from "./app.routing";
 export class AppComponent {
   title: string;
 
-  constructor(private route: ActivatedRoute, private router: Router, private authService: AuthService) {
+  constructor(private route: ActivatedRoute, private router: Router, private authService: AuthService, private employeeService: EmployeeService) {
   }
 
   ngOnInit() {
