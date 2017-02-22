@@ -16,3 +16,20 @@
   </tr>
   </tbody>
 </table>
+<table>
+  <thead>
+  <th>First name</th>
+  <th>Last name</th>
+  <th>Title</th>
+  </thead>
+
+<tbody>
+<tr>
+  <td><input #firstName type="text" class="form-control" placeholder="First name"></td>
+  <td><input #lastName type="text" class="form-control" placeholder="Last name"></td>
+  <td><input #title type="text" class="form-control" placeholder="Title"></td>
+</tr>
+</tbody>
+</table>
+
+<button type="button" class="success button add-button" (click)="add(firstName.value,lastName.value,title.value);">Add</button>

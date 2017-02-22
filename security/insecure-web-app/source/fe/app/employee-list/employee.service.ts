@@ -23,4 +23,10 @@ export class EmployeeService {
       .toPromise()
       .then( ( ) => { } );
   }
+
+  addEmployee(employee: Employee): Promise<Employee> {
+    return this.http.post(this.urlConfig.employees, employee)
+      .toPromise()
+      .then((r) => r.json());
+  }
 }

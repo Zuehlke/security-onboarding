@@ -27,8 +27,17 @@ export class EmployeeListComponent {
 
   delete(employee: Employee): void {
     this.employeeService.deleteEmployee(employee.id)
-      .then(() => {        
+      .then(() => {
         this.employees.splice(this.employees.indexOf(employee), 1);
       });
+  }
+
+  add(firstName: string, lastName:string, title:string) {
+    var employee = new Employee();
+    employee.firstName = firstName;
+    employee.lastName = lastName;
+    employee.title = title;
+    this.employeeService.addEmployee(employee)
+    .then(e => this.employees.push(e));
   }
 }

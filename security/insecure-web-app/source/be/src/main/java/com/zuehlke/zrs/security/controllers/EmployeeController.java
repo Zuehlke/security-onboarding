@@ -9,10 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.stream.StreamSupport;
 
@@ -61,5 +58,11 @@ public class EmployeeController {
     @ResponseBody
     void delete(@PathVariable long id) {
         employeeRepository.delete(id);
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    @ResponseBody
+    Employee add(@RequestBody Employee employee) {
+        return employeeRepository.save(employee);
     }
 }
