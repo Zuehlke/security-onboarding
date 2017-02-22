@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -37,7 +36,7 @@ public class EmployeeController {
     @Secured("USER")
     Iterable<Employee> index() {
         return StreamSupport.stream(employeeRepository.findAll().spliterator(), false)
-                .filter(emp -> !emp.getTitle().equals("ADMIN"))
+                .filter(emp -> !emp.getTitle().equals("ADMIN") && !emp.getDisabled())
                 .collect(toList());
     }
 
@@ -47,12 +46,22 @@ public class EmployeeController {
     Employee findById(@PathVariable String id) {
         String sql = "SELECT * FROM EMPLOYEE WHERE ID = " + id;
         try {
-            return (Employee) jdbcTemplate.queryForObject(sql,
-                    (RowMapper) (rs, num) -> new Employee(rs.getLong("ID"), rs.getString("FIRSTNAME"), rs.getString("LASTNAME"), rs.getString("TITLE")));
+            return jdbcTemplate.queryForObject(sql,
+                    (rs, num) -> new Employee(rs.getLong("ID"), rs.getString("FIRSTNAME"), rs.getString("LASTNAME"), rs.getString("TITLE"), rs.getBoolean("DISABLED")));
         } catch(EmptyResultDataAccessException e) {
             return null;
         }
     }
+
+    @RequestMapping(method = RequestMethod.POST)
+    @ResponseBody
+    @Secured("USER")
+    void add(Employee employee){
+        employeeRepository.save( employee);
+
+    }
+
+
 
     @RequestMapping(method = RequestMethod.DELETE)
     @ResponseBody
