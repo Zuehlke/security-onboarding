@@ -35,12 +35,6 @@ export class EmployeeService {
       .then(() => {});
   }
 
-  addEmployee(employee: Employee): Promise<void> {
-    return this.http.post(this.urlConfig.employees, employee)
-      .toPromise()
-      .then(()=>{});
-  }
-
   addEmployee(employee: Employee): Promise<Employee> {
     return this.http.post(this.urlConfig.employees, employee)
       .toPromise()

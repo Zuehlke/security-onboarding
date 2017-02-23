@@ -53,16 +53,6 @@ public class EmployeeController {
         }
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    @ResponseBody
-    @Secured("USER")
-    void add(Employee employee){
-        employeeRepository.save( employee);
-
-    }
-
-
-
     @RequestMapping(method = RequestMethod.DELETE)
     @ResponseBody
     void delete(@PathVariable long id) {
@@ -71,6 +61,7 @@ public class EmployeeController {
 
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
+    @Secured("USER")
     Employee add(@RequestBody Employee employee) {
         return employeeRepository.save(employee);
     }
