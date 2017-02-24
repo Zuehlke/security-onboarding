@@ -13,10 +13,11 @@ import {FormsModule} from "@angular/forms";
 import {HttpClient} from "./http/http-client";
 import {CredentialsRepository} from "./auth/credentials-repository";
 import {ApiEndpoints} from "./api-endpoints";
+import {ZPrint} from "./directives/print.directive";
 
 @NgModule({
   imports: [ BrowserModule, HttpModule, CommonModule, routing, FormsModule],
-  declarations: [ AppComponent, EmployeeListComponent , LoginComponent],
+  declarations: [AppComponent, EmployeeListComponent, LoginComponent, ZPrint],
   providers: [EmployeeService, appRoutingProviders, AuthGuard, AuthService, HttpClient, CredentialsRepository, ApiEndpoints],
   bootstrap: [ AppComponent ]
 })

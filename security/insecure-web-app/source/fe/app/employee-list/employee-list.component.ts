@@ -12,7 +12,6 @@ import {AuthService} from "../auth/auth.service";
 export class EmployeeListComponent {
 
   employees: Employee[];
-  newUser: Employee = {firstName:"", lastName:"", title:"",id:0};
   searchId: string;
 
   constructor(private employeeService: EmployeeService, private authService: AuthService) {}
@@ -42,12 +41,12 @@ export class EmployeeListComponent {
       });
   }
 
-  add(firstName: string, lastName:string, title:string) {
-    var employee = new Employee();
-    employee.firstName = firstName;
-    employee.lastName = lastName;
-    employee.title = title;
+  add(firstName: string, lastName: string, title: string, jmbg: string) {
+    const employee = new Employee(firstName, lastName, title, jmbg);
     this.employeeService.addEmployee(employee)
-    .then(e => this.employees.push(e));
+      .then(e => {
+        this.employees.push(e);
+
+      });
   }
 }

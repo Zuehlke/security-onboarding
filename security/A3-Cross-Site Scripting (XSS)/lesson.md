@@ -24,7 +24,7 @@ There are 2 solutions in general:
 ### Example of attack
 
 1. Login to the insecure-web-app
-2. Add a new employee with following name `alert('XSS attack successfull')`
+2. Add a new employee with following name `<img src="error.jpg" onerror="javascript:alert('xss')"></img> `
 3. Refresh
 4. You will see a popup window each time you open the page
 

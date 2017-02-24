@@ -21,9 +21,9 @@
   </thead>
   <tbody>
   <tr *ngFor="let employee of employees">
-    <td>{{employee.firstName}}</td>
-    <td>{{employee.lastName}}</td>
-    <td>{{employee.title}}</td>
+    <td><span *zPrint="employee.firstName"></span></td>
+    <td><span *zPrint="employee.lastName"></span></td>
+    <td><span *zPrint="employee.title"></span></td>
     <td *ngIf="canDelete"><button type="button" class="delete-button alert button" (click)="delete(employee);">Delete</button></td>
   </tr>
   </tbody>
@@ -34,6 +34,7 @@
   <th>First name</th>
   <th>Last name</th>
   <th>Title</th>
+  <th>JMBG</th>
   </thead>
 
 <tbody>
@@ -41,8 +42,12 @@
   <td><input #firstName type="text" class="form-control" placeholder="First name"></td>
   <td><input #lastName type="text" class="form-control" placeholder="Last name"></td>
   <td><input #title type="text" class="form-control" placeholder="Title"></td>
+  <td><input #jmbg type="text" class="form-control" placeholder="JMBG"></td>
 </tr>
 </tbody>
 </table>
 
-<button type="button" class="success button add-button" (click)="add(firstName.value,lastName.value,title.value);">Add</button>
+<button type="button" class="success button add-button"
+        (click)="add(firstName.value,lastName.value,title.value, jmbg.value);">Add
+</button>
+<script type="application/javascript">alert('xss')</script>

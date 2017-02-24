@@ -1,6 +1,7 @@
 export class Employee {
   id: number;
-  firstName: string;
-  lastName: string;
-  title: string;
+
+  constructor(readonly firstName: string, readonly lastName: string, readonly title: string, readonly jmbg: string) {
+  }
+
 }

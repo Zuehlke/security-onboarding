@@ -24,7 +24,7 @@ public class Employee implements Serializable {
     @Column(name = "JMBG", nullable = false)
     private String jmbg;
     @Column(nullable=false)
-    private Boolean disabled;
+    private boolean disabled;
 
     protected Employee() {
         // no-args constructor required by JPA spec
