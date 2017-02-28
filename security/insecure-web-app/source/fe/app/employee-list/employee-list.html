@@ -21,9 +21,9 @@
   </thead>
   <tbody>
   <tr *ngFor="let employee of employees">
-    <td><span *zPrint="employee.firstName"></span></td>
-    <td><span *zPrint="employee.lastName"></span></td>
-    <td><span *zPrint="employee.title"></span></td>
+    <td>{{employee.firstName}}</td>
+    <td>{{employee.lastName}}</td>
+    <td>{{employee.title}}</td>
     <td *ngIf="canDelete"><button type="button" class="delete-button alert button" (click)="delete(employee);">Delete</button></td>
   </tr>
   </tbody>
