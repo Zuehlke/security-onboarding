@@ -34,4 +34,13 @@ This is an example of a stored XSS attack. The input has been stored in the repo
 
 ### Task: Prevent the XSS attack
 
-Use [`HtmlUtils.htmlEscape`](http://docs.spring.io/spring/docs/3.0.x/javadoc-api/org/springframework/web/util/HtmlUtils.html#htmlEscape%28java.lang.String%29) method to sanitize user inputs.
+AngularJS 2 has its own script sanitization. Reason that it is not activated is that we are using a custom directive `*zPrint` in `insecure-web-app\source\fe\app\employee-list\employee-list.html`.
+
+The way to fix this is to not use the custom directive but use existing Angular way of binding values.
+
+You can replace `<span *zPrint="employee.firstName"></span>`, with `{{employee.firstName}}`. This will use Angular sanitization.
+
+In general you should always use framework XSS sanitization. If the framework does not support XSS sanitization you can use following:
+
+* In JAVA use [`HtmlUtils.htmlEscape`](http://docs.spring.io/spring/docs/3.0.x/javadoc-api/org/springframework/web/util/HtmlUtils.html#htmlEscape%28java.lang.String%29) method to sanitize user inputs.
+* In .NET use [`System.Web.Security.AntiXss.AntiXssEncoder`](https://msdn.microsoft.com/en-us/library/system.web.security.antixss.antixssencoder(v=vs.110).aspx) class to sanitize user inputs.
