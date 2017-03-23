@@ -20,6 +20,7 @@ import static java.util.stream.Collectors.toList;
 @Controller
 @EnableAutoConfiguration
 @RequestMapping("/employees")
+@Secured({"ROLE_USER", "ROLE_ADMIN"})
 public class EmployeeController {
 
     private EmployeeRepository employeeRepository;
@@ -33,7 +34,6 @@ public class EmployeeController {
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
-    @Secured("USER")
     Iterable<Employee> index() {
         return StreamSupport.stream(employeeRepository.findAll().spliterator(), false)
                 .filter(emp -> !emp.getTitle().equals("ADMIN") && !emp.getDisabled())
@@ -42,7 +42,6 @@ public class EmployeeController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
-    @Secured("USER")
     Employee findById(@PathVariable String id) {
         String sql = "SELECT * FROM EMPLOYEE WHERE ID = " + id;
         try {
@@ -61,7 +60,6 @@ public class EmployeeController {
 
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
-    @Secured("USER")
     Employee add(@RequestBody Employee employee) {
         return employeeRepository.save(employee);
     }
