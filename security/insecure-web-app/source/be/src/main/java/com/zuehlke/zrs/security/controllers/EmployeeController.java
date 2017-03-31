@@ -5,6 +5,7 @@ import com.zuehlke.zrs.security.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.http.HttpStatus;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
@@ -44,12 +45,17 @@ public class EmployeeController {
     @ResponseBody
     Employee findById(@PathVariable String id) {
         String sql = "SELECT * FROM EMPLOYEE WHERE ID = " + id;
-        try {
-            return jdbcTemplate.queryForObject(sql,
-                    (rs, num) -> new Employee(rs.getLong("ID"), rs.getString("FIRSTNAME"), rs.getString("LASTNAME"), rs.getString("TITLE"), rs.getBoolean("DISABLED")));
-        } catch(EmptyResultDataAccessException e) {
-            return null;
-        }
+        return jdbcTemplate.queryForObject(sql,
+                (rs, num) -> new Employee(rs.getLong("ID"),
+                        rs.getString("FIRSTNAME"),
+                        rs.getString("LASTNAME"),
+                        rs.getString("TITLE"),
+                        rs.getBoolean("DISABLED")));
+    }
+
+    @ExceptionHandler(EmptyResultDataAccessException.class)
+    @ResponseStatus(value = HttpStatus.NOT_FOUND, reason = "Employee not found")
+    public void notFound() {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
