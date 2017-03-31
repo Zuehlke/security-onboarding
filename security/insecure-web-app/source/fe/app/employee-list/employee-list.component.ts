@@ -27,7 +27,13 @@ export class EmployeeListComponent {
 	  this.employeeService.getEmployees().then(employees => {this.employees = employees;});
 	  return;
 	}
-	this.employeeService.getEmployeeById(this.searchId).then(employee => this.employees = [employee]);
+	this.employeeService.getEmployeeById(this.searchId).then(employee => {
+    if (!employee) {
+      this.employees = [];
+    } else {
+      this.employees = [employee];
+    }    
+  });
   }
 
   get canDelete(): boolean {
