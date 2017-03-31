@@ -17,7 +17,7 @@ Since you are logged into the website and have a running session this request is
 1. Login to the insecure-web-app
 2. Leave it open
 3. Go to the folder `A8-Cross-Site Request Forgery (CSRF)\exploit`
-4. Run index.html
+4. Run **run.bat**
 5. Click on the prize :-)
 6. Go back to the insecure-web-app user page and you will see no user is present anymore
 
