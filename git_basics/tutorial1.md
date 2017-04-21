@@ -142,7 +142,7 @@ Create new JavaScript file in the folder `gitworkshop/solar system/js` (create n
 Congratulations! You have discovered Mercury planet. Now let's share your discovery with the world.  
 We will use a group of commands (called one at the time of course) to commit our changes from the working directory to our local repository and then push our changed local repository to remote repository.
 
-Call `git status command`. You will notice that it detected the newly created folder for staging. The file is not yet detected because this folder is not tracked by git. Let's track the folder first and then stage the mercury file.  
+Call `git status` command. You will notice that it detected the newly created folder for staging. The file is not yet detected because this folder is not tracked by git. Let's track the folder first and then stage the mercury file.  
 Staging the file means that we are marking this file to be committed.
 
 To track the new folder call command `git add .` - this command will start tracking the newly created folder. 
@@ -360,7 +360,7 @@ First call `GitCommander` to delete file `pluto.js` by calling URL:
 
 Now will execute the standard set of commands to push our changes up to the remote repository:  
 You can either `git add .` or `git add pluto.js` to stage our changed file because it is the only change in our working directory so the effect is the same.  
-`git commit -m "Commiting changes on pluto.js"`  
+`git commit -m "Committing changes on pluto.js"`  
 `git pull`
 
 Notice the edit/delete effect. 
@@ -481,8 +481,8 @@ Now edit `index.html` to show the information about pluto from `pluto.js`. The `
     </div>
 
 Next, commit the changes with this set of commands and let's see what will happen:  
-`git add .` or git add index.html to stage the changed file  
-`git commit -m "Commiting changes for Pluto on index.html"`  
+`git add .` or `git add index.html` to stage the changed file  
+`git commit -m "Committing changes for Pluto on index.html"`  
 Now execute command `git pull` and notice the message that you will receive.
 
 >C:\Users\ivma\Desktop\Git workshop\repo\gitworkshop>git pull  
@@ -545,7 +545,7 @@ As you can see it is the same content as before the commit. To mark this conflic
 Now let's try and push the changes to the remote repository:  
 Execute `git push`.
 
-As you can see we have successfully resolved our first merge conflict, even by hand. We still believe that the Pluto is a planet. Keep you hops up Pluto!
+As you can see we have successfully resolved our first merge conflict, even by hand. We still believe that the Pluto is a planet. Keep you hopes up Pluto!
 
 ##Revert file to previous commit
 
