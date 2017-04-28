@@ -46,3 +46,4 @@ Have a look into the OWASP documentation and understand how to fix this using th
 Hint: 
 * Read following link: https://spring.io/blog/2015/01/12/the-login-page-angular-js-and-spring-security-part-ii
 * CSRF protection in Spring can be disabled by calling the `.csrf().disable()` of the `HttpSecurity`
+* This was disabled by "mistake" in the example application
