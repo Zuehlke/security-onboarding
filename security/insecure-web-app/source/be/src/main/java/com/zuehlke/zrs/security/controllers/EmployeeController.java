@@ -21,7 +21,6 @@ import static java.util.stream.Collectors.toList;
 @Controller
 @EnableAutoConfiguration
 @RequestMapping("/employees")
-@Secured({"ROLE_USER", "ROLE_ADMIN"})
 public class EmployeeController {
 
     private EmployeeRepository employeeRepository;
