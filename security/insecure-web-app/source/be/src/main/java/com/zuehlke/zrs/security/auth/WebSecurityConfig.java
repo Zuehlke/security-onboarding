@@ -63,7 +63,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private List<User> readUsersCredentials() throws Exception {
         List<User> users = new ArrayList<>();
-        BufferedReader br = new BufferedReader(new FileReader(getClass().getClassLoader().getResource("credentials.txt").getFile()));
+        BufferedReader br = new BufferedReader(new FileReader(getClass().getClassLoader().getResource("cryptedCredentials.txt").getFile()));
         try {
             StringBuilder sb = new StringBuilder();
             String line = br.readLine();
