@@ -8,6 +8,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -27,6 +28,7 @@ import java.util.List;
  */
 @Configuration
 @EnableWebSecurity
+@EnableGlobalMethodSecurity(securedEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
@@ -37,13 +39,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .csrf().disable()
+                .cors().and()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.GET, "/employees").authenticated()
                 .antMatchers(HttpMethod.GET, "/login").authenticated()
                 .anyRequest().permitAll()
                 .and()
                 .httpBasic().and()
+                .csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
 
@@ -61,7 +63,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private List<User> readUsersCredentials() throws IOException {
         List<User> users = new ArrayList<>();
-        BufferedReader br = new BufferedReader(new FileReader("cryptedCredentials.txt"));
+        BufferedReader br = new BufferedReader(new FileReader(getClass().getClassLoader().getResource("cryptedCredentials.txt").getFile()));
         try {
             StringBuilder sb = new StringBuilder();
             String line = br.readLine();

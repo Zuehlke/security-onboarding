@@ -4,13 +4,16 @@ import com.zuehlke.zrs.security.models.Employee;
 import com.zuehlke.zrs.security.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.stream.StreamSupport;
+
+import static java.util.stream.Collectors.toList;
 
 /**
  * Created by nesp on 21-Sep-16.
@@ -21,29 +24,48 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class EmployeeController {
 
     private EmployeeRepository employeeRepository;
+    private JdbcTemplate jdbcTemplate;
 
     @Autowired
-    public EmployeeController(EmployeeRepository employeeRepository) {
+    public EmployeeController(EmployeeRepository employeeRepository, JdbcTemplate jdbcTemplate) {
         this.employeeRepository = employeeRepository;
+        this.jdbcTemplate = jdbcTemplate;
     }
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
-    @Secured("USER")
     Iterable<Employee> index() {
-        return  employeeRepository.findAll();
+        return StreamSupport.stream(employeeRepository.findAll().spliterator(), false)
+                .filter(emp -> !emp.getTitle().equals("ADMIN") && !emp.getDisabled())
+                .collect(toList());
     }
 
-
-    @RequestMapping(method = RequestMethod.DELETE)
-    @ResponseStatus(HttpStatus.NOT_IMPLEMENTED)
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
-    String delete() {
-        return "TODO: DELETION NEEDS TO BE IMPLEMENTED";
+    Employee findById(@PathVariable String id) {
+        String sql = "SELECT * FROM EMPLOYEE WHERE ID = " + id;
+        return jdbcTemplate.queryForObject(sql,
+                (rs, num) -> new Employee(rs.getLong("ID"),
+                        rs.getString("FIRSTNAME"),
+                        rs.getString("LASTNAME"),
+                        rs.getString("TITLE"),
+                        rs.getBoolean("DISABLED")));
     }
 
+    @ExceptionHandler(EmptyResultDataAccessException.class)
+    @ResponseStatus(value = HttpStatus.NOT_FOUND, reason = "Employee not found")
+    public void notFound() {
+    }
 
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @ResponseBody
+    void delete(@PathVariable long id) {
+        employeeRepository.delete(id);
+    }
 
-
-
+    @RequestMapping(method = RequestMethod.POST)
+    @ResponseBody
+    Employee add(@RequestBody Employee employee) {
+        return employeeRepository.save(employee);
+    }
 }
