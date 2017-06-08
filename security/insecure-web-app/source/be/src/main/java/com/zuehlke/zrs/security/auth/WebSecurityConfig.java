@@ -20,6 +20,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.Override;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,6 +66,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private List<User> readUsersCredentials() throws Exception {
         List<User> users = new ArrayList<>();
         BufferedReader br = new BufferedReader(new FileReader(getClass().getClassLoader().getResource("cryptedCredentials.txt").getFile()));
+
         try {
             StringBuilder sb = new StringBuilder();
             String line = br.readLine();
