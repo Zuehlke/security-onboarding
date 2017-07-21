@@ -1,5 +1,7 @@
-export interface Employee {
-  firstName: string;
-  lastName: string;
-  title: string;
+export class Employee {
+  id: number;
+
+  constructor(readonly firstName: string, readonly lastName: string, readonly title: string, readonly jmbg: string) {
+  }
+
 }
