@@ -3,7 +3,7 @@
  
 ### Vulnerability description:
 
-OWASP documentation: https://www.owasp.org/index.php/Top_10_2013-A1-Injection
+[OWASP documentation] (https://www.owasp.org/index.php/Top_10_2013-A1-Injection)
 
 Data backend receives from the frontend cannot be unconditionally trusted - malicious users can modify frontend or even not use provided frontend at all when communicataing to the server. 
 
