@@ -12,7 +12,7 @@ If the data received from the user interacts with database, it should be validat
 ### Example of Attack
 
 1. Login to the insecure-web-app
-2. In the employee id search field, type in the following: 1%3B INSERT INTO EMPLOYEE (FIRSTNAME, LASTNAME, TITLE) VALUES ('JAMES', 'BOND', 'SPY')
+2. In the employee id search field, type in the following: 1%3B INSERT INTO EMPLOYEE (FIRSTNAME, LASTNAME, TITLE, DISABLED, JMBG) VALUES ('JAMES', 'BOND', 'SPY', false, 007)
 3. Click search
 4. Delete everything from employee id search field and search again
 5. James Bond has infiltrated your database as one of the employees :O
