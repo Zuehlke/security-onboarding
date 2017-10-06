@@ -6,3 +6,6 @@
 # Running the app
 - Open command prompt in current directory
 - Execute: run.bat
+- There are two available users: 
+    * User{username='admin', password='pass', role='ADMIN'}
+    * User{username='user', password='pass', role='USER'}
