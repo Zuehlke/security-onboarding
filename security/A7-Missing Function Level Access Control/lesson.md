@@ -23,15 +23,20 @@ Example of attack
 1. Using Chrome web browser, login to the [insecure-web-app](http://localhost:3000/) using the following credentials:
     - username: `user`
     - password: `pass`
+
 2. Upon successful login - employee list is displayed
 
 > Note: Since the user is authenticated as a **regular** user, there is no option offered to delete existing employees. However, due to `missing function level access control` security issue existing on the back-end app, this can be overcome by the following steps
+
 3. Open developer tools (either by using keyboard shortcut `F12` or by selecting `More tooles>Developer tools` from the settings)
+
 4. In the developer tools
     1. Select `Application > Local Storage > http://localhost:3000`
     2. Modify the value of **Key** IS_ADMIN to be `true`
 5. Reload the page
+
 > Delete button is displayed next to each employee in the list
+
 6. Delete some employees
 
 ### Analysis of the attack
@@ -44,6 +49,6 @@ Find and fix the back end service by enforcing proper authorization of the delet
  users only.
  
 > Hint: there is an annotation provided by **Spring Security** that can be used to fix the issue.   
-`@Secured({"ROLE_USER", "ROLE_ADMIN"})` // This is put on controller
+`@Secured({"ROLE_USER", "ROLE_ADMIN"})` // This is put on controller or action
 >
 > [Documentation of Spring Security](http://docs.spring.io/spring-security/site/docs/4.1.3.BUILD-SNAPSHOT/reference/htmlsingle/)
