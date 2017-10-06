@@ -48,7 +48,10 @@ This is an example of a `missing function level access control` attack. Employee
 Find and fix the back end service by enforcing proper authorization of the delete user action. Make it available to **admin**
  users only.
  
-> Hint: there is an annotation provided by **Spring Security** that can be used to fix the issue.   
-`@Secured({"ROLE_USER", "ROLE_ADMIN"})` // This is put on controller or action
+> Hint: there is an annotation provided by **Spring Security** that can be used to fix the issue.
+>
+`@Secured("NAME_OF_ROLE") // This is put on controller or action`
+>
+> In the insecure-web-app, roles can be found in file `credentials.txt`
 >
 > [Documentation of Spring Security](http://docs.spring.io/spring-security/site/docs/4.1.3.BUILD-SNAPSHOT/reference/htmlsingle/)
