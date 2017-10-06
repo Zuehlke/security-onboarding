@@ -1,6 +1,5 @@
 # Cross-Site Request Forgery (CSRF)
 
- 
 ### Vulnerability description:
 
 OWASP documentation: https://www.owasp.org/index.php/Top_10_2013-A8-Cross-Site_Request_Forgery_(CSRF)
@@ -17,7 +16,7 @@ Since you are logged into the website and have a running session this request is
 1. Login to the insecure-web-app
 2. Leave it open
 3. Go to the folder `A8-Cross-Site Request Forgery (CSRF)\exploit`
-4. Run **run.bat**
+4. Run `A8-Cross-Site Request Forgery (CSRF)\exploit\run.bat` file
 5. Click on the prize :-)
 6. Go back to the insecure-web-app user page and you will see no user is present anymore
 
