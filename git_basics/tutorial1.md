@@ -96,6 +96,8 @@ Note: To navigate through commit history use `arrow keys` and to quit type `:q` 
 
 Now let's register our repository branch to our helper server `GitCommander`. This server will provide some services that will help us to simulate the work of another developer on the same code that we are working on.
 
+>Note: GItCommander commands should be executed either directly in the browser or by firing Get requests from a tool like Postman `https://www.getpostman.com/`.
+
 The registration will help server to clone our project and commit and push the changes every time we call some of his execute commands/actions.
 
 For registration we will need to send information about our git user name, url to of our repository and branch name that we are working on.  
