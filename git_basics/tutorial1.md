@@ -46,7 +46,7 @@ Note that if you call this command in your local repository list can contain mor
 
 ##Cloning the project
 
-Before you do the cloning make sure that, using Git bash, you navigate to the folder where want to clone our git project. For example I am using folder `C:\Users\ivma\Desktop\Git workshop\repo`.  
+Before you do the cloning make sure that, using Git bash, you navigate to the folder where you want to clone our git project. For example I am using folder `C:\Users\ivma\Desktop\Git workshop\repo`.  
 You can initialize your local git repository in this folder by running the command `git init` and then `git remote add origin git@bitbucket.org:your_username/your_repo_name.git` to add your repository as a remote repository.  
 For more details you could have a look into resource `https://confluence.atlassian.com/bitbucket/import-code-from-an-existing-project-259358821.html `
 
