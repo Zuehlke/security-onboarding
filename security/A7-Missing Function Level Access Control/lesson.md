@@ -49,6 +49,6 @@ Find and fix the back end service by enforcing proper authorization of the delet
  users only.
  
 > Hint: there is an annotation provided by **Spring Security** that can be used to fix the issue.   
-`@Secured({"ROLE_USER", "ROLE_ADMIN"})` // This is put on controller or action
+`@RolesAllowed({"ROLE_USER", "ROLE_ADMIN"})` // This is put on controller or action
 >
 > [Documentation of Spring Security](http://docs.spring.io/spring-security/site/docs/4.1.3.BUILD-SNAPSHOT/reference/htmlsingle/)
