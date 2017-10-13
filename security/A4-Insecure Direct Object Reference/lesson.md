@@ -23,4 +23,4 @@ The application allows access to the restricted disabled employees data. User is
 
 ### Task: Prevent the Insecure direct object reference attack
 
-Prevent the attack by checking user's access to the disabled employees in EmployeeController class.
+Prevent the attack by filtering out all disabled employees in EmployeeController class.
