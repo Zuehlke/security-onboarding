@@ -46,7 +46,7 @@ Note that if you call this command in your local repository list can contain mor
 
 ##Cloning the project
 
-Now let's navigate to the desires folder where we will clone our git project. For example I am using folder `C:\Users\ivma\Desktop\Git workshop\repo`.  
+Before you do the cloning make sure that, using Git bash, you navigate to the folder where you want to clone our git project. For example I am using folder `C:\Users\ivma\Desktop\Git workshop\repo`.  
 You can initialize your local git repository in this folder by running the command `git init` and then `git remote add origin git@bitbucket.org:your_username/your_repo_name.git` to add your repository as a remote repository.  
 For more details you could have a look into resource `https://confluence.atlassian.com/bitbucket/import-code-from-an-existing-project-259358821.html `
 
@@ -95,6 +95,8 @@ Note: To navigate through commit history use `arrow keys` and to quit type `:q` 
 ##Registering our repository to the GitCommander
 
 Now let's register our repository branch to our helper server `GitCommander`. This server will provide some services that will help us to simulate the work of another developer on the same code that we are working on.
+
+>Note: GitCommander commands should be executed either directly in the browser or by firing Get requests from a tool like Postman `https://www.getpostman.com/`.
 
 The registration will help server to clone our project and commit and push the changes every time we call some of his execute commands/actions.
 
