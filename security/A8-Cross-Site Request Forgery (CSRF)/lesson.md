@@ -1,6 +1,6 @@
 # Cross-Site Request Forgery (CSRF)
 
-### Vulnerability description:
+## Vulnerability description
 
 OWASP documentation: https://www.owasp.org/index.php/Top_10_2013-A8-Cross-Site_Request_Forgery_(CSRF)
 
@@ -10,39 +10,31 @@ You get an e-mail that fools you into clicking an image. The onclick event on th
 
 Since you are logged into the website and have a running session this request is authenticated and will delete the user. You wouldn't be aware that your click caused this.
 
+## Example of attack
 
-### Example of attack
-
-1. Login to the insecure-web-app
+1. Login to the insecure web app
 2. Leave it open
-3. Go to the folder `A8-Cross-Site Request Forgery (CSRF)\exploit`
-4. Run `A8-Cross-Site Request Forgery (CSRF)\exploit\run.bat` file
+3. Go to the folder `A8-Cross-Site Request Forgery (CSRF)`
+4. Run `java-exploit\run.bat` file or `net-exploit\run.bat`
 5. Click on the prize :-)
-6. Go back to the insecure-web-app user page and you will see no user is present anymore
+6. Go back to the insecure web app user page and you will see no user is present anymore
 
-### Analysis of the attack
+## Analysis of the attack
 
-If you open the `exploit\index.html` you will see this function
+If you open the `exploit\index.html` you will see this function `callDelete`
 
-```
-function callDelete() {
-    for (let i = 0; i < 10; i++) {
-        var url = "http://localhost:9080/employees/" + i;
-        
-        var xhttp = new XMLHttpRequest();
-        xhttp.open("DELETE", url, true);
-        xhttp.send();
-    }
-}
-```
+It calls the DELETE verb on the employee deletion endpoint, and this deletes the user.
 
-It calls the DELETE verb on the http://localhost:9080/employees/{id} endpoint, and this deletes the user.
-
-### Task: Prevent the CSRF attack
+## Task: Prevent the CSRF attack
 
 Have a look into the OWASP documentation and understand how to fix this using the CSRF anti forgery token.
 
-Hint: 
+JAVA Hint:
 * Read following link: https://spring.io/blog/2015/01/12/the-login-page-angular-js-and-spring-security-part-ii
 * CSRF protection in Spring can be disabled by calling the `.csrf().disable()` of the `HttpSecurity`
 * This was disabled by "mistake" in the example application
+
+.NET Hint:
+Enable global cors policy for ASP.NET core app and remove AllowAllHeaders.
+
+See here: https://damienbod.com/2017/05/09/anti-forgery-validation-with-asp-net-core-mvc-and-angular/

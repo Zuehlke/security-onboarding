@@ -1,7 +1,6 @@
 # Cross-Site Scripting (XSS)
 
- 
-### Vulnerability description:
+## Vulnerability description
 
 OWASP documentation: https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_(XSS)
 
@@ -21,20 +20,20 @@ There are 2 solutions in general:
 **Never create your own sanitizers**, since you will not be able to cover all cases.
 
 
-### Example of attack
+## Example of attack
 
 1. Login to the insecure-web-app
 2. Add a new employee with following name `<img src="error.jpg" onerror="javascript:alert('xss')"></img> `
 3. Refresh
 4. You will see a popup window each time you open the page
 
-### Analysis of the attack
+## Analysis of the attack
 
 This is an example of a stored XSS attack. The input has been stored in the repository for employees and will be rendered on the page.
 
-### Task: Prevent the XSS attack
+## Task: Prevent the XSS attack
 
-AngularJS 2 has its own script sanitization. Reason that it is not activated is that we are using a custom directive `*zPrint` in `insecure-web-app\source\fe\app\employee-list\employee-list.html`.
+AngularJS 2 has its own script sanitization. Reason that it is not activated is that we are using a custom directive `*zPrint` in (JAVA: `insecure-web-app\source\fe\app\employee-list\employee-list.html` OR .NET: `SecurityApp\solution\SecurityApp\ClientApp\app\components\home\home.component.html`).
 
 The way to fix this is to not use the custom directive but use existing Angular way of binding values.
 

@@ -68,7 +68,6 @@ namespace SecurityApp.Controllers
 
 
             return Json(EmpDeatils);
-
         }
 
 
