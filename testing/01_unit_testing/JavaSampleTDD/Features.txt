@@ -1,0 +1,38 @@
+Bank account basic operations:
+
+1. Opening an account. 
+	The account should have an ID after opening.
+	The account balance should be zero.
+
+2. Opening an account with initial deposit.
+	The account should have an ID after opening.
+	The account balance should be the same as initial deposit.
+	
+3. Make a deposit
+	The account balance should be increased by deposit amount.
+
+4. Withdrawal
+	The account balance should be decreased by deposit amount.
+	Withdrawal should not be allowed when there are insufficient funds on the account.
+	The error should be displayed with the message: Insufficient funds
+	
+5. Transfer funds to another account
+	The account balance of the first account should be decreased by transfer amount.
+	The account balance of the second account should be increased by transfer amount.
+	Transfer should not be allowed when there are insufficient funds on the first account.
+	
+6. Logging transfers
+	Each transfer should create a transaction which should be saved in a transaction log.
+	
+
+Transactions:
+
+1.	 Creating a transaction	
+	Transaction should have an id, time-stamp, the IDs of both accounts and the amount.
+	
+Transaction log:
+
+1. Creating a transaction log
+	Transaction log should be empty on creation
+	Transaction log should contain added transaction
+

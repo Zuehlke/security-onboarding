@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/codemirror/codemirror.css">
+    <link rel="stylesheet" href="assets/bootstrap-dialog.min.css">
+    <link rel="stylesheet" href="assets/main.css">
+</head>
+<body>
+
+<h4 class="title">Exercise <span class="title-text"></span></h4>
+
+<button type="button" class="btn btn-default btn-success btn-large go">Check the code</button>
+<div style="clear:both">
+    <textarea class="code" rows="8" cols="80" style="display:none"></textarea>
+</div>
+
+<button type="button" class="btn btn-default btn-warning btn-large show-solution">I give up. Show the solution!</button>
+
+<div>
+    <textarea class="solution-code" style="display: none" class="code" rows="8" cols="80" style="display:none"></textarea>
+</div>
+
+<script src="assets/codemirror/codemirror.js"></script>
+<script src="assets/codemirror/matchbrackets.js"></script>
+<script src="assets/codemirror/javascript.js"></script>
+
+<script src="assets/jquery-1.10.2.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/bootstrap-dialog.min.js"></script>
+<script src="assets/main.js"></script>
+
+
+<div id="exercise-1-title" style="display:none">
+    Get and array of all twitter user names
+</div>
+<script id="exercise-1-code" type="text/x-handlebars-template">
+var tweetCountByUser = [
+    {"name": "Jack Spencer","tweetsCount": 76},
+    {"name": "Johnny Anderson","tweetsCount": 33},
+    {"name": "Craig Gray", "tweetsCount": 37},
+    {"name": "Phillip Rice", "tweetsCount": 44},
+    {"name": "Andrew Baker", "tweetsCount": 74},
+    {"name": "Rebecca Wheeler", "tweetsCount": 25},
+    {"name": "Gerald Knight", "tweetsCount": 49},
+    {"name": "Nancy Harvey", "tweetsCount": 94},
+    {"name": "Annie Tucker", "tweetsCount": 29},
+    {"name": "Ralph Mitchell", "tweetsCount": 83}
+];
+
+//Get and array of all twitter user names
+//Using the "map" method on the 'tweetCountByUser' array
+//uncomment the line below and complete the statement
+
+//tweetCountByUser.map
+</script>
+<script id="exercise-1-solution" type="text/x-handlebars-template">
+    ["Jack Spencer", "Johnny Anderson", "Craig Gray", "Phillip Rice", "Andrew Baker", "Rebecca Wheeler", "Gerald Knight", "Nancy Harvey", "Annie Tucker", "Ralph Mitchell"]
+</script>
+<script id="exercise-1-solution-code" type="text/x-handlebars-template">
+    tweetCountByUser.map(function(u) {
+        return u.name;
+    })
+</script>
+
+<div id="exercise-2-title" style="display:none">
+    Get an array of twitter names of people who tweeted about chocolate at least once
+</div>
+<script id="exercise-2-code" type="text/x-handlebars-template">
+var twitterUsers = [
+    {"name": "Jack Spencer", "tweets": ["I like to tweet", "Hey", "sth is wrong here"]},
+    {"name": "Johnny Anderson","tweets": ["My team just won", "I hate chocolate"]},
+    {"name": "Craig Gray", "tweets": []},
+    {"name": "Phillip Rice", "tweets": ["I just had a chocolate bar", "Please, follow me on tweeter", "Bring some chocolate"]},
+];
+
+//Get an array of twitter names of people who tweeted about chocolate at least once
+//Use the following methods on the 'followers' array: map, filter, some
+//Hint: string has a method named 'includes'
+//uncomment the line below and complete the statement
+
+//twitterUsers.filter
+
+</script>
+<script id="exercise-2-solution" type="text/x-handlebars-template">
+    ["Johnny Anderson", "Phillip Rice"]
+</script>
+<script id="exercise-2-solution-code" type="text/x-handlebars-template">
+    twitterUsers.filter(function(user) {
+        return user.tweets.some(function (tweet) {
+            return tweet.toLowerCase().includes("chocolate");
+        });
+    }).map(function(user) {return user.name;});
+</script>
+
+</body>
+</html>
