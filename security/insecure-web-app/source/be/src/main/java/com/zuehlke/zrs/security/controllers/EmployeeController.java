@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,12 +22,10 @@ import static java.util.stream.Collectors.toList;
 public class EmployeeController {
 
     private EmployeeRepository employeeRepository;
-    private JdbcTemplate jdbcTemplate;
 
     @Autowired
-    public EmployeeController(EmployeeRepository employeeRepository, JdbcTemplate jdbcTemplate) {
+    public EmployeeController(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
-        this.jdbcTemplate = jdbcTemplate;
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -43,13 +39,7 @@ public class EmployeeController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
     Employee findById(@PathVariable String id) {
-        String sql = "SELECT * FROM EMPLOYEE WHERE ID = " + id;
-        return jdbcTemplate.queryForObject(sql,
-                (rs, num) -> new Employee(rs.getLong("ID"),
-                        rs.getString("FIRSTNAME"),
-                        rs.getString("LASTNAME"),
-                        rs.getString("TITLE"),
-                        rs.getBoolean("DISABLED")));
+        return employeeRepository.findOne(Long.parseLong(id));
     }
 
     @ExceptionHandler(EmptyResultDataAccessException.class)
