@@ -51,6 +51,7 @@ public class EmployeeController {
     public void notFound() {
     }
 
+    @Secured("ADMIN")
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     @ResponseBody
     void delete(@PathVariable long id) {
