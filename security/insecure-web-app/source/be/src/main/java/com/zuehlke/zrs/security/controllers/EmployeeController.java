@@ -39,10 +39,14 @@ public class EmployeeController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
     Employee findById(@PathVariable String id) {
-        return employeeRepository.findOne(Long.parseLong(id));
+        Employee employee = employeeRepository.findOne(Long.parseLong(id));
+        if (employee.getDisabled()) {
+            throw new EmployeeDisabledException();
+        }
+        return employee;
     }
 
-    @ExceptionHandler(EmptyResultDataAccessException.class)
+    @ExceptionHandler({EmptyResultDataAccessException.class, EmployeeDisabledException.class})
     @ResponseStatus(value = HttpStatus.NOT_FOUND, reason = "Employee not found")
     public void notFound() {
     }
