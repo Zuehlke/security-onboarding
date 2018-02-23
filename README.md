@@ -12,5 +12,5 @@ ___
 * [github] - See other project from Zühlke on github
 * [bitbucket] - see other project from Zühlke on bitbucket
 
-[github]:https://github.com/zuehlke-ch
+[github]:https://github.com/Zuehlke
 [bitbucket]:https://bitbucket.zuehlke.com/projects
