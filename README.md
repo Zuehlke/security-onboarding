@@ -2,7 +2,7 @@
 Central location for ZRS curriculum materials
 
 ### Version
-0.0.1
+0.0.2
 
 ##### Affiliate
 * Team - ZRS
@@ -13,4 +13,4 @@ ___
 * [bitbucket] - see other project from Zühlke on bitbucket
 
 [github]:https://github.com/zuehlke-ch
-[bitbucket]:https://bitbucket.org/zuehlke/
+[bitbucket]:https://bitbucket.zuehlke.com/projects
