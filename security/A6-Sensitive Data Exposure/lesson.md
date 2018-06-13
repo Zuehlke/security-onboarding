@@ -11,7 +11,7 @@ Incidents range from concerted attack by black hats associated with organized cr
 ## Example of Attack
 
 1. Login to the insecure-web-app
-2. Using browser's network monitor, inspect the JSON batch of users that are retrieved after login and displayed in the table
+2. Using browser's Network monitor in the Developer tools (F12), inspect the response with JSON array of users that are retrieved after login and displayed in the table
 3. Each JSON should contain confidential JMBG field - this is sensitive data that is exposed!
 
 ## Analysis of the Attack
@@ -34,4 +34,4 @@ This is all fine, but we need to find a way to not leak this field into the HTTP
 
 ## Task: Prevent Sensitive Data Exposure
 
-Instruct the JSON serializer to ignore the sensitive field. This can often be done declaratively (e.g. in the Java and .NET apps using annotations).
+Instruct the JSON serializer to ignore the sensitive field. This can often be done declaratively (e.g. in Java using annotations and .NET using attributes).
