@@ -8,6 +8,43 @@ A data breach is the intentional or unintentional release of secure or private/c
 Other terms for this phenomenon include unintentional information disclosure, data leak and also data spill.
 Incidents range from concerted attack by black hats associated with organized crime, political activist or national governments to careless disposal of used computer equipment or data storage media.
 
+## What is sensitive data
+
+**Personally Identifiable Information** (**PII**) is a category of sensitive information that is associated with an individual person, such as an employee, student, or donor. PII should be accessed only on a strictly need-to-know basis and handled and stored with care.
+
+PII is information that can be used to uniquely identify, contact, or locate a single person. Personal information that is “de-identified” (maintained in a way that does not allow association with a specific person) is not considered sensitive.
+
+## Example of personally sensitive data
+
+* National ID number
+* Passport number
+* Visa permit number
+* Driver's license number
+* Bank and credit/debit card numbers
+* Disability status
+* Ethnicity
+* Gender
+* The location of an individual at a particular time
+* Web sites visited
+* Materials downloaded
+* Any other information reflecting preferences and behaviors of an individual 
+* Internet Protocol (IP) address (source and destination) in conjunction with other PII. IP address may identify an individual originating a transaction as well as the recipient.
+
+# **IMPORTANT**
+
+In context of our company, we have the concept of **internal information**. Any data connected to our customers is sensitive. Examples are:
+
+* Customer name
+* Project name
+* Project code
+* Project documentation
+* Project financial information
+* Non-public financial information
+* Internal Zuehlke documents
+* Additional NDA with customer that covers communication with your Zuehlke collegues about projects
+
+If in doubt, ask your line manager (HCU) or the Chief Information Security Office (CISO) if the data is sensitive.
+
 ## Example of Attack
 
 1. Login to the insecure-web-app
