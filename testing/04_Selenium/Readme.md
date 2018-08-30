@@ -1,9 +1,12 @@
 Welcome to Selenium course
 
+
 Here you can find detailed presentation about using Selenium in Java for creating automated UI test cases.
 Steps to get started:
 
-1. Clone this repository localy
+1. Install Java on your mashine
+2. Install Maven
+3. Clone this repository localy
 
 In Selenium.pptx presentation you can find details on how to use selenium. Presentation follows examples from  zLibrary_SeleniumTests scripts.
 
