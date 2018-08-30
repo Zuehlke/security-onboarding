@@ -6,23 +6,27 @@ Steps to get started:
 
 1. Install Java on your mashine and set JAVA enviroment variables.
 2. Download and Install Maven, precondition: JAVA installed, Java path set in system variables
+
+-------------------------------------------------------------
+
 Steps: 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| 1. Go to "https://maven.apache.org/download.cgi"																																				|
-| 2. Download binary zip archive (-bin.zip) - For WindowsOS,																																|
-| 3. Unzip downloaded file to sutable location																																							|
-| 4. Copy path where you unzipped maven archive (Folder that contains "bin" folder) and set it as environmental system variable		|
-| 5. Setting environmental system variable can be done following steps:																												|
-|	 5.1 Go to ThisPC, right click and select poperties																																					|
-|	 5.2 On left side og the opened window click "Advanced system settings"																										|
-|	 5.3 In "Advanced" tab click "Environment Variables..." button on window bottom																						|
-|	 5.4 Click "New..." button under System variables and set name as "MAVEN_HOME" and value as path you copied								|
-| 6. Now copy path of "bin" folder from unzipped maven archive and add it to "Path" System variable, see details below:						|
-|	 6.1 Find System variable called "Path"																																									|
-|	 6.2 Double click on it, on new window click "New" and copy path there																											|
-| 7. Test if you have set up maven by entering "mvn --version" in cmd																													|
-| 8. If no error is displayed, you are ready to go.																																						|
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Go to "https://maven.apache.org/download.cgi"	
+ 2. Download binary zip archive (-bin.zip) - For WindowsOS,
+ 3. Unzip downloaded file to sutable location
+ 4. Copy path where you unzipped maven archive (Folder that contains "bin" folder) and set it as environmental system variable
+ 5. Setting environmental system variable can be done following steps:	
+	 5.1 Go to ThisPC, right click and select poperties
+	 5.2 On left side og the opened window click "Advanced system settings"
+	 5.3 In "Advanced" tab click "Environment Variables..." button on window bottom
+	 5.4 Click "New..." button under System variables and set name as "MAVEN_HOME" and value as path you copied
+ 6. Now copy path of "bin" folder from unzipped maven archive and add it to "Path" System variable, see details below:
+	 6.1 Find System variable called "Path"
+     6.2 Double click on it, on new window click "New" and copy path there
+7. Test if you have set up maven by entering "mvn --version" in cmd
+8. If no error is displayed, you are ready to go.
+
+------------------------------------------------------------
+
 3. Clone this repository localy
 
 In Selenium.pptx presentation you can find details on how to use selenium. Presentation follows examples from  zLibrary_SeleniumTests scripts.
