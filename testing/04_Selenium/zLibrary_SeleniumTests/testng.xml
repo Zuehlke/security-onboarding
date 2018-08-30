@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="SmokeTest">
+    <test name="order">
+        <classes>
+            <class name="zLibrary.tests.A_LoginFunctionality_Test"/>
+            <class name="zLibrary.tests.B_NavigationAndPagesContent_Test"/>
+            <class name="zLibrary.tests.C_ReserveBook_Test"/>
+            <class name="zLibrary.tests.D_Search"/>
+            <class name="zLibrary.tests.F_ToggleUserRole"/>
+        </classes>
+    </test>
+    <test name="TestTest">
+            <classes>
+                <class name="zLibrary.tests.B_NavigationAndPagesContent_Test"></class>
+            </classes>
+    </test>
+</suite>
